@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Main</title>
+	<link rel="stylesheet" href="./css/common.css">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+	<!-- skip Nav -->
+	<div class="skip_nav">
+		<a href="#nav">네비게이션 메뉴 바로가기</a>
+		<a href="#content">콘텐츠 메뉴 바로가기</a>
+	</div>
+
+	<div class="main_wrp">
+		<div class="main_inr">
+			<!-- SECTION : Header -->
+			<header id="header" class="main_hg">
+				<h1><a href="#">포포올</a></h1>
+			</header>
+
+			<!-- SECTION : Navigation -->
+			<nav id="nav" class="main_nv">
+				<ul>
+					<li><a href="#sec_portfolio">portfolio</a></li>
+					<li><a href="#sec_contact">contact me</a></li>
+				</ul>
+			</nav>
+			
+			<!-- SECTION : Main Content -->
+			<div id="content" class="main_cg">
+				<div class="main_bn">
+					<!-- bn_bg1.png ~ bn_bg3.png -->
+					<img src="./img/bn_bg1.png" width="1280" height="570" alt="" />
+				</div>
+			
+				<div class="main_sg">
+					<!-- Group : 업무 프로젝트 -->
+					<section id="sec_portfolio" class="main_gr">
+						<h2 class="main_tt">업무 프로젝트</h2>
+						<ul class="main_pj">
+							<li>
+								<a href="https://www.qoo10.sg" target="_blank" title="">
+									<div class="thmb">
+										<img src="./img/img_pj1.jpg" width="360" height="300" alt="">
+									</div>
+									<p class="tt">Qoo10 메인 페이지 전체 개편</p>
+								</a>
+								<p class="dsc">768px, 980px, 1260px 해상도별 반응형 작업 및 태블릿 화면에 따라 이미지 아이콘 svg처리</p>
+							</li>
+							<li>
+								<a href="https://www.qoo10.sg/gmkt.inc/Login/Login.aspx" target="_blank" title="">
+									<div class="thmb">
+										<img src="./img/img_pj2.jpg" width="360" height="300" alt="">
+									</div>
+									<p class="tt">Qoo10 PC 로그인, 회원가입 개편</p>
+								</a>
+							</li>
+							<li>
+								<a href="https://m.qoo10.sg/gmkt.inc/Mobile/Member/RegisterMember.aspx?ReturnUrl=https%3a%2f%2fwww.qoo10.sg%2f%3f__ar%3dY" target="_blank" title="">
+									<div class="thmb">
+										<img src="./img/img_pj3.jpg" width="360" height="300" alt="">
+									</div>
+									<p class="tt">Qoo10 모바일 회원가입 개편</p>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.qoo10.sg/gmkt.inc/Order/ClickAndDelivery.aspx" target="_blank" title="">
+									<div class="thmb">
+										<img src="./img/img_pj4.jpg" width="360" height="300" alt="">
+									</div>
+									<p class="tt">PC Qdelivery 전체 개편</p>
+								</a>
+							</li>
+							<li>
+								<a href="https://m.qoo10.sg/gmkt.inc/Mobile/Order/ClickAndDelivery.aspx" target="_blank" title="">
+									<div class="thmb">
+										<img src="./img/img_pj5.jpg" width="360" height="300" alt="">
+									</div>
+									<p class="tt">Mobile Qdelivery 전체 개편</p>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.quube.xyz/gmkt.inc/Qcoin/QcoinIntroduce.aspx" target="_blank" title="">
+									<div class="thmb">
+										<img src="./img/img_pj6.jpg" width="360" height="300" alt="">
+									</div>
+									<p class="tt">Qoo10 블록체인 소개 페이지</p>
+								</a>
+							</li>
+						</ul>
+						<p class="main_cmt">※ 해당 작업 외에 다수의 프로젝트 작업 및 유지보수 작업 진행</p>
+					</section>
+
+					<!-- Group : 연락처 정보 -->
+					<section id="sec_contact" class="main_gr">
+						<h2 class="main_tt">contact me</h2>
+						<ul class="main_inf">
+							<li>
+								<strong class="sbj">이메일</strong>
+								<a href="mailto:92729@naver.com" title="메일 보내기">92729@naver.com</a>
+							</li>
+							<li>
+								<strong class="sbj">휴대폰 번호</strong>
+								<a href="tel:01026014217" title="전화걸기">010-2601-4217</a>
+							</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</div>
+		<!-- SECTION : Footer -->
+		<footer id="footer" class="main_fg">
+			<p>ⓒHyun Jin Kim</p>
+		</footer>
+	</div>
+
+	<!-- Page Loading -->
+	<div class="ld_bg">
+		<div class="ld">Page Loading</div>
+	</div>
+
+	<!-- Top Button -->
+	<button type="button" class="bt_top">Go to Top</button>
+	
+	<script src="./js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	(function(){
+		// 메인 배너 이미지 랜덤으로 돌리기
+		var random = Math.floor(Math.random() * 3 + 1);
+		$(".main_bn img").attr("src", "./img/bn_bg" + random + ".png");
+
+		// loading
+		setTimeout(loading, 1500);
+		function loading(){
+			$(".ld_bg").fadeOut();
+		};
+
+		// Top Button
+		$(".bt_top").on("click", function(){
+			$("html, body").stop().animate({"scrollTop" : 0}, 400);
+		});
+	})();
+	
+	
+	</script>
+</body>
+</html>
