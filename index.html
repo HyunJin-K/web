@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Main</title>
-	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./layout/css/main.min.css">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -33,7 +33,7 @@
 			<div id="content" class="main_cg">
 				<div class="main_bn">
 					<!-- bn_bg1.png ~ bn_bg3.png -->
-					<img src="./img/bn_bg1.png" width="1280" height="570" alt="" />
+					<img src="./layout/img/bn_bg1.png" width="1280" height="570" alt="" />
 				</div>
 			
 				<div class="main_sg">
@@ -103,13 +103,13 @@
 	<!-- Top Button -->
 	<button type="button" class="bt_top">Go to Top</button>
 	
-	<script src="./js/jquery-3.1.1.min.js"></script>
+	<script src="./layout/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript">
 	
 	(function(){
 		// 메인 배너 이미지 랜덤으로 돌리기
 		var random = Math.floor(Math.random() * 3 + 1);
-		$(".main_bn img").attr("src", "./img/bn_bg" + random + ".png");
+		$(".main_bn img").attr("src", "./layout/img/bn_bg" + random + ".png");
 
 		// loading
 		setTimeout(loading, 1500);
