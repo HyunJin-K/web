@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>England Premier League</title>
-    <link rel="stylesheet" href="./layout/css/epl.min.css">
+    <link rel="stylesheet" href="layout/css/epl.min.css">
 </head>
 <body>
     <!-- SKIP NAVIGATION -->
@@ -13,59 +13,352 @@
         <a href="#header">Go to Header</a>
         <a href="#content">Go to Contents</a>
         <a href="#sidemenu">Go to SideMenu</a>
-    </ul>
+    </div>
 
     <div class="epl_wrp">
         <!-- Section : Header -->
         <header class="epl_hg" id="header">
             <h1>
                 <a href="#">
-                    <img src="" alt="">
+                    <img src="" width="" height="" alt="">
                 </a>
             </h1>
             <nav>
                 <ul>
-                    <li><a href="#">text1</a></li>
-                    <li><a href="#">text2</a></li>
-                    <li><a href="#">text3</a></li>
-                    <li><a href="#">text4</a></li>
-                    <li><a href="#">text5</a></li>
+                    <li><a href="#content_score">WEEKLY SCORE</a></li>
+                    <li><a href="#content_team">TEAM</a></li>
+                    <li><a href="#content_news">NEWS</a></li>
+                    <li><a href="#content_notice">Records</a></li>
                 </ul>
             </nav>
+
+            <!-- Area : Side Button -->
+            <div class="epl_hg_sd">
+                <a href="#" class="bt_shp" target="_blank">Shop</a>
+                <a href="#" class="bt_tck" target="_blank">Ticket</a>
+            </div>
         </header>
 
         <!-- Section : Content -->
         <div class="epl_cg" id="content">
-            <div class="epl_bn">
-
+            <!-- Area : Ranking Board & Banner -->
+            <div class="epl_mn">
+                <div class="epl_rnk">
+                    <table>
+                        <caption>Premier League Ranking Board</caption>
+                        <colgroup>
+                            <col style="width:42px;">
+                            <col>
+                            <col style="width:26px;">
+                            <col style="width:30px;">
+                            <col style="width:36px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <abbr title="Position">Pos</abbr>
+                                </th>
+                                <th scope="col">Club</th>
+                                <th scope="col">
+                                    <abbr title="played">Pl</abbr>
+                                </th>
+                                <th scope="col">
+                                    <abbr title="Goal Difference">GD</abbr>
+                                </th>
+                                <th scope="col">
+                                    <abbr title="Points">Pts</abbr>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="pos_up" title="Previous Position 2">1</th>
+                                <td class="lft">
+                                    <strong>Man City</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td class="lft">
+                                    <strong>Sheffield Utd</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td class="lft">
+                                    <strong>Leicester</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="pos_down">4</th>
+                                <td class="lft">
+                                    <strong>Chelsea</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="pos_up" title="Previous Position 6">5</th>
+                                <td class="lft">
+                                    <strong>Man City</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td class="lft">
+                                    <strong>Sheffield Utd</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td class="lft">
+                                    <strong>Leicester</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td class="lft">
+                                    <strong>Chelsea</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td class="lft">
+                                    <strong>Man City</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td class="lft">
+                                    <strong>Sheffield Utd</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">11</th>
+                                <td class="lft">
+                                    <strong>Leicester</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="pos_down" title="Previous Position 11">12</th>
+                                <td class="lft">
+                                    <strong>Chelsea</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="pos_up" title="Previous Position 16">13</th>
+                                <td class="lft">
+                                    <strong>Man City</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">14</th>
+                                <td class="lft">
+                                    <strong>Sheffield Utd</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="pos_up" title="Previous Position 16">15</th>
+                                <td class="lft">
+                                    <strong>Leicester</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="pos_down" title="Previous Position 15">16</th>
+                                <td class="lft">
+                                    <strong>Chelsea</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">17</th>
+                                <td class="lft">
+                                    <strong>Man City</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">18</th>
+                                <td>
+                                    <strong>Sheffield Utd</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">19</th>
+                                <td>
+                                    <strong>Leicester</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">20</th>
+                                <td class="lft">
+                                    <strong>Chelsea</strong>
+                                </td>
+                                <td>11</td>
+                                <td>+16</td>
+                                <td><strong>31</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="epl_bn">
+                    <h2 class="hide">Main Banner</h2>
+                    <img src="#" width="" height="" alt="">
+                </div>
             </div>
 
+            <!-- Area : WEEKLY SCORE -->
+            <div class="epl_sg" id="content_score">
+                <h2 class="epl_tt">WEEKLY SCORE</h2>
+                
+            </div>
+
+            <!-- Area : TEAM -->
+            <div class="epl_sg" id="content_team">
+                <h2 class="epl_tt">TEAM</h2>
+                <p>slide freemode 형식의 팀 영역</p>
+            </div>
             
+            <!-- Area : NEWS -->
+            <div class="epl_sg" id="content_news">
+                <h2 class="epl_tt">NEWS</h2>
+                <ul>
+                    <li>
+                        <a href="#" target="_blank">
+                            <div class="thmb">
+                                <img src="#" width="" height="" alt="">
+                            </div>
+                            <p class="txt">textest</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <div class="thmb">
+                                <img src="#" width="" height="" alt="">
+                            </div>
+                            <p class="txt">textest</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <div class="thmb">
+                                <img src="#" width="" height="" alt="">
+                            </div>
+                            <p class="txt">textest</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <div class="thmb">
+                                <img src="#" width="" height="" alt="">
+                            </div>
+                            <p class="txt">textest</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <div class="thmb">
+                                <img src="#" width="" height="" alt="">
+                            </div>
+                            <p class="txt">textest</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <div class="thmb">
+                                <img src="#" width="" height="" alt="">
+                            </div>
+                            <p class="txt">textest</p>
+                        </a>
+                    </li>
+                </ul>
+                <a href="#" class="bt_mr" target="_blank" title="More News">More</a>
+            </div>
+
+            <!-- Area : NOTICE -->
+            <div class="epl_sg" id="content_notice">
+                <h2 class="epl_tt">NOTICE</h2>
+                
+            </div>
         </div>
 
         <!-- Section : Side Menu -->
         <aside class="epl_ag" id="sidemenu">
-            <h2>Side title</h2>
-            
-            <!-- Area : 시뮬레이션 경기 체크 영역 -->
-            <div class="sm_chk">
+            <div class="epl_ag_hd">
+                <h2>Side title</h2>
+            </div>
+            <!-- Area : sns -->
+            <div class="epl_ag_sns">
                 <ul>
                     <li>
-                        <div class="team">
-                            <input type="radio" id="team1_1" name="team1">
-                            <label for="team1_1">team1</label>
+                        <div class="inf">
+                            <i>Twiter</i>
+                            <span class="date">1days ago</span>
                         </div>
-                        <div class="team">
-                            <input type="radio" id="team1_1" name="team1">
-                            <label for="team1_1">team1</label>
+                        <p class="txt">textestextest</p>
+                        <div class="img">
+                            <img src="#" width="" height="" alt="">
                         </div>
-                        <p class="cmt">[!] 안내 문구</p>
                     </li>
                 </ul>
-                <button type="button">Simulation</button>
             </div>
         </aside>
 
     </div>
+
+    <script src="layout/js/jquery-3.1.1.min.js"></script>
 </body>
 </html>

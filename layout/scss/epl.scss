@@ -1,2 +1,89 @@
+$page:epl;
+
 @import "./control/reset",
-        "./control/common";
+        "./control/common",
+        "./control/basic";
+
+
+
+/*-------------------------------------
+[P] EPL
+--------------------------------------*/
+.epl{
+    // .epl_wrp
+    &_wrp{position:relative; padding-right:300px;}
+    // Aside Group : .epl_ag
+    &_ag{position:fixed; top:0; right:0; width:300px;}
+    // .epl_hg
+    &_hg{
+        position:relative; background:#37003c;
+        &.is_fixed{position:fixed; top:0; left:0; right:300px;}
+        h1{position:absolute;}
+        nav{
+            font-size:13px;
+            ul{overflow:hidden;}
+            li{
+                float:left;
+                a{display:block; padding:0 27px; height:52px; line-height:52px; color:#fff;}
+            }
+
+        }
+        // Side Buttons : .epl_hg_sd
+        &_sd{
+            position:absolute; top:0; bottom:0; right:0; font-size:0;
+            a{display:inline-block; border-left:1px solid rgba(255,255,255,.4); width:52px; height:52px;}
+            .bt{
+                // .bt_shp, bt_tck
+                &_shp{
+                    
+                }
+                &_tck{}
+            }
+        }
+    }
+    // .epl_cg
+    &_cg{
+        border-top:8px solid #ebebeb; padding:26px;
+        
+    }
+    // .epl_sg
+    &_sg{
+        position:relative; margin:40px 0;
+        // More Button
+        .bt_mr{
+            position:absolute; font-size:14px; font-weight:bold;
+            &:after{display:inline-block; margin:-2px 0 0 3px; border:solid #888; border-width:1px 1px 0 0; width:5px; height:5px; -webkit-transform:rotate(45deg); transform:rotate(45deg); content:""; vertical-align:middle;}
+        }
+    }
+    // Common Title : .epl_tt
+    &_tt{margin-bottom:24px; font-size:26px;}
+
+    // Main Section : .epl_mn
+    &_mn{
+        position:relative; padding-left:300px; height:410px;
+    }
+    // Ranking Board : .epl_rnk
+    &_rnk{
+        position:absolute; top:0; left:0; background:#fff; width:270px; height:410px; overflow:hidden; box-shadow:0 0 5px rgba(0,0,0,.2);
+        &:hover{height:auto; z-index:1;}
+        table{width:100%;}
+        th, td{padding:4px; text-align:center; box-sizing:border-box;}
+        thead th{background:#fbfbfb; height:30px; color:#777;}
+        tbody{
+            th, td{border-bottom:1px solid #efefef; height:38px;}
+            th{
+                &:after{display:inline-block; margin-left:5px; border-radius:50%; background:#999; width:4px; height:4px; content:""; vertical-align:middle;}
+                &.pos_up:after,
+                &.pos_down:after{margin:-2px -3px 0 5px; border-radius:0; background:none; width:0; height:0; border-style:solid;}
+                &.pos_up:after{border-width:0 3.5px 5px 3.5px; border-color:transparent transparent #13cf00 transparent;}
+                &.pos_down:after{border-width: 5px 3.5px 0 3.5px;                 border-color: #e90052 transparent transparent transparent;}
+            }
+        }
+        .lft{text-align:left;}
+    }
+    // Main Banner : .epl_bn
+    &_bn{}
+
+
+
+}

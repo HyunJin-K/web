@@ -1,0 +1,22 @@
+// 공통으로 사용하는 @mixin
+
+
+// Background 이미지 (true : 가상선택자 사용, false : 단순 bg)
+@mixin background($pseudo:false, $display:inline-block, $margin:null, $img:$page, $pos:null, $bsize:null){
+    @if $pseudo == true{
+        display:$display; margin:$margin; vertical-align:middle; content:"";
+        background:'url(../../img/' + $img + '.png)' $pos no-repeat;
+        background-size:$bsize;
+        @content;
+    }
+    
+    @else if $pseudo == false{
+        background:'url(../../img/' + $img + '.png)' $pos no-repeat;
+        @content;
+    }
+}
+
+// ClearFix
+@mixin clearfix{
+    display:block; clear:both; content:"";
+}
