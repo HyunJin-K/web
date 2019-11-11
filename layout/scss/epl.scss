@@ -1,4 +1,4 @@
-$page:epl;
+$page:klg;
 
 @import "./control/reset",
         "./control/common",
@@ -7,31 +7,41 @@ $page:epl;
 
 
 /*-------------------------------------
-[P] EPL
+[P] KLeague
 --------------------------------------*/
-.epl{
-    // .epl_wrp
+.klg{
+    // .klg_wrp
     &_wrp{position:relative; padding-right:300px;}
-    // Aside Group : .epl_ag
-    &_ag{position:fixed; top:0; right:0; width:300px;}
-    // .epl_hg
+
+    // Aside Group : .klg_ag
+    &_ag{
+        position:fixed; top:0; bottom:0; right:0; width:300px;
+        background:#e90052;
+        // .klg_ag_tt
+        &_tt{background:#37003c; height:52px; line-height:52px; text-align:center; color:#fff; font-size:20px;}
+    }
+
+    // .klg_hg
     &_hg{
-        position:relative; background:#37003c;
-        &.is_fixed{position:fixed; top:0; left:0; right:300px;}
-        h1{position:absolute;}
+        position:relative; padding:6px 120px 6px 110px; background:#25b7aa; -webkit-transition:0.5s all; transition:0.5s all;
+        &.is_fixed{position:fixed; top:0; left:0; right:300px; padding:0 0 0 120px; z-index:100;}
+        h1{position:absolute; top:5px; left:20px;}
         nav{
             font-size:13px;
             ul{overflow:hidden;}
             li{
                 float:left;
-                a{display:block; padding:0 27px; height:52px; line-height:52px; color:#fff;}
+                a{
+                    display:block; padding:0 27px; height:52px; line-height:52px; color:#fff; font-weight:bold; -webkit-transition:0.3s color; transition:0.3s color;
+                    &:hover{color:#37003c;}
+                }
             }
 
         }
-        // Side Buttons : .epl_hg_sd
+        // Side Buttons : .klg_hg_sd
         &_sd{
             position:absolute; top:0; bottom:0; right:0; font-size:0;
-            a{display:inline-block; border-left:1px solid rgba(255,255,255,.4); width:52px; height:52px;}
+            a{display:inline-block; border-left:1px solid rgba(255,255,255,.4); width:52px; height:100%; font-size:12px;}
             .bt{
                 // .bt_shp, bt_tck
                 &_shp{
@@ -41,30 +51,49 @@ $page:epl;
             }
         }
     }
-    // .epl_cg
+
+    // .klg_cg
     &_cg{
-        border-top:8px solid #ebebeb; padding:26px;
-        
+        background:#ebebeb;
     }
-    // .epl_sg
+
+    // .klg_sg
     &_sg{
-        position:relative; margin:40px 0;
+        position:relative; margin:40px 0; padding:26px; background:#fff;
         // More Button
         .bt_mr{
             position:absolute; font-size:14px; font-weight:bold;
             &:after{display:inline-block; margin:-2px 0 0 3px; border:solid #888; border-width:1px 1px 0 0; width:5px; height:5px; -webkit-transform:rotate(45deg); transform:rotate(45deg); content:""; vertical-align:middle;}
         }
     }
-    // Common Title : .epl_tt
+    // Common Title : .klg_tt
     &_tt{margin-bottom:24px; font-size:26px;}
 
-    // Main Section : .epl_mn
-    &_mn{
-        position:relative; padding-left:300px; height:410px;
+    // Main Banner : .klg_bn
+    &_bn{
+        padding:26px;
+        .lnk{
+            display:table; width:100%;
+            > *{display:table-cell; vertical-align:middle;}
+            &:hover .thmb img{-webkit-transform:scale(1.1); transform:scale(1.1);}
+        }
+        .thmb{
+            overflow:hidden;
+            img{width:auto; height:auto; max-width:100%; max-height:100%; transition:0.3s all;}
+        }
+        .inf{padding:15px; background:#00285e; width:35%;}
+        .bdg{color:#72e9ff; font-size:14px;}
+        .dsc{margin-top:10px; line-height:1.3; color:#fff; font-size:20px;}
     }
-    // Ranking Board : .epl_rnk
+
+    // Board : .klg_brd
+    &_brd{
+        position:relative; padding:26px 0 26px 330px; background:#fff; height:410px;
+    }
+
+    // Ranking Board : .klg_rnk
     &_rnk{
-        position:absolute; top:0; left:0; background:#fff; width:270px; height:410px; overflow:hidden; box-shadow:0 0 5px rgba(0,0,0,.2);
+        position:absolute; top:26px; left:26px; border-radius:10px; background:#fff; width:270px; height:410px; overflow:hidden; box-shadow:0 0 5px rgba(0,0,0,.2);
         &:hover{height:auto; z-index:1;}
         table{width:100%;}
         th, td{padding:4px; text-align:center; box-sizing:border-box;}
@@ -76,14 +105,28 @@ $page:epl;
                 &.pos_up:after,
                 &.pos_down:after{margin:-2px -3px 0 5px; border-radius:0; background:none; width:0; height:0; border-style:solid;}
                 &.pos_up:after{border-width:0 3.5px 5px 3.5px; border-color:transparent transparent #13cf00 transparent;}
-                &.pos_down:after{border-width: 5px 3.5px 0 3.5px;                 border-color: #e90052 transparent transparent transparent;}
+                &.pos_down:after{border-width: 5px 3.5px 0 3.5px; border-color: #e90052 transparent transparent transparent;}
             }
         }
         .lft{text-align:left;}
     }
-    // Main Banner : .epl_bn
-    &_bn{}
 
-
+    // Score Board : .klg_scr
+    &_scr{
+        // .klg_scr_gr
+        &_gr{
+            h3{font-size:16px;}
+            li{
+                border-top:1px solid #efefef;
+                a{
+                    display:flex; height:52px; align-items:center;
+                }
+            }
+            .club{display:flex; width:60%; align-items:center;}
+            .home{width:40%; text-align:right;}
+            time{margin:0 5px; border:1px solid #ddd; width:50px; height:25px; line-height:25px; text-align:center;}
+            .place{width:40%;}
+        }
+    }
 
 }
