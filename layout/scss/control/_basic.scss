@@ -20,3 +20,19 @@
 @mixin clearfix{
     display:block; clear:both; content:"";
 }
+
+// Test Ellipsis
+@mixin text-ellipsis{
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+@mixin text-line-ellipsis($line){
+    display:-webkit-box; overflow:hidden; text-overflow:ellipsis; -webkit-line-clamp:$line; -webkit-box-orient:vertical; word-wrap:break-word;
+}
+
+// Background Gradient
+@mixin bg-gradient($direct, $color1, $color2){
+    background:-webkit-linear-gradient($direct, $color1, $color2);
+    background:-moz-linear-gradient($direct, $color1, $color2);
+    background:-ms-linear-gradient($direct, $color1, $color2);
+    background:linear-gradient($direct, $color1, $color2);
+}
