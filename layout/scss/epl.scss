@@ -18,36 +18,41 @@ $page:klg;
         .tmp{
             // Gallery Type List : .tmp_glr
             &_glr{
-                overflow:hidden;
-                // type01 : Video, Photo
-                &.t01{
-                    li:first-child{
+                display:flex;
+                &_bg{
+                    width:50%;
+                    .inf{
+                        @include bg-gradient(240deg, #fd2882, #3b013d);
+                    }
+                    + .tmp_glr_ls{
                         width:50%;
-                        .thmb:after{display:none;}
-                        .inf{
-                            padding:25px 15px;
-                            @include bg-gradient(240deg, #fd2882, #3b013d);
-                        }
+                        li{width:50%;}
                     }
                 }
-                li{
-                    float:left; padding:0 4px; width:25%; box-sizing:border-box;
-                    a{
-                        display:block;
-                        &:hover .thmb{
-                            &:after{left:0; right:0;}
+                &_ls{
+                    overflow:hidden;
+                    li{
+                        float:left; padding:0 4px; width:25%; box-sizing:border-box;
+                        a{
+                            display:block;
+                            &:hover .thmb{
+                                &:after{left:0; right:0;}
+                            }
                         }
                     }
+                    .thmb{
+                        -webkit-transition:0.3s all; transition:0.3s all;
+                        &:after{
+                            position:absolute; bottom:-4px; left:18px; right:18px; height:4px; -webkit-transition:0.3s all; transition:0.3s all; content:"";
+                            @include bg-gradient(90deg, #ff2883, #973cfe);
+                        }
+                    }
+                    .inf{padding:15px 10px;}
                 }
                 .thmb{
                     position:relative; padding-top:66.667%;
-                    img{position:absolute; top:0; left:0; right:0; bottom:0; margin:auto; width:auto; height:auto; max-width:100%; max-height:100%; -webkit-transition:0.3s all; transition:0.3s all; content:"";}
-                    &:after{
-                        position:absolute; bottom:-4px; left:18px; right:18px; height:4px; -webkit-transition:0.3s all; transition:0.3s all; content:"";
-                        @include bg-gradient(90deg, #ff2883, #973cfe);
-                    }
+                    img{position:absolute; top:0; left:0; right:0; bottom:0; margin:auto; width:auto; height:auto; max-width:100%; max-height:100%;}
                 }
-                .inf{padding:15px 10px;}
                 .cmt{display:block; color:#e90052;}
                 .txt{
                     margin-top:6px; line-height:22px; height:44px; font-size:17px;

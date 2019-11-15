@@ -153,23 +153,32 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 .tmp_glr {
-  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.tmp_glr.t01 li:first-child {
+.tmp_glr_bg {
   width: 50%;
 }
 
-.tmp_glr.t01 li:first-child .thmb:after {
-  display: none;
-}
-
-.tmp_glr.t01 li:first-child .inf {
-  padding: 25px 15px;
+.tmp_glr_bg .inf {
   background: linear-gradient(240deg, #fd2882, #3b013d);
 }
 
-.tmp_glr li {
+.tmp_glr_bg + .tmp_glr_ls {
+  width: 50%;
+}
+
+.tmp_glr_bg + .tmp_glr_ls li {
+  width: 50%;
+}
+
+.tmp_glr_ls {
+  overflow: hidden;
+}
+
+.tmp_glr_ls li {
   float: left;
   padding: 0 4px;
   width: 25%;
@@ -177,13 +186,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
           box-sizing: border-box;
 }
 
-.tmp_glr li a {
+.tmp_glr_ls li a {
   display: block;
 }
 
-.tmp_glr li a:hover .thmb:after {
+.tmp_glr_ls li a:hover .thmb:after {
   left: 0;
   right: 0;
+}
+
+.tmp_glr_ls .thmb {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.tmp_glr_ls .thmb:after {
+  position: absolute;
+  bottom: -4px;
+  left: 18px;
+  right: 18px;
+  height: 4px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  content: "";
+  background: -webkit-gradient(linear, left top, right top, from(#ff2883), to(#973cfe));
+  background: linear-gradient(90deg, #ff2883, #973cfe);
+}
+
+.tmp_glr_ls .inf {
+  padding: 15px 10px;
 }
 
 .tmp_glr .thmb {
@@ -202,26 +233,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   height: auto;
   max-width: 100%;
   max-height: 100%;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-  content: "";
-}
-
-.tmp_glr .thmb:after {
-  position: absolute;
-  bottom: -4px;
-  left: 18px;
-  right: 18px;
-  height: 4px;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-  content: "";
-  background: -webkit-gradient(linear, left top, right top, from(#ff2883), to(#973cfe));
-  background: linear-gradient(90deg, #ff2883, #973cfe);
-}
-
-.tmp_glr .inf {
-  padding: 15px 10px;
 }
 
 .tmp_glr .cmt {
