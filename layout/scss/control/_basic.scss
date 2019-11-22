@@ -5,13 +5,13 @@
 @mixin background($pseudo:false, $display:inline-block, $margin:null, $img:$page, $pos:null, $bsize:null){
     @if $pseudo == true{
         display:$display; margin:$margin; vertical-align:middle; content:"";
-        background:'url(../../img/' + $img + '.png)' $pos no-repeat;
+        background:url('../img/' + $img + '.png') $pos no-repeat;
         background-size:$bsize;
         @content;
     }
     
     @else if $pseudo == false{
-        background:'url(../../img/' + $img + '.png)' $pos no-repeat;
+        background:url('../img/' + $img + '.png') $pos no-repeat;
         @content;
     }
 }
@@ -31,8 +31,8 @@
 
 // Background Gradient
 @mixin bg-gradient($direct, $color1, $color2){
-    background:-webkit-linear-gradient($direct, $color1, $color2);
-    background:-moz-linear-gradient($direct, $color1, $color2);
-    background:-ms-linear-gradient($direct, $color1, $color2);
-    background:linear-gradient($direct, $color1, $color2);
+    background-image: -webkit-linear-gradient($direct, $color1, $color2);
+    background-image: -moz-linear-gradient($direct, $color1, $color2);
+    background-image: -ms-linear-gradient($direct, $color1, $color2);
+    background-image: linear-gradient($direct, $color1, $color2);
 }

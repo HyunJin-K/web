@@ -1,0 +1,70 @@
+$page:tvn;
+
+@import "./control/reset",
+        "./control/common",
+        "./control/basic";
+
+
+/*-------------------------------------
+[P] Tvn
+--------------------------------------*/
+.main{
+    // .main_wrp
+    &_wrp{}
+
+    // .main_inr
+    &_inr{margin:0 auto; width:1200px;}
+
+    // .main_hg
+    &_hg{
+        border-bottom:1px solid #e5e5e5;
+        // .main_hg_mn
+        &_mn{
+            overflow:hidden; line-height:40px;
+            .tving{display:inline-block;}
+            .mn{
+                float:right;
+                li{
+                    float:left; margin-left:14px; 
+                    a{display:block; color:#a3a3a3; letter-spacing:-0.5px;}
+                }
+            }
+        }
+        
+        // Main Logo
+        h1{text-align:center;}
+
+        // .main_hg_nv
+        &_nv{
+            margin-top:19px; font-size:16px; overflow:hidden;
+            .nv{
+                // .nv_lst
+                &_lst{
+                    float:left; margin-left:-16px; overflow:hidden;
+                    li{float:left;}
+                    .is_on a:after{
+                        position:absolute; bottom:0; left:14px; right:14px; background:#fc0000; height:3px; content:"";
+                    }
+                    a{display:block; position:relative; padding:0 16px; line-height:55px; box-sizing:border-box; letter-spacing:-0.3px; color:#000;}
+                }
+                // .nv_sd
+                &_sd{
+                    float:right; margin-top:15px; font-size:0;
+                    a{display:inline-block; margin-left:11px; vertical-align:middle;}
+                    .bt_air{margin-left:26px; padding:0 12px; background:#e32323; line-height:25px; color:#fff; font-weight:bold; font-size:12px;}
+                }
+            }
+        }
+    }
+
+    // .main_bn
+    &_bn{
+        margin:10px 0; height:490px;
+    }
+
+    // .main_tdy
+    &_tdy{
+        margin:10px 0;
+        h2{float:left;}
+    }
+}
