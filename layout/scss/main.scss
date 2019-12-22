@@ -56,9 +56,9 @@
             }
         }
     }
-    // .main_pj
-    &_pj{
-        margin-top:-20px; font-size:0;
+    // .main_glr
+    &_glr{
+        font-size:0;
         li{
             display:inline-block; padding:20px 30px; width:33.3%; text-align:center; vertical-align:middle; box-sizing:border-box;
             a{
@@ -70,7 +70,7 @@
             overflow:hidden;
             img{max-width:100%; width:auto; height:auto; -webkit-transition:0.5s all; transition:0.5s all;}
         }
-        .tt{margin-top:18px; font-size:15px;}
+        .tt{display:block; margin-top:18px; font-size:15px;}
         .dsc{margin-top:4px; line-height:1.4; color:#888; font-size:13px;}
     }
 
@@ -103,7 +103,7 @@
 }
 
 /* Top Button */
-.bt_top{position:fixed; bottom:25px; right:25px; background:#fff url(../img/scrollTop.png) no-repeat 10px 6px; background-size:20px 30px; width:40px; height:40px; box-shadow:2px 3px 3px rgba(0,0,0,0.3); text-indent:-9999px;}
+.bt_top{position:fixed; bottom:25px; right:25px; background:#fff url(../img/main/scrollTop.png) no-repeat 10px 6px; background-size:20px 30px; width:40px; height:40px; box-shadow:2px 3px 3px rgba(0,0,0,0.3); text-indent:-9999px;}
 
 
 
