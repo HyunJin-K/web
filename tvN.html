@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="layout/css/tvn.min.css">
-    <title>tvN</title>
+    <link rel="stylesheet" href="layout/css/slick.css">
+    <title>즐거움의 시작 tvN</title>
 </head>
 <body>
-    <div class="main_wrp">
+    <div class="tvn_wrp">
         <!-- SKIP NAVIGATION -->
         <div class="skip_nav">
             <a href="#header">Go to Header</a>
@@ -17,9 +18,9 @@
         </div>
 
         <!-- Section : Header -->
-        <header class="main_hg" id="header">
-            <div class="main_inr">
-                <div class="main_hg_mn">
+        <header class="tvn_hg" id="header">
+            <div class="tvn_inr">
+                <div class="tvn_hg_mn">
                     <a href="#" class="tving">
                         <img src="layout/img/tvn/logo_tving.png" width="70" height="16" alt="TVING">
                     </a>
@@ -35,306 +36,743 @@
                         <img src="layout/img/tvn/logo_tvn.png" width="126" height="50" alt="tvN">
                     </a>
                 </h1>
-                <nav class="main_hg_nv">
-                    <ul class="nv_lst">
-                        <li><a href="#">About tvN</a></li>
-                        <li><a href="#">일일 편성표</a></li>
-                        <li><a href="#">드라마</a></li>
-                        <li><a href="#">연예오락</a></li>
-                        <li><a href="#">인사이트</a></li>
-                        <li><a href="#">스포츠</a></li>
-                        <li><a href="#">동영상</a></li>
-                        <li><a href="#">이벤트</a></li>
-                        <li><a href="#">연말엔 tvN</a></li>
-                    </ul>
-                    <div class="nv_sd">
-                        <a href="#"><img src="layout/img/tvn/logo_tvno.png" width="32" height="25" alt="tvN O"></a>
-                        <a href="#"><img src="layout/img/tvn/logo_xtvn.png" width="48" height="25" alt="XtvN"></a>
-                        <a href="#" class="bt_air">ON AIR</a>
+                <nav class="tvn_hg_nv">
+                    <div class="tvn_inr">
+                        <ul class="nv_lst">
+                            <li><a href="#">About tvN</a></li>
+                            <li><a href="#">일일 편성표</a></li>
+                            <li data-nav="detail">
+                                <a href="#">드라마</a>
+                                <div class="nv_dtl">
+                                    <ul>
+                                        <li><a href="#">[예정] 블랙독</a></li>
+                                        <li><a href="#">[예정] 사랑의 불시착</a></li>
+                                        <li><a href="#">[수] 싸이코패스 다이어리</a></li>
+                                        <li><a href="#">[수] 드라마 스테이지 2020</a></li>
+                                        <li><a href="#">[종영] 유령을 잡아라</a></li>
+                                        <li><a href="#">[종영] 쌉니다 뿌지직</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-nav="detail">
+                                <a href="#">연예오락</a>
+                                <div class="nv_dtl">
+                                    <ul>
+                                        <li><a href="#">[예정] RUN</a></li>
+                                        <li><a href="#">[예정] 연말엔tvN-박나래쇼</a></li>
+                                        <li><a href="#">[예정] 좋은가요</a></li>
+                                        <li><a href="#">[월] 더 짠내투어</a></li>
+                                        <li><a href="#">[수] 수미네 반찬</a></li>
+                                        <li><a href="#">[목] 문제적 남자:브레인 유랑단</a></li>
+                                        <li><a href="#">[금] 라면 끼리는 남자</a></li>
+                                        <li><a href="#">[금] 신서유기7</a></li>
+                                        <li><a href="#">[토] 놀라운 토요일</a></li>
+                                        <li><a href="#">[토] 돈키호테</a></li>
+                                        <li><a href="#">[일] 코미디빅리그</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-nav="detail">
+                                <a href="#">인사이트</a>
+                                <div class="nv_dtl">
+                                    <ul>
+                                        <li><a href="#">[예정] tvN Shift 2020</a></li>
+                                        <li><a href="#">[예정] 법륜스님의 즉문즉설</a></li>
+                                        <li><a href="#">[월] 김현정의 쎈터:뷰</a></li>
+                                        <li><a href="#">[월] 리틀빅히어로</a></li>
+                                        <li><a href="#">[화] 책 읽어드립니다</a></li>
+                                        <li><a href="#">[수] 곽승준의 쿨까당</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-nav="detail">
+                                <a href="#">스포츠</a>
+                                <div class="nv_dtl">
+                                    <ul>
+                                        <li><a href="#">[종영] 2019 THE CJ CUP@나인브릿지</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-nav="detail">
+                                <a href="#">동영상</a>
+                                <div class="nv_dtl">
+                                    <ul>
+                                        <li><a href="#">추천 동영상</a></li>
+                                        <li><a href="#">동영상 전체보기</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-nav="detail">
+                                <a href="#">이벤트</a>
+                                <div class="nv_dtl">
+                                    <ul>
+                                        <li><a href="#">진행중인 이벤트</a></li>
+                                        <li><a href="#">당첨자 발표</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">연말엔 tvN</a></li>
+                        </ul>
+                        <div class="nv_sd">
+                            <a href="#"><img src="layout/img/tvn/logo_tvno.png" width="32" height="25" alt="tvN O"></a>
+                            <a href="#"><img src="layout/img/tvn/logo_xtvn.png" width="48" height="25" alt="XtvN"></a>
+                            <a href="#" class="bt_air">ON AIR</a>
+                        </div>
                     </div>
                 </nav>
             </div>
         </header>
 
         <!-- Section : Content -->
-        <div class="main_cg" id="content">
-            <div class="main_inr">
+        <div class="tvn_cg" id="content">
+            <div class="tvn_inr">
                 <!-- Area : 메인 배너 -->
-                <section class="main_bn" style="background:#999;">
+                <section class="tvn_bn">
+                    <ul id="slideBanner">
+                        <li>
+                            <a href="#">
+                                <img src="http://img.lifestyler.co.kr/uploads/brand/banner/2019/12/f132206175162574325(0).jpg" width="1200" height="489" alt="tvN 토일 드라마 사랑의 불시착 | 12월 14일 [토] 밤 9시 tvN 첫 방송">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="http://img.lifestyler.co.kr/uploads/brand/banner/2019/12/f132205138424995023(0).jpg" width="1200" height="489" alt="내 가슴을 뛰게 할 Run | 1월 2일 [목] 밤 11시 tvN 첫방송">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="http://img.lifestyler.co.kr/uploads/brand/banner/2019/03/f131982299993176000(0).jpg" width="1200" height="489" alt="대세로 굳다, 코미디빅리그 매주 [알] 저녁 7시 45분 tvN 방송">
+                            </a>
+                        </li>
+                    </ul>
                 </section>
 
                 <!-- Area : 오늘의 편성표 -->
-                <section class="main_tdy">
-                    <h2>
-                        오늘 TV <strong>뭐 보지?</strong>
-                        <a href="#">편성표 전체보기</a>
-                    </h2>
+                <section class="tvn_tdy">
+                    <div class="tvn_tdy_tt">
+                        <h2>오늘 TV <strong>뭐 보지?</strong></h2>
+                        <a href="#" class="bt_lnk">편성표 전체보기</a>
+                    </div>
+                    
                     <ol>
-                        <li>
+                        <li class="is_on">
                             <a href="#" target="_blank">
-                                <time>PM 7:40</time>
-                                <img src="#" width="" height="" alt="ttttttt">
-                                <span class="now" title="본방송">ttttttt</span>
+                                <div class="hd">
+                                    <time>PM 8:10</time>
+                                </div>
+                                <img src="layout/img/tvn/logo_program01.png" width="89" height="50" alt="ttttttt">
+                                <span class="tt" title="본방송">책 읽어드립니다 10회</span>
+                            </a>
+                        </li>
+                        <li class="is_on">
+                            <a href="#" target="_blank">
+                                <div class="hd">
+                                    <time>PM 9:30</time>
+                                </div>
+                                <img src="layout/img/tvn/logo_program02.png" width="89" height="50" alt="ttttttt">
+                                <span class="tt" title="본방송">유령을 잡아라 12화</span>
+                            </a>
+                        </li>
+                        <li class="is_on">
+                            <a href="#" target="_blank">
+                                <div class="hd">
+                                    <time>PM 11:00</time>
+                                </div>
+                                <img src="layout/img/tvn/logo_program03.png" width="89" height="50" alt="ttttttt">
+                                <span class="tt" title="본방송">유 퀴즈 온 더 블럭 45회</span>
                             </a>
                         </li>
                         <li>
                             <a href="#" target="_blank">
-                                <time>PM 7:40</time>
-                                <img src="#" width="" height="" alt="ttttttt">
-                                <span class="now" title="본방송">ttttttt</span>
+                                <div class="hd">
+                                    <time>AM 01:00</time>
+                                </div>
+                                <img src="layout/img/tvn/logo_program02.png" width="89" height="50" alt="ttttttt">
+                                <span class="tt">유령을 잡아라 11화</span>
                             </a>
                         </li>
                         <li>
                             <a href="#" target="_blank">
-                                <time>PM 7:40</time>
-                                <img src="#" width="" height="" alt="ttttttt">
-                                <span class="now" title="본방송">ttttttt</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">
-                                <time>PM 7:40</time>
-                                <img src="#" width="" height="" alt="ttttttt">
-                                <span>ttttttt</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">
-                                <time>PM 7:40</time>
-                                <img src="#" width="" height="" alt="ttttttt">
-                                <span>ttttttt</span>
+                                <div class="hd">
+                                    <time>AM 02:30</time>
+                                </div>
+                                <img src="layout/img/tvn/logo_program02.png" width="89" height="50" alt="ttttttt">
+                                <span class="tt">유령을 잡아라 12화</span>
                             </a>
                         </li>
                     </ol>
                 </section>
-    
-                <div class="main_sg">
-                    <div class="main_lft">
+                
+                <!-- Main Contents -->
+                <div class="tvn_sg">
+                    <div class="tvn_lft">
                         <!-- Area : 최신 동영상 -->
-                        <section class="main_gr">
-                            <h2 class="main_tt">최신 동영상</h2>
-                            <ul class="tmp_glr t02">
+                        <section class="tvn_gr">
+                            <h2 class="tvn_tt">최신 동영상</h2>
+                            <ul class="tvn_glr">
                                 <li>
-                                    <a href="#">
+                                    <a href="#" title="싸이코패스 다이어리 | 내 다이어리를 가져간 놈이 윤시윤? 그의 진실을 알게 된 박성훈">
                                         <div class="thmb">
-                                            <img src="#" width="" height="" alt="">
-                                            <span class="time"></span>
+                                            <img src="http://image.tving.com/upload/cms/cais/CAIS0400/S034466275.jpg/dims/resize/205" width="205" height="115" alt="">
+                                            <span class="time">01:00:05</span>
                                         </div>
                                         <div class="inf">
-                                            <p class="dsc">testext</p>
-                                            <span class="tag">testxt</span>
+                                            <p class="dsc">내 다이어리를 가져간 놈이 윤시윤? 그의 진실을 알게 된 박성훈</p>
+                                            <span class="tag">싸이코패스 다이어리</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="싸이코패스 다이어리 | 8화예고">
+                                        <div class="thmb">
+                                            <img src="http://image.tving.com/upload/cms/cais/CAIS0400/S034448775.jpg/dims/resize/205" width="205" height="115" alt="">
+                                            <span class="time">00:05:00</span>
+                                        </div>
+                                        <div class="inf">
+                                            <p class="dsc">[8화예고] 행님 사랑(♥)이 남다른 허성태, 윤시윤 구하기 위해 00까지?</p>
+                                            <span class="tag">싸이코패스 다이어리</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="싸이코패스 다이어리 | 김명수를 격리병동으로 옮긴 박성훈, 안타까운 정인선">
+                                        <div class="thmb">
+                                            <img src="http://image.tving.com/upload/cms/cais/CAIS0400/S034466775.jpg/dims/resize/205" width="205" height="115" alt="">
+                                            <span class="time">00:06:20</span>
+                                        </div>
+                                        <div class="inf">
+                                            <p class="dsc">김명수를 격리병동으로 옮긴 박성훈, 안타까운 정인선</p>
+                                            <span class="tag">싸이코패스 다이어리</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="싸이코패스 다이어리 | 쥐 때문에 오열하는 호구 윤시윤, (어쩌다) 사건 수첩 발견!">
+                                        <div class="thmb">
+                                            <img src="http://image.tving.com/upload/cms/cais/CAIS0400/S034467776.jpg/dims/resize/205" width="205" height="115" alt="">
+                                            <span class="time">00:02:10</span>
+                                        </div>
+                                        <div class="inf">
+                                            <p class="dsc">쥐 때문에 오열하는 호구 윤시윤, (어쩌다) 사건 수첩 발견!</p>
+                                            <span class="tag">싸이코패스 다이어리</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="싸이코패스 다이어리 8화 다시보기">
+                                        <div class="thmb">
+                                            <img src="http://image.tving.com/upload/cms/caie/CAIE0400/E002834845.jpg/dims/resize/205" width="205" height="115" alt="">
+                                            <span class="time">01:05:00</span>
+                                        </div>
+                                        <div class="inf">
+                                            <p class="dsc">싸이코패스 다이어리 8화</p>
+                                            <span class="tag">싸이코패스 다이어리</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="사랑의불시착 | [라이브채팅2] 현빈, 센스폭발 답변 작년에 예비군 끝났는데">
+                                        <div class="thmb">
+                                            <img src="http://image.tving.com/upload/cms/cais/CAIS0400/S034435775.jpg/dims/resize/205" width="205" height="115" alt="">
+                                            <span class="time">00:15:33</span>
+                                        </div>
+                                        <div class="inf">
+                                            <p class="dsc">[라이브채팅2] 현빈, 센스폭발 답변 작년에 예비군 끝났는데</p>
+                                            <span class="tag">사랑의불시착</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="싸이코패스 다이어리 | '용감한 시민+살아난 피해자' 윤시윤, 완벽 타이틀 get하고 셀럽 등극★">
+                                        <div class="thmb">
+                                            <img src="http://image.tving.com/upload/cms/cais/CAIS0400/S034466776.jpg/dims/resize/205" width="205" height="115" alt="">
+                                            <span class="time">00:01:38</span>
+                                        </div>
+                                        <div class="inf">
+                                            <p class="dsc">'용감한 시민+살아난 피해자' 윤시윤, 완벽 타이틀 get하고 셀럽 등극★</p>
+                                            <span class="tag">싸이코패스 다이어리</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="싸이코패스 다이어리 | 정인선한테 작업(?) 거는 박성훈, 동식씨랑 어떤 관계에요?">
+                                        <div class="thmb">
+                                            <img src="http://image.tving.com/upload/cms/cais/CAIS0400/S034462785.jpg/dims/resize/205" width="205" height="115" alt="">
+                                            <span class="time">00:06:00</span>
+                                        </div>
+                                        <div class="inf">
+                                            <p class="dsc">정인선한테 작업(?) 거는 박성훈, 동식씨랑 어떤 관계에요?</p>
+                                            <span class="tag">싸이코패스 다이어리</span>
                                         </div>
                                     </a>
                                 </li>
                             </ul>
-                            <a href="#" class="main_bt_mr" title="최신 동영상 더보기">더보기</a>
+                            <a href="#" class="tvn_bt_mr" title="최신 동영상 더보기">더보기</a>
                         </section>
+
                         <!-- Area : 최신 콘텐츠 -->
-                        <section class="main_gr">
-                            <h2 class="main_tt">최신 콘텐츠</h2>
-                            <ul class="tmp_glr">
+                        <section class="tvn_gr">
+                            <h2 class="tvn_tt">최신 콘텐츠</h2>
+                            <ul class="tvn_glr t02">
                                 <li>
-                                    <a href="#">
+                                    <a href="#" title="코미디 빅리그 | 339회 순위표">
                                         <div class="thmb">
-                                            <img src="#" width="" height="" alt="">
-                                            <span class="time"></span>
+                                            <img src="http://program.tving.com/board/cropfile?w=226&h=146&url=http://img.lifestyler.co.kr/uploads/program/cheditor/2019/12/EEBUEN3WCQHBZ8N4SJ2P.jpg" width="203" height="131" alt="">
                                         </div>
                                         <div class="inf">
-                                            <p class="dsc">testext</p>
-                                            <span class="tag">testxt</span>
+                                            <p class="sbj">339회 순위표 </p>
+                                            <span class="tag">코미디빅리그</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="사랑의 불시착 | 방금 전, 제 마음속 국보 1호로 지정되셨습니다. ">
+                                        <div class="thmb">
+                                            <img src="http://program.tving.com/board/cropfile?w=226&h=146&url=http://img.lifestyler.co.kr/uploads/program/cheditor/2019/12/JZ6M3I3QVKQKDGWDH2TR.png" width="203" height="131" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <p class="sbj">방금 전, 제 마음속 국보 1호로 지정되셨습니다.</p>
+                                            <span class="tag">사랑의 불시착</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="사랑의 불시착 | 이 사진 본 사람들은 다 타지로 이사간다지 뭐야...">
+                                        <div class="thmb">
+                                            <img src="http://program.tving.com/board/cropfile?w=226&h=146&url=http://img.lifestyler.co.kr/uploads/program/cheditor/2019/12/TFAAVKIE6P9B1O289KMM.png" width="203" height="131" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <p class="sbj">이 사진 본 사람들은 다 타지로 이사간다지 뭐야...<사랑의 불시착>이라는 판✨타✨ 지</p>
+                                            <span class="tag">사랑의 불시착</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="사랑의 불시착 | 현빈&오만석 눈빛으로 팬들 기대감 불태워..">
+                                        <div class="thmb">
+                                            <img src="http://program.tving.com/board/cropfile?w=226&h=146&url=http://img.lifestyler.co.kr/uploads/program/cheditor/2019/12/F22T2BQRFLKJY44KKQIH.png" width="203" height="131" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <p class="sbj">현빈&오만석 눈빛으로 팬들 기대감 불태워..🔥</p>
+                                            <span class="tag">사랑의 불시착</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="드라마 스페셜 | 14화 미리보기">
+                                        <div class="txt_inf">
+                                            <span class="tt">14화 미리보기</span>
+                                            <p>아내의 유혹의 귀퉁머리를 쳐버리는 극한의 상황! 동생의 복수를 위해 학생 주임 선생님과의 불타는 혈투 그의 주먹은 얼마나 매서울까? ㄷㄷㄷ</p>
+                                            <span class="tag">드라마 스페셜</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="코미디 빅리그 | 338회 미리보기">
+                                        <div class="txt_inf">
+                                            <span class="tt">338회 미리보기</span>
+                                            <p>니쭈의 기차여행 코스 먹방! 그가 관객에게 준  ‘호두’의 정체는? 한편 좀비가 열차를 습격하자 니쭈는 ‘부메랑’을 꺼내는데...!</p>
+                                            <span class="tag">코미디 빅리그</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="블랙독 | 블랙독 4인 복도">
+                                        <div class="thmb">
+                                            <img src="http://program.tving.com/board/cropfile?w=226&h=146&url=http://img.lifestyler.co.kr/uploads/program/cheditor/2019/12/6VRPSGXAN55QYNJR8SGF.jpg" width="203" height="131" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <p class="sbj">블랙독 4인 복도</p>
+                                            <span class="tag">블랙독</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="수미네 반찬 | 80회 총각김치 레시피">
+                                        <div class="thmb">
+                                            <img src="http://program.tving.com/board/cropfile?w=226&h=146&url=http://img.lifestyler.co.kr/uploads/program/cheditor/2019/12/CQ7ECK9WHJGWNOBAH5Q9.jpg" width="203" height="131" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <p class="sbj">80회 '총각김치' 레시피</p>
+                                            <span class="tag">수미네 반찬</span>
                                         </div>
                                     </a>
                                 </li>
                             </ul>
                         </section>
+
                         <!-- Area : 서브 배너 -->
-                        <section class="main_bn_sb">
+                        <section class="tvn_bn_sb">
                             <a href="#">
-                                <img src="#" width="" height="" alt="txt">
+                                <img src="layout/img/tvn/img_bn_sub01.jpg" width="640" height="100" alt="연말엔 tvN 즐거움 선물 공장 풀 가동 중!">
+                            </a>
+                            <a href="#">
+                                <img src="layout/img/tvn/img_bn_sub02.jpg" width="240" height="100" alt="문제적남자 - 문제를 내는 문제 출격!">
                             </a>
                         </section>
+
                         <!-- Area : 최신 프로그램 -->
-                        <section class="main_gr">
-                            <h2 class="main_tt">최신 프로그램</h2>
-                            <ul class="main_prg_ls">
+                        <section class="tvn_gr">
+                            <h2 class="tvn_tt">최신 프로그램</h2>
+                            <ul class="tvn_pgm">
                                 <li>
-                                    <a href="#" title="">
+                                    <a href="#" title="연예오락 RUN">
                                         <div class="thmb">
-                                            <img src="#" width="" height="" alt="">
+                                            <img src="http://img.lifestyler.co.kr/uploads/program/2/2063/skin/f132205127692631048(0).jpg" width="160" height="228" alt="">
                                         </div>
                                         <div class="inf">
-                                            <span class="tt">txt</span>
-                                            <p class="dsc">txt</p>
-                                            <span class="tag">txt</span>
+                                            <span class="tt">RUN</span>
+                                            <p class="dsc">1/2 (목) 밤 11시 첫 방송</p>
+                                            <span class="tag">연예오락</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="연예오락 라면 끼리는 남자">
+                                        <div class="thmb">
+                                            <img src="http://img.lifestyler.co.kr/uploads/program/2/2058/skin/f132194782733142832(1).jpg" width="160" height="228" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <span class="tt">라면 끼리는 남자</span>
+                                            <p class="dsc">매주 (금) 밤 10시 40분부터 육분!</p>
+                                            <span class="tag">연예오락</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="인사이트 2020 설특집 법륜스님의 즉문즉설">
+                                        <div class="thmb">
+                                            <img src="http://img.lifestyler.co.kr/uploads/program/2/2057/skin/f132191250509869396(0).JPG" width="160" height="228" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <span class="tt">2020 설특집 법륜스님의 즉문즉설</span>
+                                            <p class="dsc">2020년 1월 설연휴</p>
+                                            <span class="tag">인사이트</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="연예오락 박나래쇼">
+                                        <div class="thmb">
+                                            <img src="http://img.lifestyler.co.kr/uploads/program/2/2056/skin/f132198286912043081(0).jpg" width="160" height="228" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <span class="tt">연말엔 tvN - 박나래 쇼</span>
+                                            <p class="dsc">12/24 (화) 밤 11시 방송</p>
+                                            <span class="tag">연예오락</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="드라마 스테이지 2020">
+                                        <div class="thmb">
+                                            <img src="http://img.lifestyler.co.kr/uploads/program/2/2055/skin/f132181785573372000(0).jpg" width="160" height="228" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <span class="tt">드라마 스테이지 2020</span>
+                                            <p class="dsc">매주 (수) 밤 11시 방송</p>
+                                            <span class="tag">드라마</span>
                                         </div>
                                     </a>
                                 </li>
                             </ul>
-                            <a href="#" class="main_bt_mr" title="최신 프로그램 더보기">더보기</a>
+                            <a href="#" class="tvn_bt_mr" title="최신 프로그램 더보기">더보기</a>
                         </section>
+
                         <!-- Area : 인기 프로그램 -->
-                        <section class="main_gr">
-                            <h2 class="main_tt">인기 프로그램</h2>
-                            <ul class="main_prg_ls">
+                        <section class="tvn_gr">
+                            <h2 class="tvn_tt">인기 프로그램</h2>
+                            <ul class="tvn_pgm">
                                 <li>
-                                    <a href="#" title="">
+                                    <a href="#" title="드라마 블랙독">
                                         <div class="thmb">
-                                            <img src="#" width="" height="" alt="">
+                                            <img src="http://img.lifestyler.co.kr/uploads//program/2/2053/skin/f132194055581137180(0).jpg" width="160" height="228" alt="">
                                         </div>
                                         <div class="inf">
-                                            <span class="tt">txt</span>
-                                            <p class="dsc">txt</p>
-                                            <span class="tag">txt</span>
+                                            <span class="tt">블랙독</span>
+                                            <p class="dsc">12/16 (월) 밤 9시 30분 첫 방송</p>
+                                            <span class="tag">드라마</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="드라마 사랑의 불시착">
+                                        <div class="thmb">
+                                            <img src="http://img.lifestyler.co.kr/uploads//program/2/2052/skin/f132204257980593810(0).jpg" width="160" height="228" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <span class="tt">사랑의 불시착</span>
+                                            <p class="dsc">12/14 (토) 밤 9시 첫 방송</p>
+                                            <span class="tag">드라마</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="드라마 싸이코패스 다이어리">
+                                        <div class="thmb">
+                                            <img src="http://img.lifestyler.co.kr/uploads//program/2/2035/skin/f132168764860646000(0).jpg" width="160" height="228" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <span class="tt">싸이코패스 다이어리</span>
+                                            <p class="dsc">매주 (수,목) 밤 9시 30분 방송</p>
+                                            <span class="tag">드라마</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="다큐 tvN shift">
+                                        <div class="thmb">
+                                            <img src="http://img.lifestyler.co.kr/uploads//program/1/1815/skin/f132194866527441292(0).jpg" width="160" height="228" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <span class="tt">[다큐] tvN Shift</span>
+                                            <p class="dsc">12/13 (금) 밤 11시 첫 방송</p>
+                                            <span class="tag">인사이트</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="연예오락 신서유기7">
+                                        <div class="thmb">
+                                            <img src="http://img.lifestyler.co.kr/uploads//program/2/2034/skin/f132162046487396000(0).jpg" width="160" height="228" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <span class="tt">신서유기7</span>
+                                            <p class="dsc">매주 (금) 밤 9시 10분 방송</p>
+                                            <span class="tag">연예오락</span>
                                         </div>
                                     </a>
                                 </li>
                             </ul>
-                            <a href="#" class="main_bt_mr" title="인기 프로그램 더보기">더보기</a>
+                            <a href="#" class="tvn_bt_mr" title="인기 프로그램 더보기">더보기</a>
                         </section>
                     </div>
-    
-                    <div class="main_sd">
+                    
+                    <!-- Aside : 사이드 영역 -->
+                    <aside class="tvn_sd">
                         <!-- Area : 티빙 다시보기 -->
-                        <section class="main_tvng">
-                            <a href="#">무료 실시간 방송 보기</a>
-                            <a href="#">프로그램 다시보기</a>
+                        <section class="tvn_sd_tvng">
+                            <a href="#" class="bt_live">무료 실시간 방송 보기</a>
+                            <a href="#" class="bt_prg">프로그램 다시보기</a>
                         </section>
+
                         <!-- Area : 투표하기 -->
-                        <section class="main_pck">
-                            <h2 class="main_pck_hd">
-                                <img src="#" width="" height="" alt="tvN Pick">
+                        <section class="tvn_sd_pck">
+                            <h2 class="hd">
+                                <span class="hide">tvN Pick</span>
                             </h2>
-                            <ul class="main_pck_ls">
-                                <li></li>
+                            <ul class="lst">
+                                <!-- pick01 -->
+                                <li>
+                                    <p class="sbj">[돈키호테] 강풍기 벌칙 걸린 세기의 탁구  대결! 승자는 과연 누구일까?</p>
+                                    <ul class="pick">
+                                        <li>
+                                            <input type="radio" id="pick01" name="tvnpick" title="얍삽 준호">
+                                            <label for="pick01">
+                                                <div class="thmb">
+                                                    <img src="http://img.lifestyler.co.kr/uploads/promotion/20191210/f637115927305167213.jpg" width="120" height="120" alt="">
+                                                </div>
+                                                <span class="tt">얍삽 준호</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="pick02" name="tvnpick" title="파워 진호">
+                                            <label for="pick02">
+                                                <div class="thmb">
+                                                    <img src="http://img.lifestyler.co.kr/uploads/promotion/20191210/f637115927305167213(0).jpg" width="120" height="120" alt="">
+                                                </div>
+                                                <span class="tt">파워 진호</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- pick02 -->
                             </ul>
-                            <button type="button">투표하기</button>
+                            <button class="bt_sbmt">투표하기</button>
                         </section>
+
                         <!-- Area : 이벤트 -->
-                        <section class="main_sd_gr">
-                            <h2 class="main_sd_tt">이벤트 참여</h2>
-                            <ul>
-                                <li></li>
+                        <section class="tvn_sd_gr">
+                            <h2 class="tvn_sd_tt">이벤트 참여</h2>
+                            <ul class="tvn_sd_evt">
+                                <li>
+                                    <a href="#" title="2020 설특집 [법륜스님의 즉문즉설]">
+                                        <div class="thmb">
+                                            <img src="http://img.lifestyler.co.kr/uploads/promotion/20191108/f637088248115184000.jpg" width="270" height="108" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <p class="sbj">2020 설특집 [법륜스님의 즉문즉설]</p>
+                                            <span class="date">2019.11.11 ~ 2019.12.16</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="[연말엔tvN] tvN프렌즈 심리테스트">
+                                        <div class="thmb">
+                                            <img src="http://img.lifestyler.co.kr/uploads/promotion/20191107/f637087503288348000.jpg" width="270" height="108" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <p class="sbj">[연말엔tvN] tvN프렌즈 심리테스트</p>
+                                            <span class="date">2019.12.11 ~ 2019.12.26</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="[문제적 남자] 나만의 신유형 문제를 찾습니다!">
+                                        <div class="thmb">
+                                            <img src="http://img.lifestyler.co.kr/uploads/promotion/20191119/f637097786581492460.jpg" width="270" height="108" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <p class="sbj">[문제적 남자] 나만의 신유형 문제를 찾습니다!</p>
+                                            <span class="date">2019.12.31 ~ 2020.01.08</span>
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
-                            <a href="#" class="main_bt_mr" title="이벤트 더보기">더보기</a>
+                            <a href="#" class="tvn_bt_mr" title="이벤트 더보기">더보기</a>
                         </section>
+
                         <!-- Area : 프로그램 참여 -->
-                        <section class="main_sd_gr">
-                            <h2 class="main_sd_tt">프로그램 참여</h2>
-                            <ul class="main_txt_ls">
-                                <li>
-                                    <a href="#">txt</a>
-                                </li>
+                        <section class="tvn_sd_gr">
+                            <h2 class="tvn_sd_tt">프로그램 참여</h2>
+                            <ul class="tvn_sd_txt">
+                                <li><a href="#">[법륜스님의 즉문즉설] 방청 신청</a></li>
+                                <li><a href="#">[김현정의 쎈터:뷰] 프렌즈 신청</a></li>
+                                <li><a href="#">[김현정의 쎈터:뷰] 방청신청</a></li>
+                                <li><a href="#">[리틀빅히어로] 히어로 추천하기</a></li>
+                                <li><a href="#">배우고 싶은 [수미네 반찬] 신청하기</a></li>
+                                <li><a href="#">[코미디빅리그] 방청 신청</a></li>
+                                <li><a href="#">[문제적 남자] 문제 제보</a></li>
                             </ul>
                         </section>
+
                         <!-- Area : 공지사항 -->
-                        <section class="main_sd_gr">
-                            <h2 class="main_sd_tt">공지사항</h2>
-                            <ul class="main_txt_ls">
-                                <li>
-                                    <a href="#">txt</a>
-                                </li>
+                        <section class="tvn_sd_gr">
+                            <h2 class="tvn_sd_tt">공지사항</h2>
+                            <ul class="tvn_sd_txt">
+                                <li><a href="#" title="[채널번호 변경 안내] KT olleh TV 내 tvN 채널 번호 변경 안내 (17번→ 3번)">[채널번호 변경 안내] KT olleh TV 내 tvN 채널 번호 변경 안내 (17번→ 3번)</a></li>
                             </ul>
                         </section>
+
                         <!-- Area : SNS -->
-                        <ul class="main_sns">
-                            <li>
-                                <a href="#"><img src="#" width="" height="" alt="Youtube"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="#" width="" height="" alt="Facebook"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="#" width="" height="" alt="Instagram"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="#" width="" height="" alt="Naver TV"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="#" width="" height="" alt="Twitter"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="#" width="" height="" alt="Naver Post"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="#" width="" height="" alt="Daum TV pot"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="#" width="" height="" alt="KaKao Story"></a>
-                            </li>
-                        </ul>
+                        <div class="tvn_sns">
+                            <a href="#" class="ic_youtb">Youtube</a>
+                            <a href="#" class="ic_fbook">Facebook</a>
+                            <a href="#" class="ic_insta">Instagram</a>
+                            <a href="#" class="ic_nvtv">Naver TV</a>
+                            <a href="#" class="ic_twt">Twitter</a>
+                            <a href="#" class="ic_nvpost">Naver Post</a>
+                            <a href="#" class="ic_tvpot">Daum TV pot</a>
+                            <a href="#" class="ic_kakao">KaKao Story</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- Area : Notice & Family site -->
+            <div class="tvn_etc">
+                <div class="tvn_inr">
+                    <div class="tvn_etc_ntc">
+                        <h2><a href="#">공지사항</a></h2>
+                        <p>[공지사항] [안내] tvN 서비스 정기점검 안내 (익일 06:00 ~ 06:10)</p>
+                    </div>
+                    <div class="tvn_etc_fml">
+                        <div class="ly_inr">
+                            <a href="#layerBrand" class="bt">브랜드 바로가기</a>
+                            <div class="ly_bt_dtl" id="layerBrand" style="display:none;">
+                                <ul>
+                                    <li><a href="#" target="_blank">MNET</a></li>
+                                    <li><a href="#" target="_blank">MWAVE</a></li>
+                                    <li><a href="#" target="_blank">tvN</a></li>
+                                    <li><a href="#" target="_blank">tvnD</a></li>
+                                    <li><a href="#" target="_blank">O tvN</a></li>
+                                    <li><a href="#" target="_blank">OnStyle</a></li>
+                                    <li><a href="#" target="_blank">XTM</a></li>
+                                    <li><a href="#" target="_blank">OCN</a></li>
+                                    <li><a href="#" target="_blank">채널 CGV</a></li>
+                                    <li><a href="#" target="_blank">Super Action</a></li>
+                                    <li><a href="#" target="_blank">Tooniverse</a></li>
+                                    <li><a href="#" target="_blank">중화 TV</a></li>
+                                    <li><a href="#" target="_blank">OGN</a></li>
+                                    <li><a href="#" target="_blank">CATCH ON</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ly_inr" style="width:200px;">
+                            <a href="#layerFamily" class="bt">계열사 바로가기</a>
+                            <div class="ly_bt_dtl" id="layerFamily" style="display:none;">
+                                <strong class="tt">CJ 그룹</strong>
+                                <ul>
+                                    <li><a href="#" target="_blank">CJ 주식회사</a></li>
+                                </ul>
+                                <strong class="tt">엔터테인먼트 & 미디어</strong>
+                                <ul>
+                                    <li><a href="#" target="_blank">CJ ENM(E&M)</a></li>
+                                    <li><a href="#" target="_blank">CJ CGV</a></li>
+                                    <li><a href="#" target="_blank">CJ Hello</a></li>
+                                </ul>
+                                <strong class="tt">식품 & 식품서비스</strong>
+                                <ul>
+                                    <li><a href="#" target="_blank">CJ 제일제당(식품)</a></li>
+                                    <li><a href="#" target="_blank">CJ 프레시웨이</a></li>
+                                    <li><a href="#" target="_blank">CJ 푸드빌</a></li>
+                                    <li><a href="#" target="_blank">CJ 엠디원</a></li>
+                                </ul>
+                                <strong class="tt">생명공학</strong>
+                                <ul>
+                                    <li><a href="#" target="_blank">CJ 제일제당(바이오)</a></li>
+                                </ul>
+                                <strong class="tt">신유통</strong>
+                                <ul>
+                                    <li><a href="#" target="_blank">CJ ENM(오쇼핑)</a></li>
+                                    <li><a href="#" target="_blank">CJ 대한통운</a></li>
+                                    <li><a href="#" target="_blank">CJ 텔레닉스</a></li>
+                                    <li><a href="#" target="_blank">CJ 올리브네트웍스<br>(올리브영)</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
         <!-- Section : Content -->
-        <footer class="main_fg" id="footer">
-            <div class="main_fg_top">
-                <div class="main_fg_ntc">
-                    <h2>공지사항</h2>
-                    <p>text</p>
-                </div>
-                <div class="bt_area">
-                    <a href="#" class="bt">브랜드 바로가기</a>
-                    <div class="ly_bt_dtl">
-                        <ul>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                        </ul>
-                    </div>
-                    <a href="#" class="bt">계열사 바로가기</a>
-                    <div class="ly_bt_dtl">
-                        <ul>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                            <li><a href="#" target="_blank">tttt</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="main_fg_btm">
-                <ul class="main_fg_mn">
-                    <li><a href="#">회사소개</a></li>
-                    <li><a href="#">광고/제휴문의</a></li>
-                    <li><a href="#">이용약관</a></li>
-                    <li><a href="#"><strong>개인정보 처리방침</strong></a></li>
-                    <li><a href="#">청소년보호정책</a></li>
-                    <li><a href="#">법적고지</a></li>
-                    <li><a href="#">이메일무단수집거부</a></li>
-                    <li><a href="#">큐톤표</a></li>
-                    <li><a href="#">고객센터</a></li>
-                </ul>
-                <ul class="main_fg_inf">
-                    <li>
-                        대표이사 : 허민회, 허민호
-                        <a href="#">사업자정보확인</a>
-                    </li>
-                    <li>개인정보관리 책임자 : 고창남</li>
-                    <li>사업자등록번호 : 106-81-51510</li>
-                    <li>통신판매신고번호 : 서초 제 000015호</li>
-                    <li>본점 : <address>서울특별시 서초구 과천대로 870-13 (방배동)</address></li>
-                    <li>사업장 : <address>서울특별시 마포구 상암산로 66 (상암동)</address></li>
-                    <li>티빙 고객센터 : 1670-1525, tving@cj.net</li>
-                    <li>ENM 시청자상담실 (편성 문의 및 시청자 의견) : 080-080-0780</li>
-                    <li>Copyright (C) CJ ENM All Rights Reserved</li>
-                </ul>
+        <footer class="tvn_fg" id="footer">
+            <ul class="tvn_fg_mn">
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">광고/제휴문의</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#"><strong>개인정보 처리방침</strong></a></li>
+                <li><a href="#">청소년보호정책</a></li>
+                <li><a href="#">법적고지</a></li>
+                <li><a href="#">이메일무단수집거부</a></li>
+                <li><a href="#">큐톤표</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+            <ul class="tvn_fg_inf">
+                <li>
+                    대표이사 : 허민회, 허민호
+                    <a href="#" class="lnk">사업자정보확인</a>
+                </li>
+                <li>개인정보관리 책임자 : 고창남</li>
+                <li>사업자등록번호 : 106-81-51510</li>
+                <li>통신판매신고번호 : 서초 제 000015호</li>
+                <li>본점 : <address>서울특별시 서초구 과천대로 870-13 (방배동)</address></li>
+                <li>사업장 : <address>서울특별시 마포구 상암산로 66 (상암동)</address></li>
+                <li>티빙 고객센터 : 1670-1525, tving@cj.net</li>
+                <li>ENM 시청자상담실 (편성 문의 및 시청자 의견) : 080-080-0780</li>
+                <li>Copyright (C) CJ ENM All Rights Reserved</li>
+            </ul>
+            <div class="tvn_fg_lg">
                 <a href="#">
-                    <img src="#" width="" height="" alt="CJ ENM">
+                    <img src="layout/img/tvn/logo_cjenm.png" width="74" height="36" alt="CJ ENM">
                 </a>
             </div>
+            
         </footer>
     </div>
+    <script type="text/javascript" src="layout/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="layout/js/slick.min.js"></script>
+    <script type="text/javascript" src="layout/js/tvn.js"></script>
 </body>
 </html>

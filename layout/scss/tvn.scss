@@ -8,17 +8,21 @@ $page:tvn;
 /*-------------------------------------
 [P] Tvn
 --------------------------------------*/
-.main{
-    // .main_wrp
-    &_wrp{}
-
-    // .main_inr
+.tvn{
+    // .tvn_wrp
+    &_wrp{
+        min-width:1200px;
+        @at-root .ly_inr{position:relative;}
+    }
+    
+    // .tvn_inr
     &_inr{margin:0 auto; width:1200px;}
 
-    // .main_hg
+    // .tvn_hg
     &_hg{
-        border-bottom:1px solid #e5e5e5;
-        // .main_hg_mn
+        position:relative; padding-bottom:75px;
+        &:after{position:absolute; bottom:0; left:0; right:0; background:#e5e5e5; height:1px; content:""; z-index:102;}
+        // .tvn_hg_mn
         &_mn{
             overflow:hidden; line-height:40px;
             .tving{display:inline-block;}
@@ -34,18 +38,31 @@ $page:tvn;
         // Main Logo
         h1{text-align:center;}
 
-        // .main_hg_nv
+        // .tvn_hg_nv
         &_nv{
-            margin-top:19px; font-size:16px; overflow:hidden;
+            position:absolute; left:0; right:0; margin-top:20px; background:#fff; height:55px; overflow:hidden; z-index:101;
+            &.is_opn{border-bottom:3px solid #fc0000;}
+            .tvn_inr:after{@include clearfix;}
             .nv{
                 // .nv_lst
                 &_lst{
-                    float:left; margin-left:-16px; overflow:hidden;
-                    li{float:left;}
-                    .is_on a:after{
-                        position:absolute; bottom:0; left:14px; right:14px; background:#fc0000; height:3px; content:"";
+                    float:left; margin-left:-16px; font-size:16px;
+                    &:after{@include clearfix;}
+                    > li{
+                        position:relative; float:left;
+                        > a{display:block; position:relative; padding:0 16px; line-height:55px; box-sizing:border-box; letter-spacing:-0.3px; color:#000;}
                     }
-                    a{display:block; position:relative; padding:0 16px; line-height:55px; box-sizing:border-box; letter-spacing:-0.3px; color:#000;}
+                    .is_on{
+                        > a:after{
+                            position:absolute; bottom:0; left:14px; right:14px; background:#fc0000; height:3px; content:"";
+                        }
+                        .nv_dtl{z-index:10;}
+                    }
+                }
+                // .nv_dtl
+                &_dtl{
+                    display:none; position:absolute; top:54px; padding:15px 0; font-size:13px; white-space:nowrap;
+                    li{margin:8px 0;}
                 }
                 // .nv_sd
                 &_sd{
@@ -57,14 +74,326 @@ $page:tvn;
         }
     }
 
-    // .main_bn
-    &_bn{
-        margin:10px 0; height:490px;
+    // Navigation Background : .tvn_bg_nv
+    &_bg_nv{
+        position:absolute; left:0; right:0; height:0; margin-top:1px; background:#fff; min-width:1200px; overflow:hidden;
+        &:after{position:absolute; bottom:0; left:0; right:0; background:#ef0329; height:3px; content:"";}
     }
 
-    // .main_tdy
-    &_tdy{
-        margin:10px 0;
-        h2{float:left;}
+    // .tvn_fg
+    &_fg{
+        padding:28px 0 102px; background:#fafafa; text-align:center;
+        // .tvn_fg_mn
+        &_mn{
+            display:inline-block; font-size:14px; overflow:hidden;
+            li{float:left; margin:0 7px;}
+            a{
+                color:#707070;
+                strong{color:#000;}
+            }
+        }
+        // .tvn_fg_inf
+        &_inf{
+            display:block; margin:28px auto 0; width:820px; color:#707070;
+            li{display:inline-block; margin:4px;}
+            address{display:inline-block;}
+            .lnk{
+                color:#666;
+                &:hover{text-decoration:underline;}
+            }
+        }
+        // .tvn_fg_lg
+        &_lg{margin:28px auto 0;}
     }
+
+    // Banner : .tvn_bn
+    &_bn{
+        margin:10px 0; height:490px;
+        .slick-prev,
+        .slick-next{
+            width:50px; height:60px;
+            @include background($img:ic_slider);
+        }
+        .slick-next{background-position:-50px 0;}
+        // Sub Banner : .tvn_bn_sb
+        &_sb{
+            margin:40px 0; font-size:0;
+            a{display:inline-block; vertical-align:middle;}
+            img{width:auto; height:auto; max-width:100%; max-height:100%;}
+        }
+    }
+
+    // 오늘 뭐보지? : .tvn_tdy
+    &_tdy{
+        margin:10px 0; overflow:hidden;
+        // .tvn_tdy_tt
+        &_tt{
+            float:left; margin-right:10px; border:7px solid #d2d2d2; padding:16px 22px 0; width:155px; height:132px; box-sizing:border-box;
+            h2{line-height:1.3; font-size:22px; font-weight:normal;}
+            .bt_lnk{
+                display:block; margin-top:15px; color:#777; font-size:11px;
+                &:after{display:inline-block; margin:-3px 0 0 5px; border:solid #666; border-width:1px 1px 0 0; width:4px; height:4px; -webkit-transform:rotate(45deg); transform:rotate(45deg); vertical-align:middle; content:"";}
+                &:hover{color:#000;}
+            }
+        }
+        // 실시간 방송 리스트
+        ol{border-bottom:1px solid #d2d2d2; overflow:hidden;}
+        li{
+            float:left; border-top:3px solid #d9d9d9; width:20%; text-align:center;
+            &:first-child a{border-left:0;}
+            &.is_on{
+                border-top-color:#ff4e4e;
+                time{color:#fc0f0f;}
+                .tt:before{display:inline-block; border-radius:50%; background:#ff0000; margin-right:5px; width:20px; height:20px; line-height:20px; text-align:center; color:#fff; font-size:11px; content:"본"; vertical-align:top;}
+            }
+            a{display:block; border-left:1px solid #eee; height:129px;}
+            .hd{display:block; margin-bottom:6px; background:#f8f8f8; height:33px; line-height:33px;}
+            time{font-size:14px; font-weight:bold; color:#888;}
+            img{max-width:100%; width:auto; height:50px;}
+            .tt{
+                display:block; margin-top:7px; padding:0 8px; height:20px; line-height:20px; font-size:14px;
+                @include text-ellipsis;
+            }
+        }
+    }
+
+    // 페이지 공통 버튼 : .tvn_bt
+    &_bt{
+        // .tvn_bt_mr
+        &_mr{
+            position:absolute; top:13px; right:0; color:#555; letter-spacing:-1px; font-size:13px;
+            &:after{display:inline-block; margin:-2px 0 0 3px; border:solid #333; border-width:1px 1px 0 0; width:5px; height:5px; vertical-align:middle; -webkit-transform:rotate(45deg);transform:rotate(45deg); content:"";}
+        }
+    }
+
+    // .tvn_sg
+    &_sg{
+        margin-top:38px;
+        &:after{@include clearfix;}
+    }
+
+    // sns Icon : .tvn_sns
+    &_sns{
+        font-size:0; text-align:center;
+        a{
+            display:inline-block; margin:4px 6px; width:53px; height:53px; text-indent:-9999px;
+            @include background($img:ic_sns, $bsize:auto 53px);
+        }
+
+        // SNS ICON background-position
+        $i: 0;
+        @each $sns in (youtb, fbook, insta, nvtv, twt, nvpost, tvpot, kakao){
+            .ic_#{$sns}{
+                background-position:0px - $i 0;
+            }
+            $i: $i + 53;
+        }
+    }
+
+    //--- .tvn_lft
+    &_lft{float:left; width:880px;}
+
+    // .tvn_gr
+    &_gr{
+        position:relative;
+        + .tvn_gr{margin-top:28px;}
+    }
+
+    // .tvn_tt
+    &_tt{margin-bottom:18px; font-size:24px; font-weight:normal;}
+
+    // .tvn_glr
+    &_glr{
+        margin:-4px -10px; overflow:hidden;
+        li{float:left; margin:4px 10px; width:205px; box-sizing:border-box;}
+        .thmb{
+            position:relative; height:115px;
+            .time{position:absolute; bottom:0; right:0; padding:0 6px; background:#000; height:18px; line-height:18px; color:#fff;}
+            img{width:auto; height:auto; max-width:100%; max-height:100%; vertical-align:middle;}
+            // 이미지 정렬
+            &:after{display:inline-block;  height:100%; vertical-align:middle; content:"";}
+        }
+        .inf{
+            padding:10px 0; height:88px; box-sizing:border-box;
+            p{color:#636363; font-size:14px;}
+        }
+        // 미리보기 텍스트 영역
+        .txt_inf{
+            padding:20px 15px; height:219px; box-sizing:border-box;
+            .tt{display:block; font-size:16px;}
+            p{
+                margin:12px 0 24px; line-height:22px; max-height:110px; color:#636363;
+                @include text-line-ellipsis(5);
+            }
+        }
+        .dsc{
+            line-height:20px; height:40px;
+            @include text-line-ellipsis(2);
+        }
+        .sbj{
+            font-size:14px;
+            @include text-ellipsis;
+        }
+        .tag{display:block; margin-top:10px; color:#2270ac;}
+
+        &.t02{
+            margin:-10px;
+            li{margin:10px; border:1px solid #ebebeb;}
+            .thmb{height:131px;}
+            .inf{padding:17px 15px;}
+        }
+    }
+
+    // 프로그램 리스트 : .tvn_pgm
+    &_pgm{
+        margin:0 -10px; overflow:hidden;
+        li{float:left; margin:0 10px; width:160px;}
+        .thmb{
+            height:228px;
+            img{width:auto; height:auto; max-width:100%; max-height:100%;}
+        }
+        .inf{padding:12px 0;}
+        .tt{display:block; font-size:18px;}
+        .dsc{margin-top:12px; font-size:14px;}
+        .tt,
+        .dsc{@include text-ellipsis;}
+        .tag{display:block; margin-top:6px; color:#a9a9a9; font-size:14px;}
+    }
+
+    // .tvn_etc
+    &_etc{
+        margin-top:38px; border:1px solid #eee;
+        .tvn_inr{position:relative; padding-right:400px; box-sizing:border-box;}
+        // Notice : .tvn_etc_ntc
+        &_ntc{
+            height:50px; line-height:50px; overflow:hidden; white-space:nowrap;
+            h2{float:left; margin-right:15px; font-weight:normal; font-size:14px;}
+            p{
+                color:#9f9f9f; font-size:13px; word-break:break-all;
+                @include text-ellipsis;
+            }
+        }
+
+        // Family site : .tvn_etc_fml
+        &_fml{
+            position:absolute; top:8px; right:0;
+            .bt{
+                display:block; position:relative; border:1px solid #dedede; padding:0 52px 0 10px; height:32px; line-height:32px; font-size:12px;
+                &:after{position:absolute; right:10px; top:50%; margin-top:-5px; border:solid #999; border-width:0 1px 1px 0; width:6px; height:6px; -webkit-transform:rotate(45deg); transform:rotate(45deg); -webkit-transition:0.3s all; transition:0.3s all; content:"";}
+                // 버튼 클릭시
+                &.is_on:after{margin-top:-1px; -webkit-transform:rotate(225deg); transform:rotate(225deg);}
+            }
+            .ly_inr{float:left; margin-left:8px;}
+        }
+        // 셀렉트 레이어
+        @at-root .ly_bt_dtl{
+            position:absolute; left:0; right:0; bottom:33px; border:1px solid #dedede; padding:10px 0 6px; background:#fff; line-height:1.3; max-height:298px; box-sizing:border-box; overflow:auto;
+            .tt{
+                display:block; margin-bottom:4px; padding:0 10px;
+                ~ .tt{margin-top:10px;}
+            }
+            a{
+                display:block; padding:4px 15px; color:#4c4c4c; word-break:break-all;
+                &:hover{background:#f8f8f8;}
+            }
+        }
+    }
+
+    //--- .tvn_sd
+    &_sd{
+        float:right; width:270px;
+
+        // .tvn_sd_tt
+        &_tt{margin-bottom:20px; height:40px; line-height:40px; border-bottom:2px solid #333; font-size:18px;}
+
+        // .tvn_sd_gr
+        &_gr{position:relative; margin:20px 0;}
+
+        // Tving 다시보기 버튼 영역 : .tvn_sd_tvng
+        &_tvng{
+            overflow:hidden; text-align:center;
+            a{float:left; width:50%; height:40px; line-height:40px; color:#fff; font-weight:bold; font-size:11px;}
+            .bt_live{background:#494949;}
+            .bt_prg{background:#cc0000;}
+        }
+
+        // .tvn_sd_pck
+        &_pck{
+            margin-top:2px;
+            .hd{
+                height:70px; font-size:13px;
+                @include background($img:bg_pick);
+            }
+            .lst{
+                position:relative; margin:-6px 10px 0;
+                &:after{position:absolute; top:88px; left:50%; margin-left:-14px; border-radius:50%; border:2px solid #ef0329; background:#fff; width:24px; height:24px; line-height:24px; color:#ef0329; content:"VS"; text-align:center; font-weight:bold; font-size:14px;}
+                .sbj{padding:0 5px; line-height:16px;}
+                .pick{
+                    margin:10px -5px 0; overflow:hidden;
+                    li{float:left; padding:0 5px; font-size:14px;}
+                    input{
+                        position:absolute; width:1px; height:1px; opacity:0;
+                        &:checked ~ label{
+                            &:before{background:#ef0329;}
+                        }
+                    }
+                    label{
+                        display:block; position:relative;
+                        &:before{position:absolute; top:3px; right:3px; border-radius:50%; background:#d2d2d2; width:19px; height:19px; content:"";}
+                        &:after{position:absolute; top:6px; right:9px; border:solid #fff; border-width:0 2px 2px 0; width:4px; height:8px; -webkit-transform:rotate(45deg); transform:rotate(45deg); content:"";}
+                    }
+                }
+                .thmb{
+                    width:120px; height:120px; font-size:0;
+                    &:after{display:inline-block; height:100%; vertical-align:middle;}
+                    img{width:auto; height:auto; max-width:100%; max-height:100%; vertical-align:middle;}
+                }
+                .tt{display:block; margin-top:8px;}
+            }
+            .bt_sbmt{
+                display:block; position:relative; margin-top:20px; background:#ef0329; width:100%; height:40px; line-height:40px; color:#fff; font-weight:bold; font-size:16px; text-align:center; outline:none;
+                &:before{position:absolute; top:0; left:0; right:0; bottom:0; border:3px solid #ef0329; content:"";}
+                &:after{
+                    position:absolute; top:-20px; right:0; border-style:solid; border-width:0 0 20px 20px; border-color:transparent transparent #ef032a transparent; width:0; height:0; content:"";
+                }
+                // 버튼 마우스 오버 효과
+                &:hover:before{animation:0.5s 1 buttonScale linear;}
+                @keyframes buttonScale{
+                    0%{opacity:0.8;}
+                    100%{-webkit-transform:scale(1.06, 1.4); transform:scale(1.06, 1.4); opacity:0;}
+                }
+            }
+        }
+
+        // .tvn_sd_evt
+        &_evt{
+            li{margin:20px 0;}
+            .thmb{
+                height:108px; font-size:0;
+                &:after{display:inline-block; height:100%; vertical-align:middle;}
+            }
+            .inf{padding-top:12px;}
+            .sbj{
+                color:#666;
+                @include text-ellipsis;
+            }
+            .date{display:block; margin-top:8px; color:#999; font-size:11px;}
+        }
+
+        // .tvn_sd_txt
+        &_txt{
+            li{
+                margin:16px 0; list-style:circle;
+                @include text-ellipsis;
+            }
+            a{
+                position:relative; padding-left:18px; color:#636363; font-size:13px;
+                &:before{position:absolute; left:3px; top:50%; margin-top:-2px; border-radius:50%; background:#c9c9c9; width:3px; height:3px; content:"";}
+            }
+        }
+    }
+
+    
+
+    
 }

@@ -2,16 +2,17 @@
 
 
 // Background 이미지 (true : 가상선택자 사용, false : 단순 bg)
-@mixin background($pseudo:false, $display:inline-block, $margin:null, $img:$page, $pos:null, $bsize:null){
+@mixin background($pseudo:false, $display:inline-block, $margin:null, $img:null, $img-type:png, $pos:null, $bsize:null){
     @if $pseudo == true{
         display:$display; margin:$margin; vertical-align:middle; content:"";
-        background:url('../img/' + $img + '.png') $pos no-repeat;
+        background:url('../img/' + $page + "/" + $img + "." + $img-type) $pos no-repeat;
         background-size:$bsize;
         @content;
     }
     
     @else if $pseudo == false{
-        background:url('../img/' + $img + '.png') $pos no-repeat;
+        background:url('../img/' + $page + "/" + $img + "." + $img-type) $pos no-repeat;
+        background-size:$bsize;
         @content;
     }
 }
