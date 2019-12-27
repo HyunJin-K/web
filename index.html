@@ -2,10 +2,10 @@
 <html lang="ko">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Main</title>
 	<link rel="stylesheet" href="layout/css/main.min.css">
-	<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
 	<!-- skip Nav -->
@@ -122,24 +122,23 @@
 	<script src="layout/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript">
 	
-	(function(){
-		// 메인 배너 이미지 랜덤으로 돌리기
-		var random = Math.floor(Math.random() * 3 + 1);
-		$(".main_bn img").attr("src", "./layout/img/main/bn_bg" + random + ".png");
-
-		// loading
-		setTimeout(loading, 1500);
-		function loading(){
-			$(".ld_bg").fadeOut();
-		};
-
-		// Top Button
-		$(".bt_top").on("click", function(){
-			$("html, body").stop().animate({"scrollTop" : 0}, 400);
-		});
-	})();
 	
+	// 메인 배너 이미지 랜덤으로 돌리기
+	var random = Math.floor(Math.random() * 3 + 1);
+	$(".main_bn img").attr("src", "./layout/img/main/bn_bg" + random + ".png");
+
+	// Top Button
+	$(".bt_top").on("click", function(){
+		$("html, body").stop().animate({"scrollTop" : 0}, 400);
+	});
 	
+	$(window).on("load", function(){
+		setTimeout(
+			function(){
+				$(".ld_bg").fadeOut();
+			}, 1100
+		);
+	});
 	</script>
 </body>
 </html>

@@ -91,7 +91,7 @@
 /* Loading */
 .ld_bg{
     position:fixed; top:0; right:0; bottom:0; left:0; background:rgba(0,0,0,.4); z-index:100;
-    .ld{position:fixed; top:50%; left:50%; margin:-30px 0 0 -30px; border:5px solid transparent; width:60px; height:60px; box-sizing:border-box; animation:ld_square 1.4s 1; text-indent:-9999px;}
+    .ld{position:fixed; top:50%; left:50%; margin:-30px 0 0 -30px; border:5px solid transparent; width:60px; height:60px; box-sizing:border-box; animation:ld_square 1.4s infinite; text-indent:-9999px;}
     @at-root{
         @keyframes ld_square{
             25%{border-color:#fff transparent transparent transparent;}

@@ -376,8 +376,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   height: 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-animation: ld_square 1.4s 1;
-          animation: ld_square 1.4s 1;
+  -webkit-animation: ld_square 1.4s infinite;
+          animation: ld_square 1.4s infinite;
   text-indent: -9999px;
 }
 
