@@ -1,0 +1,90 @@
+$page:likelystory;
+
+@import "./control/reset",
+        "./control/common",
+        "./control/basic";
+
+
+
+/*-------------------------------------
+[P] LikelyStory
+--------------------------------------*/
+.lks{
+    // .lks_wrp
+    &_wrp{font-family:sans-serif;}
+
+    // .lks_inr
+    &_inr{display:table; margin:0 auto; width:1128px; height:100%; table-layout:fixed;}
+
+    // .lks_lg
+    &_lg{position:fixed;}
+
+    // .lks_mn
+    &_mn{position:fixed; font-size:1.5em;}
+
+    // .lks_sg
+    &_sg{
+        height:100vh;
+        .dtl{display:table-cell; padding:68px 0; vertical-align:bottom;}
+        .lnk{
+            display:block; max-width:60%; color:inherit;
+            &:hover{
+                .see_mr{
+                    &:before{opacity:1;}
+                    &:after{width:20px;}
+                }
+            }
+        }
+        .sub{
+            display:block; position:relative; margin-bottom:12px; padding-left:50px; font-size:1.5em; font-weight:600;
+            &:before{position:absolute; top:50%; left:0; background:#fff; width:40px; height:1px; content:"";}
+        }
+        .tt{line-height:1.2; font-size:5.33em; letter-spacing:-1px;}
+        .dsc{margin-top:20px; line-height:1.4; font-size:1.5em; font-weight:600;}
+        .see_mr{
+            display:inline-block; position:relative; margin-top:25px; padding-right:35px; font-size:1.5em; font-weight:bold;
+            // 화살표 표시
+            &:before{position:absolute; content:""; right:0; top:50%; margin-top:-2px; border-style:solid; border-width:1px 1px 0 0; border-color:#fff; width:6px; height:6px; -webkit-transform:rotate(45deg); transform:rotate(45deg); transition:0.2s all; opacity:0;}
+            &:after{position:absolute; content:""; top:50%; right:0; margin-top:1px; background:#fff; width:0; height:1px; transition:0.3s all;}
+        }
+        &.t_{
+            &main{
+                background:#5214ff; color:#fc589f;
+                .tt{font-size:11.67em; letter-spacing:-3px;}
+                .dsc{margin-top:15px;}
+            }
+            &fnc{
+                background:#9f79fa; color:#fff;
+            }
+            &idea{
+                background:#ffbc42; color:#5214ff;
+            }
+            &spk{
+                background:#40296d; color:#fff;
+            }
+            &att{
+                background:#ff3a49; color:#1b1363;
+                .sub:before{background:#1b1363;}
+                .see_mr{
+                    &:before{border-color:#1b1363;}
+                    &:after{background:#1b1363;}
+                }
+            }
+            &dsgn{
+                background:#ffbfdd; color:#fff;
+            }
+        }
+    }
+
+    // .lks_fg
+    &_fg{
+        padding:28px 0; background:#141221; overflow:hidden;
+        .logo{display:inline-block;}
+        .sns{
+            overflow:hidden;
+            li{float:left;}
+        }
+        .side{float:right;}
+        .dsc{color:#fff;}
+    }
+}
