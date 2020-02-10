@@ -135,87 +135,53 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-indent: -9999px;
 }
 
+/* scroll fix */
+.scroll_fix {
+  overflow: hidden;
+}
+
 /* Layout */
-.main_wrp {
+html, body {
+  height: 100%;
+}
+
+.ptf_wrp {
+  position: relative;
   border: 20px solid #000;
+  padding-bottom: 54px;
   min-width: 320px;
+  min-height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.main_inr {
+.ptf_inr {
   margin: 0 auto;
   max-width: 1260px;
 }
 
-.main_sg {
-  padding: 0 15px;
+.ptf_sg {
+  padding: 40px 15px;
 }
 
-.main_gr {
-  margin: 45px 0;
-}
-
-.main_tt {
-  margin-bottom: 25px;
+.ptf_tt {
+  margin-bottom: 20px;
   font-size: 23px;
 }
 
-.main_hg {
+.ptf_hg {
   padding: 50px 20px 40px;
 }
 
-.main_hg h1 {
+.ptf_hg h1 {
   font-size: 30px;
 }
 
-.main_nv {
-  overflow: hidden;
-}
-
-.main_nv ul {
-  float: right;
-  font-size: 15px;
-}
-
-.main_nv li {
-  float: left;
-}
-
-.main_nv li a {
-  display: block;
-  padding: 0 12px;
-  height: 40px;
-  line-height: 40px;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-}
-
-.main_nv li:hover a {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
-}
-
-.main_nv button {
-  background: url(../img/ic_nvbt.png) 0 0 no-repeat;
-  background-size: 33px auto;
-  width: 33px;
-  height: 34px;
-  text-indent: -9999px;
-}
-
-.main_cmt {
-  margin: 35px 0;
-  color: #777;
-  font-size: 14px;
-  text-align: center;
-}
-
-.main_bn {
+.ptf_bn {
   margin-top: 20px;
 }
 
-.main_bn img {
+.ptf_bn img {
   display: block;
   width: 100%;
   height: auto;
@@ -249,45 +215,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 }
 
-.main_wrk {
-  font-size: 17px;
+.ptf_glr {
+  overflow: hidden;
 }
 
-.main_wrk li {
-  position: relative;
-  margin-top: 12px;
-  padding-left: 10px;
-}
-
-.main_wrk li:before {
-  position: absolute;
-  top: 15px;
-  left: 0;
-  border-radius: 50%;
-  background: #777;
-  width: 2px;
-  height: 2px;
-  content: "";
-}
-
-.main_wrk li a {
-  display: inline-block;
-  padding: 5px;
-  -webkit-transition: 0.4s all;
-  transition: 0.4s all;
-}
-
-.main_wrk li a:hover {
-  background: #888;
-  color: #fff;
-}
-
-.main_glr {
-  font-size: 0;
-}
-
-.main_glr li {
-  display: inline-block;
+.ptf_glr li {
+  float: left;
   padding: 20px 30px;
   width: 33.3%;
   text-align: center;
@@ -296,20 +229,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
           box-sizing: border-box;
 }
 
-.main_glr li a {
+.ptf_glr li:only-child {
+  float: none;
+  margin: 0 auto;
+}
+
+.ptf_glr li a {
   display: block;
 }
 
-.main_glr li a:hover img {
+.ptf_glr li a:hover img {
   -webkit-transform: scale(1.15);
   transform: scale(1.15);
 }
 
-.main_glr .thmb {
+.ptf_glr .thmb {
   overflow: hidden;
 }
 
-.main_glr .thmb img {
+.ptf_glr .thmb img {
   max-width: 100%;
   width: auto;
   height: auto;
@@ -317,41 +255,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transition: 0.5s all;
 }
 
-.main_glr .tt {
+.ptf_glr .tt {
   display: block;
   margin-top: 18px;
   font-size: 15px;
 }
 
-.main_glr .dsc {
+.ptf_glr .dsc {
   margin-top: 4px;
   line-height: 1.4;
   color: #888;
   font-size: 13px;
 }
 
-.main_inf {
-  font-size: 15px;
-}
-
-.main_inf li {
-  margin-top: 15px;
-}
-
-.main_inf .sbj {
-  display: inline-block;
-  margin-right: 10px;
-  min-width: 90px;
-  color: #555;
-}
-
-.main_fg {
-  padding: 20px 0;
+.ptf_fg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background: #e6e6e6;
+  height: 54px;
+  line-height: 54px;
   text-align: center;
 }
 
-.main_fg p {
+.ptf_fg p {
   color: #000;
 }
 
@@ -416,7 +344,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: fixed;
   bottom: 25px;
   right: 25px;
-  background: #fff url(../img/main/scrollTop.png) no-repeat 10px 6px;
+  background: #fff url(../img/portfolios/scrollTop.png) no-repeat 10px 6px;
   background-size: 20px 30px;
   width: 40px;
   height: 40px;
@@ -427,34 +355,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* Media Query */
 @media screen and (max-width: 640px) {
-  .main_wrp {
+  .ptf_wrp {
     border-width: 10px;
   }
-  .main_hg {
+  .ptf_hg {
     text-align: center;
-  }
-  .main_nv ul {
-    float: none;
-    margin-top: 0;
-    text-align: center;
-    overflow: hidden;
-  }
-  .main_nv li {
-    padding: 10px;
-    width: 50%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
   }
 }
 
 @media screen and (max-width: 640px) and (min-width: 376px) {
-  .main_pj li {
+  .ptf_pj li {
     width: 50%;
   }
 }
 
 @media screen and (max-width: 375px) {
-  .main_pj li {
+  .ptf_pj li {
     width: 100%;
   }
 }
