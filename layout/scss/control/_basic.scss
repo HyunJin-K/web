@@ -4,20 +4,11 @@
 // Background 이미지 (true : 가상선택자 사용, false : 단순 bg)
 @mixin background($pseudo:false, $target:before, $display:inline-block, $margin:null, $wsize:null, $hsize:null, $img:null, $img-type:png, $pos:null, $bsize:null){
     @if $pseudo == true{
-        @if $target == before{
-            &:before{
-                display:$display; margin:$margin; width:$wsize; height:$hsize; vertical-align:middle; content:"";
-                background:url('../img/' + $page + "/" + $img + "." + $img-type) $pos no-repeat;
-                background-size:$bsize;
-                @content;
-            }
-        }@else{
-            &:after{
-                display:$display; margin:$margin; width:$wsize; height:$hsize; vertical-align:middle; content:"";
-                background:url('../img/' + $page + "/" + $img + "." + $img-type) $pos no-repeat;
-                background-size:$bsize;
-                @content;
-            }
+        &:#{$target}{
+            display:$display; margin:$margin; width:$wsize; height:$hsize; vertical-align:middle; content:"";
+            background:url('../img/' + $page + "/" + $img + "." + $img-type) $pos no-repeat;
+            background-size:$bsize;
+            @content;
         }
     }
     

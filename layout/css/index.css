@@ -290,6 +290,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-weight: 600;
 }
 
+.main_sg .dsc + .dsc {
+  margin-top: 5px;
+}
+
 .main_sg .see_mr {
   display: inline-block;
   position: relative;
@@ -607,5 +611,37 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   body {
     height: 100%;
     overflow: auto;
+  }
+}
+
+/* Media Query */
+@media screen and (max-width: 640px) {
+  .main_sg.t_intro:after, .main_sg.t_portfolio:after, .main_sg.t_contact:after {
+    background-attachment: initial;
+    background-size: 170%;
+  }
+  .main_inr {
+    padding: 0 20px;
+  }
+  .main_sg.t_main .tt {
+    font-size: 9.5em;
+  }
+  .main_sd .bt_clse {
+    right: 30px;
+  }
+}
+
+@media screen and (max-width: 640px) and (min-width: 321px) {
+  body {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    font-size: 10px;
+  }
+  .main_sg .dtl {
+    margin: 40px 0;
   }
 }

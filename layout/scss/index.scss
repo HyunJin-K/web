@@ -54,7 +54,10 @@ $page:main;
             &:before{display:inline-block; margin-right:10px; background:#fff; width:0; height:1px; content:""; transition:0.7s all; vertical-align:middle;}
         }
         .tt{line-height:1.2; font-size:5.33em; letter-spacing:-1px;}
-        .dsc{margin-top:20px; line-height:1.4; font-size:1.5em; font-weight:600;}
+        .dsc{
+            margin-top:20px; line-height:1.4; font-size:1.5em; font-weight:600;
+            + .dsc{margin-top:5px;}
+        }
         .see_mr{
             display:inline-block; position:relative; margin-top:25px; padding-right:35px; font-size:1.5em; font-weight:bold;
             // 화살표 표시
@@ -63,6 +66,7 @@ $page:main;
         }
         // 각 영역별 색상 변경
         &.t_{
+            // .t_main
             &main{
                 background:#5214ff; color:#fc589f;
                 .main_inr{@include background($img:bg_main, $target:after, $pos:100% 100%, $bsize:50%);}
@@ -70,6 +74,7 @@ $page:main;
                 .tt{font-size:11.67em; letter-spacing:-3px;}
                 .dsc{margin-top:15px;}
             }
+            // .t_intro
             &intro{
                 background:#9f79fa; color:#fff;
                 @include background($pseudo:true, $target:after, $img:bg_intro, $pos:100% 50%, $bsize:contain){
@@ -77,6 +82,7 @@ $page:main;
                 }
                 .main_mn_lg{color:#9f79fa;}
             }
+            // .t_project
             &project{
                 background:#ffbc42; color:#5214ff;
                 .main_inr{@include background($img:bg_spread01, $target:after, $pos:100% 100%, $bsize:50%);}
@@ -86,6 +92,7 @@ $page:main;
                 .see_mr:after{background:#5214ff;}
                 .see_mr:before{border-color:#5214ff;}
             }
+            // .t_portfolio
             &portfolio{
                 background:#40296d; color:#fff;
                 @include background($pseudo:true, $target:after, $img:bg_work, $pos:100% 50%, $bsize:contain){
@@ -93,6 +100,7 @@ $page:main;
                 }
                 .main_mn_lg{color:#40296d;}
             }
+            // .t_blog
             &blog{
                 background:#ff3a49; color:#1b1363;
                 .main_inr{@include background($img:bg_spread02, $target:after, $pos:100% 100%, $bsize:50%);}
@@ -102,6 +110,7 @@ $page:main;
                 .see_mr:after{background:#1b1363;}
                 .see_mr:before{border-color:#1b1363;}
             }
+            // .t_contact
             &contact{
                 background:#fdabd1; color:#fff;
                 @include background($pseudo:true, $target:after, $img:bg_contact, $pos:100% 50%, $bsize:contain){
@@ -162,4 +171,30 @@ $page:main;
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
     html{height:100%; overflow:hidden;}
     body{height:100%; overflow:auto;}
+}
+
+/* Media Query */
+@media screen and (max-width:640px){
+    .main_sg{
+        // .t_intro, .t_portfolio, .t_contact
+        &.t_{
+            &intro:after,
+            &portfolio:after,
+            &contact:after{background-attachment:initial; background-size:170%;}
+        }
+    }
+    .main_inr{padding:0 20px;}
+    .main_sg{
+        &.t_main .tt{font-size:9.5em;}
+    }
+    .main_sd .bt_clse{right:30px;}
+}
+@media screen and (max-width:640px) and (min-width:321px){
+    body{font-size:11px;}
+}
+@media screen and (max-width:320px){
+    body{font-size:10px;}
+    .main_sg{
+        .dtl{margin:40px 0;}
+    }
 }
