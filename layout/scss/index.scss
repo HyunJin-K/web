@@ -9,12 +9,11 @@ $page:main;
 /* Layout */
 .main{
     // .main_wrp
-    &_wrp{font-family:sans-serif;}
+    &_wrp{font-family:sans-serif; -webkit-overflow-scrolling: touch;}
 
     // .main_mn
     &_mn{
         position:absolute; top:0; left:0; right:0; bottom:0; clip:rect(0 auto auto 0); z-index:10;
-        -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 100%);
         // .main_mn_fx
         &_fx{position:fixed; top:28px; left:0; right:0; font-weight:bold;}
         // .main_mn_inr

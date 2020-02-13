@@ -151,6 +151,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* Layout */
 .main_wrp {
   font-family: sans-serif;
+  -webkit-overflow-scrolling: touch;
 }
 
 .main_mn {
@@ -161,7 +162,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   bottom: 0;
   clip: rect(0 auto auto 0);
   z-index: 10;
-  -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
 }
 
 .main_mn_fx {
