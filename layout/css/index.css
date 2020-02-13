@@ -616,7 +616,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 }
 
-@media screen and (-wekbit-min-device-pixel-ration: 1.5) {
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
   .main_mn {
     clip: auto;
     -webkit-clip-path: inset(0);
