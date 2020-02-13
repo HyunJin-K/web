@@ -160,6 +160,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   left: 0;
   right: 0;
   bottom: 0;
+  clip: rect(0 auto auto 0);
   -webkit-clip-path: inset(0);
   clip-path: inset(0);
   z-index: 10;
