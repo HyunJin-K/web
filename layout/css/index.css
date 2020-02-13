@@ -161,6 +161,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   bottom: 0;
   clip: rect(0 auto auto 0);
   z-index: 10;
+  -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
 }
 
 .main_mn_fx {
@@ -644,12 +645,5 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
   .main_sg .dtl {
     margin: 40px 0;
-  }
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  .rowcontainer {
-    clip: auto;
-    -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
   }
 }
