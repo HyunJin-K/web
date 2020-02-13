@@ -13,7 +13,7 @@ $page:main;
 
     // .main_mn
     &_mn{
-        position:absolute; top:0; left:0; right:0; bottom:0; clip:rect(0 auto auto 0); -webkit-clip-path:inset(0); clip-path:inset(0); z-index:10;
+        position:absolute; top:0; left:0; right:0; bottom:0; clip:rect(0 auto auto 0); z-index:10;
         // .main_mn_fx
         &_fx{position:fixed; top:28px; left:0; right:0; font-weight:bold;}
         // .main_mn_inr
@@ -171,6 +171,14 @@ $page:main;
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
     html{height:100%; overflow:hidden;}
     body{height:100%; overflow:auto;}
+}
+
+@media screen and (-wekbit-min-device-pixel-ration:1.5){
+    .main_mn{
+        clip:auto;
+        -webkit-clip-path:inset(0); clip-path:inset(0);
+    }
+    
 }
 
 /* Media Query */
