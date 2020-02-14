@@ -79,11 +79,13 @@ html, body{height:100%;}
 /* Media Query */
 @media screen and (max-width:640px){
 	.ptf_wrp{border-width:10px;}
-	.ptf_hg{text-align:center;}
+    .ptf_hg{text-align:center;}
+    .ptf_glr li{padding:10px;}
 }
 @media screen and (max-width:640px) and (min-width:376px){
-	.ptf_pj li{width:50%;}
+	.ptf_glr li{width:50%;}
 }
 @media screen and (max-width:375px){
-	.ptf_pj li{width:100%;}
+    .ptf_wrp{border-width:5px;}
+	.ptf_glr li{width:100%;}
 }

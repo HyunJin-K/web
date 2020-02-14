@@ -22,3 +22,12 @@ $(function(){
         $("html").removeClass("scroll_fix");
     });
 });
+
+//페이지 로드시 로딩화면 제거
+$(window).on("load", function(){
+    setTimeout(
+        function(){
+            $(".main_ld").fadeOut();
+        }, 1000
+    );
+});

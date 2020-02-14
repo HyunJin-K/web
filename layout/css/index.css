@@ -554,6 +554,63 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   content: "×";
 }
 
+.main_ld {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  text-align: center;
+}
+
+.main_ld:after {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  content: "";
+}
+
+.main_ld_txt {
+  display: inline-block;
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.main_ld_txt:after {
+  display: inline-block;
+  content: "";
+  -webkit-animation: dotting 1s alternate infinite;
+          animation: dotting 1s alternate infinite;
+}
+
+@-webkit-keyframes dotting {
+  33% {
+    content: ".";
+  }
+  66% {
+    content: "..";
+  }
+  100% {
+    content: "...";
+  }
+}
+
+@keyframes dotting {
+  33% {
+    content: ".";
+  }
+  66% {
+    content: "..";
+  }
+  100% {
+    content: "...";
+  }
+}
+
 .main_fg {
   padding: 28px 0;
   background: #141221;

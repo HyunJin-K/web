@@ -368,16 +368,22 @@ html, body {
   .ptf_hg {
     text-align: center;
   }
+  .ptf_glr li {
+    padding: 10px;
+  }
 }
 
 @media screen and (max-width: 640px) and (min-width: 376px) {
-  .ptf_pj li {
+  .ptf_glr li {
     width: 50%;
   }
 }
 
 @media screen and (max-width: 375px) {
-  .ptf_pj li {
+  .ptf_wrp {
+    border-width: 5px;
+  }
+  .ptf_glr li {
     width: 100%;
   }
 }
