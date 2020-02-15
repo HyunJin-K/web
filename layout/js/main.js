@@ -21,6 +21,18 @@ $(function(){
         $sideMenu.fadeOut();
         $("html").removeClass("scroll_fix");
     });
+
+    // 로딩 화면 제어
+    
+    var Loading = setInterval(
+        function(){
+            $(".main_ld_txt").append(".");
+            if($(".main_ld_txt").text().length >= 10){
+                clearInterval(Loading);
+            }
+        }, 300
+    );
+    
 });
 
 //페이지 로드시 로딩화면 제거

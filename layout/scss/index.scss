@@ -151,17 +151,7 @@ $page:main;
         position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.9); z-index:100; text-align:center;
         &:after{display:inline-block; height:100%; vertical-align:middle; content:"";}
         // .main_ld_txt
-        &_txt{
-            display:inline-block; color:#fff; font-size:3em; font-weight:bold; vertical-align:middle;
-            &:after{display:inline-block; content:""; animation:dotting 1s alternate infinite;}
-        }
-        @at-root{
-            @keyframes dotting{
-                33%{content:"."}
-                66%{content:"..";}
-                100%{content:"...";}
-            }
-        }
+        &_txt{display:inline-block; color:#fff; font-size:3em; font-weight:bold; vertical-align:middle;}
     }
 
     // .main_fg

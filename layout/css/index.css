@@ -580,37 +580,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   vertical-align: middle;
 }
 
-.main_ld_txt:after {
-  display: inline-block;
-  content: "";
-  -webkit-animation: dotting 1s alternate infinite;
-          animation: dotting 1s alternate infinite;
-}
-
-@-webkit-keyframes dotting {
-  33% {
-    content: ".";
-  }
-  66% {
-    content: "..";
-  }
-  100% {
-    content: "...";
-  }
-}
-
-@keyframes dotting {
-  33% {
-    content: ".";
-  }
-  66% {
-    content: "..";
-  }
-  100% {
-    content: "...";
-  }
-}
-
 .main_fg {
   padding: 28px 0;
   background: #141221;
