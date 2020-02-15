@@ -202,6 +202,14 @@ $page:main;
     .main_inr{padding:0 20px;}
     .main_sg{
         &.t_main .tt{font-size:9.5em;}
+        .lnk{
+            transform:translateY(0);
+            .sub:before{width:40px;}
+            .see_mr{
+                &:before{opacity:1;}
+                &:after{width:20px;}
+            }
+        }
     }
     .main_sd .bt_clse{right:30px;}
 }

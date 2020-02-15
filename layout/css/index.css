@@ -662,6 +662,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   .main_sg.t_main .tt {
     font-size: 9.5em;
   }
+  .main_sg .lnk {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .main_sg .lnk .sub:before {
+    width: 40px;
+  }
+  .main_sg .lnk .see_mr:before {
+    opacity: 1;
+  }
+  .main_sg .lnk .see_mr:after {
+    width: 20px;
+  }
   .main_sd .bt_clse {
     right: 30px;
   }
