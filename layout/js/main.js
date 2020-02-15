@@ -28,6 +28,6 @@ $(window).on("load", function(){
     setTimeout(
         function(){
             $(".main_ld").fadeOut();
-        }, 1000
+        }, 500
     );
 });

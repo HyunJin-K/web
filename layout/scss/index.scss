@@ -155,10 +155,12 @@ $page:main;
             display:inline-block; color:#fff; font-size:3em; font-weight:bold; vertical-align:middle;
             &:after{display:inline-block; content:""; animation:dotting 1s alternate infinite;}
         }
-        @keyframes dotting{
-            33%{content:"."}
-            66%{content:"..";}
-            100%{content:"...";}
+        @at-root{
+            @keyframes dotting{
+                33%{content:"."}
+                66%{content:"..";}
+                100%{content:"...";}
+            }
         }
     }
 
