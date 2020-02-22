@@ -23,7 +23,6 @@ $(function(){
     });
 
     // 로딩 화면 제어
-    
     var Loading = setInterval(
         function(){
             $(".main_ld_txt").append(".");
@@ -32,7 +31,9 @@ $(function(){
             }
         }, 300
     );
-    
+
+    // 로딩화면시 스크롤 막기
+    $("html").addClass("scroll_fix");
 });
 
 //페이지 로드시 로딩화면 제거
@@ -40,6 +41,7 @@ $(window).on("load", function(){
     setTimeout(
         function(){
             $(".main_ld").fadeOut();
+            $("html").removeClass("scroll_fix");
         }, 500
     );
 });

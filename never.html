@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="네이버 페이지의 레이아웃을 바꿔보는 페이지 입니다.">
+    <link rel="stylesheet" href="layout/css/never.min.css">
     <title>Never</title>
 </head>
 <body>
@@ -17,20 +17,47 @@
     <div class="nvr_wrp">
         <header class="nvr_hg">
             <div class="nvr_hg_sd">
-                <a href="#">네버를 시작페이지로</a>
-                <ul>
+                <a href="#" class="bt_fav">네버를 시작페이지로</a>
+                <ul class="lnk">
                     <li><a href="#">쥬니어네버</a></li>
                     <li><a href="#">해피빈</a></li>
                 </ul>
             </div>
-            <div></div>
-            <div>
-                <nav>
-                    <ul>
-                        <li></li>
+            <div class="nvr_sch">
+                <h1 class="nvr_lg">
+                    <a href="#"><img src="#" alt="NEVER"></a>
+                </h1>
+                <div class="nvr_sch">
+                    <div class="nvr_sch_bx">
+                        <input type="text">
+                        <button type="button">연관검색어</button>
+                    </div>
+                    <button type="button">검색</button>
+                </div>
+            </div>
+            <div class="nvr_mn">
+                <nav id="nav" class="nvr_mn_nav">
+                    <ul class="main_svc">
+                        <li><a href="#">메일</a></li>
+                        <li><a href="#">카페</a></li>
+                        <li><a href="#">블로그</a></li>
+                        <li><a href="#">지식iN</a></li>
+                        <li><a href="#">쇼핑</a></li>
+                        <li><a href="#">Pay</a></li>
+                        <li><a href="#"><img src="#" alt="Never TV"></a></li>
+                        <li><a href="#">사전</a></li>
+                        <li><a href="#">뉴스</a></li>
+                        <li><a href="#">증권</a></li>
+                        <li><a href="#">부동산</a></li>
+                        <li><a href="#">지도</a></li>
+                        <li><a href="#">영화</a></li>
+                        <li><a href="#">뮤직</a></li>
+                        <li><a href="#">책</a></li>
+                        <li><a href="#">웹툰</a></li>
                     </ul>
+                    <button type="button" class="bt_mr" title="서비스 메뉴 더보기">더보기</button>
                 </nav>
-                <div>
+                <div class="nvr_mn_hot">
 
                 </div>
             </div>
@@ -41,41 +68,320 @@
             <div class="nvr_inr">
                 <!-- Section : 배너 & 로그인 -->
                 <section class="nvr_sg">
-                    <div class="nvr_bn">
+                    <div class="nvr_bnr">
                         <a href="#">
                             <img src="" width="" height="" alt="">
                         </a>
                     </div>
                     <div id="login" class="nvr_lgn">
-                        
+                        <h2 class="hide">로그인</h2>
                     </div>
                 </section>
 
                 <!-- Section : 뉴스 & 사이드 안내 -->
                 <section class="nvr_sg">
-                    <div>
-
+                    <div class="nvr_news">
+                        <h2 class="hide">뉴스</h2>
                     </div>
-                    <div></div>
+                    <div class="nvr_util">
+                        <h2 class="hide">빠른 안내</h2>
+                    </div>
+                    <div class="nvr_bn_sd">
+                        <img src="#" width="" height="" alt="">
+                    </div>
                 </section>
 
                 <!-- Section : 주제별 캐스트 & 쇼핑 -->
                 <section class="nvr_sg">
-                    <div>
-
+                    <div class="nvr_cast">
+                        <h2 class="hide">주제별 캐스트</h2>
+                        <div class="nvr_cast_mn">
+                            <a href="#">캐스트 주제 전체보기</a>
+                            <ul class="ctg">
+                                <li><a href="#">스포츠</a></li>
+                                <li><a href="#">웹툰</a></li>
+                                <li><a href="#">게임</a></li>
+                                <li><a href="#">함께N</a></li>
+                                <li><a href="#">뮤직</a></li>
+                            </ul>
+                            <div class="btn">
+                                <button type="button">이전 카테고리</button>
+                                <button type="button">다음 카테고리</button>
+                            </div>
+                        </div>
+                        <div class="nvr_cast_dtl">
+                            <div class="cast_sbj">
+                                <h3>뮤직</h3>
+                                <ul>
+                                    <li><a href="#">Top 100</a></li>
+                                    <li><a href="#">최신앨범</a></li>
+                                    <li><a href="#">뮤직스페셜</a></li>
+                                    <li><a href="#">뮤직매거진</a></li>
+                                    <li><a href="#">뮤지션리그</a></li>
+                                    <li><a href="#">온스테이지</a></li>
+                                    <li><a href="#">이용권</a></li>
+                                    <li><a href="#">내 이용현황</a></li>
+                                </ul>
+                            </div>
+                            <ul class="lst">
+                                <!-- [!] 배너형 리스트는 t_bn 클래스 추가 -->
+                                <li class="t_bn">
+                                    <a href="#">
+                                        <div class="img">
+                                            <img src="#" width="" height="" alt="">
+                                        </div>
+                                        <div class="inf">
+                                            <div class="thmb">
+                                                <img src="#" width="" height="" alt="">
+                                            </div>
+                                            <div class="dtl">
+                                                <span class="sub">textxetxte</span>
+                                                <strong class="tt">tetetetetest</strong>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="t_chart">
+                                    <h4>일간 TOP 100</h4>
+                                    <p class="dsc">00.00 오전 7시 업데이트</p>
+                                    <!-- 뮤직, 차트 -->
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <div class="thmb">
+                                                    <img src="#" width="" height="" alt="">
+                                                </div>
+                                                <span>testset</span>
+                                            </a>
+                                            <span class="artist">wrwer</span>
+                                        </li>
+                                    </ul>
+                                    <!-- // 뮤직, 차트 -->
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="img">
+                                            <img src="#" width="" height="" alt="">
+                                            <span class="flg">뮤지션리그</span>
+                                        </div>
+                                        <div class="inf">
+                                            <span class="sub">textxetxte</span>
+                                            <strong class="tt">tetetetetest</strong>
+                                        </div>
+                                    </a>
+                                    <span class="sbj">testset</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
 
+                    <div class="nvr_shp">
+                        <div class="nvr_shp_mn">
+                            <h2>쇼핑</h2>
+                            <ul class="tab">
+                                <li><a href="#">상품</a></li>
+                                <li><a href="#">쇼핑몰</a></li>
+                                <li><a href="#">MEN</a></li>
+                            </ul>
+                        </div>
+                        <ul class="nvr_shp_ctg">
+                            <li><a href="#">G마켓</a></li>
+                            <li><a href="#">옥션</a></li>
+                            <li><a href="#">11번가</a></li>
+                            <li><a href="#">위메프</a></li>
+                            <li><a href="#">티몬</a></li>
+                            <li><a href="#">이마트몰</a></li>
+                            <li><a href="#">신세계몰</a></li>
+                            <li><a href="#">올리브영</a></li>
+                            <li><a href="#">GS샵</a></li>
+                            <li><a href="#">롯데닷컴</a></li>
+                            <li><a href="#">롯데i몰</a></li>
+                            <li><a href="#">CJmall</a></li>
+                        </ul>
+                        
+                        <!-- Tab : 상품 -->
+                        <div id="tab_Item" class="nvr_shp_dtl">
+                            <h3 class="hide">상품 목록</h3>
+                            <div class="">
+                                <div class="pg">
+                                    <span class="num"><strong>1</strong>/19</span>
+                                    <button type="button">이전 페이지</button>
+                                    <button type="button">다음 페이지</button>
+                                </div>
+                                <ul class="itm_glr">
+                                    <li>
+                                        <a href="#">
+                                            <div class="thmb">
+                                                <img src="#" width="" height="" alt="">
+                                            </div>
+                                            <div class="dtl">
+                                                <p>testetsetsetset</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="shp_news">
+                                <h4>반갑다! 쇼핑뉴스</h4>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sllr">셀러명</span>
+                                            <p class="dsc">뉴스설명</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Tab : 쇼핑몰 -->
+                        <div id="tab_Shopping" class="nvr_shp_dtl">
+                            <h3 class="hide">쇼핑몰 목록</h3>
+                            <div class="pg">
+                                <span class="num"><strong>1</strong>/19</span>
+                                <button type="button">이전 페이지</button>
+                                <button type="button">다음 페이지</button>
+                            </div>
+                            <div id="shopping01">
+                                <div class="mall">
+                                    <h4 class="nm">옥션</h4>
+                                    <a href="#" class="bt_go">옥션 바로가기</a>
+                                    <ul class="itm_glr">
+                                        <li>
+                                            <a href="#">
+                                                <div class="thmb">
+                                                    <img src="#" width="" height="" alt="">
+                                                </div>
+                                                <div class="dtl">
+                                                    <p>testetsetsetset</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="txt_bn">
+                                    <a href="#">
+                                        <span class="flg">SALE</span>
+                                        핫딜핫딜핫딜핫딜핫딜핫딜핫딜
+                                    </a>
+                                </div>
+                                <!-- 상품 3개씩 노출 -->
+                                <div class="mall">
+                                    <h4 class="nm">옥션2</h4>
+                                    <a href="#" class="bt_go">옥션2 바로가기</a>
+                                    <ul class="itm_glr">
+                                        <li>
+                                            <a href="#">
+                                                <div class="thmb">
+                                                    <img src="#" width="" height="" alt="">
+                                                </div>
+                                                <div class="dtl">
+                                                    <p>testetsetsetset</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mall">
+                                    <h4 class="nm">옥션3</h4>
+                                    <a href="#" class="bt_go">옥션3 바로가기</a>
+                                    <ul class="itm_glr">
+                                        <li>
+                                            <a href="#">
+                                                <div class="thmb">
+                                                    <img src="#" width="" height="" alt="">
+                                                </div>
+                                                <div class="dtl">
+                                                    <p>testetsetsetset</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mall">
+                                    <h4 class="nm">옥션4</h4>
+                                    <a href="#" class="bt_go">옥션4 바로가기</a>
+                                    <ul class="itm_glr">
+                                        <li>
+                                            <a href="#">
+                                                <div class="thmb">
+                                                    <img src="#" width="" height="" alt="">
+                                                </div>
+                                                <div class="dtl">
+                                                    <p>testetsetsetset</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Tab : MEN -->
+                        <div id="tab_Men" class="nvr_shp_dtl">
+                            <h3 class="hide">MEN 상품 목록</h3>
+                            <div class="">
+                                <div class="pg">
+                                    <span class="num"><strong>1</strong>/19</span>
+                                    <button type="button">이전 페이지</button>
+                                    <button type="button">다음 페이지</button>
+                                </div>
+                                <ul class="itm_glr">
+                                    <li>
+                                        <a href="#">
+                                            <div class="thmb">
+                                                <img src="#" width="" height="" alt="">
+                                            </div>
+                                            <div class="dtl">
+                                                <p>testetsetsetset</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>PLAY.Fun</h4>
+                                <ul class="itm_glr t02">
+                                    <li>
+                                        <a href="#">
+                                            <div class="thmb">
+                                                <img src="#" width="" height="" alt="">
+                                            </div>
+                                            <div class="dtl">
+                                                <p>testetsetsetset</p>
+                                                <span class="shp">shopshop</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 <!-- Section : 칼럼 & 스몰 배너 -->
                 <section class="nvr_sg">
-                    <div>
-
+                    <div class="nvr_clmn">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="#" width="" height="" alt="">
+                                    </div>
+                                    <div class="dtl">
+                                        <span class="sbj">해피빈</span>
+                                        <strong class="tt">제목</strong>
+                                        <p class="dsc">설명</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <div>
-
+                    <div class="nvr_bn_sd02">
+                        <a href="#">
+                            <img src="#" width="" height="" alt="">
+                        </a>
                     </div>
                 </section>
             </div>
@@ -84,13 +390,66 @@
         <footer class="nvr_fg">
             <div class="nvr_inr">
                 <div class="nvr_fg_ntc">
-
+                    <h2>
+                        <a href="#">공지사항</a>
+                    </h2>
+                    <a href="#" class="bt_svc">서비스 전체보기</a>
                 </div>
                 <div class="nvr_fg_svc">
-
+                    <h2 class="hide">사용자 서비스</h2>
+                    <div class="ctg">
+                        <div class="grp">
+                            <h3>Creators</h3>
+                            <ul>
+                                <li><a href="#">크리에이터</a></li>
+                                <li><a href="#">스몰비즈니스</a></li>
+                            </ul>
+                        </div>
+                        <div class="grp">
+                            <h3>Partners</h3>
+                            <ul>
+                                <li><a href="#">비즈니스 · 광고</a></li>
+                                <li><a href="#">스토어 개설</a></li>
+                                <li><a href="#">지역업체 등록</a></li>
+                            </ul>
+                        </div>
+                        <div class="grp">
+                            <h3>Developers</h3>
+                            <ul>
+                                <li><a href="#">네이버 개발자센터</a></li>
+                                <li><a href="#">오픈 API</a></li>
+                                <li><a href="#">오픈소스</a></li>
+                                <li><a href="#">네이버 D2</a></li>
+                                <li><a href="#">네이버 D2SF</a></li>
+                                <li><a href="#">네이버 랩스</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sd">
+                        <div class="grp">
+                            <strong class="tt">웨일 브라우저</strong>
+                            <a href="#">다운받기</a>
+                        </div>
+                        <div class="grp">
+                            <strong class="tt">프로젝트 꽃</strong>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="nvr_fg_mn">
-
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">인재채용</a></li>
+                        <li><a href="#">제휴제안</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">청소년보호정책</a></li>
+                        <li><a href="#">네이버 정책</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                    <strong class="corp">
+                        ⓒ <a href="#">NEVER Corp</a>
+                    </strong>
                 </div>
             </div>
         </footer>
