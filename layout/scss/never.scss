@@ -13,4 +13,40 @@ $page:tvn;
     &_wrp{
         
     }
+
+    // .nvr_inr
+    &_inr{margin:0 auto; width:1000px;}
+
+    // .nvr_hg
+    &_hg{
+        position:relative; padding-top:50px;
+        // .nvr_hg_top
+        &_top{position:absolute; top:5px; right:0;}
+        // .nvr_hg_md
+        &_md{}
+        // .nvr_hg_btm
+        &_btm{margin-top:25px;}
+
+        .bt_fav{
+            &:after{display:inline-block; border:solid #666; border-width:1px 1px 0 0; width:3px; height:3px; transform:rotate(45deg); vertical-align:middle; content:"";}
+        }
+        .mr_lnk{
+            border:1px solid #aaa;
+            li{margin-left:5px;}
+        }
+        .logo{
+            img{width:auto; height:auto; max-width:100%; max-height:100%;}
+        }
+        .sch{
+            margin-left:10px;
+            fieldset{border:2px solid #03cf5d; width:500px;}
+            // .sch_inr
+            &_inr{
+                input{padding:0 15px; width:100%; height:100%; box-sizing:border-box;}
+            }
+            .bt_crn{text-indent:-9999px;}
+            .bt_sch{background:#03cf5d; width:25px; height:100%;}
+        }
+    }
+
 }
