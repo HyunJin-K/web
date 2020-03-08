@@ -5,9 +5,9 @@ $(function(){
         var this_type = $(this).attr("data-type");
 
         if(this_type != "default"){
-            $("body").removeClass().addClass(this_type);
+            $(".nvr_wrp").attr("data-type", this_type);
         }else{
-            $("body").removeClass();
+            $(".nvr_wrp").attr("data-type", "");
         }
     });
 });
