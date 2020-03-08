@@ -1,8 +1,14 @@
-$page:tvn;
+$page:never;
 
-@import "./control/reset",
-        "./control/common",
-        "./control/basic";
+@import "./control/basic";
+
+
+
+///--- [C] Mixin
+// > (화살표) 표시
+@mixin arrow($margin:null, $border:1px 1px 0 0, $color:#555, $size:null){
+    &:after{display:inline-block; margin:$margin; border:solid $color; border-width:$border; width:$size; height:$size; vertical-align:middle; content:""; -webkit-transform:rotate(45deg); transform:rotate(45deg); @content}
+}
 
 
 /*-------------------------------------
@@ -11,42 +17,650 @@ $page:tvn;
 .nvr{
     // .nvr_wrp
     &_wrp{
-        
+        min-width:1080px;
+        @at-root{
+            // Layout01
+            .t_layout01{
+                .nvr{
+                    // .nvr_bnr
+                    &_bnr{
+                        &.t_main{width:100%; height:175px;}
+                        &.t_sd01{float:right; margin:0; width:400px; height:300px; box-sizing:border-box;}
+                        &.t_sd02{display:none;}
+                    }
+                    // .nvr_lgn
+                    &_lgn{
+                        width:274px; height:246px;
+                        // .nvr_lgn_inf
+                        &_inf{
+                            .mn{
+                                li{display:block;}
+                                a{height:26px; line-height:26px;}
+                            }
+                        }
+                    }
+                    // .nvr_news
+                    &_news{
+                        width:800px; overflow:hidden; height:246px;
+                        // .nvr_news_hd
+                        &_hd{
+                            float:left; width:170px; height:100%;
+                            h3{float:none;}
+                            .slide_news{display:none;}
+                            .sd_mn{
+                                float:none; margin-top:24px;
+                                li{float:none; margin:8px 0 0 0;}
+                            }
+                        }
+                        // .nvr_news_dtl
+                        &_dtl{float:right; margin-top:0; width:calc(100% - 179px);}
+                    }
+                    // .nvr_sd
+                    &_sd{width:658px;}
+                    // .nvr_util
+                    &_util{
+                        float:left; width:250px; height:300px;
+                        // .nvr_util_dtl
+                        &_dtl{
+                            padding:23px 16px 30px;
+                            .lst li{float:none; width:auto;}
+                            .bt_lnk{top:auto; bottom:0;}
+                        }
+                    }
+                    // .nvr_clmn
+                    &_clmn{
+                        width:414px; height:300px; order:5;
+                        ul{padding-top:0;}
+                        li{float:none; margin-top:38px; width:auto;}
+                    }
+                    // .nvr_cast
+                    &_cast{order:7;}
+                    // .nvr_shp
+                    &_shp{order:6;}
+                }
+            }
+            // Layout02
+            .t_layout02{
+                .nvr{
+                    // .nvr_shp
+                    &_shp{
+                        width:100%; height:auto; order:9;
+                        // .nvr_shp_dtl
+                        &_dtl{
+                            .lst{
+                                float:left; border-bottom:0; padding-top:45px; width:660px;
+                                li{
+                                    width:20%;
+                                    &:last-child{display:block !important;}
+                                }
+                            }
+                            .add_inf{float:right;}
+                        }
+                    }
+                    // .nvr_cast
+                    &_cast{
+                        width:100%; height:auto; order:10;
+                        // .nvr_cast_dtl
+                        &_dtl{
+                            .sbj{width:250px; height:231px;}
+                            .lst{
+                                li{
+                                    height:250px;
+                                    &:first-child{margin-left:265px;}
+                                }
+                                .thmb{height:163px;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     // .nvr_inr
-    &_inr{margin:0 auto; width:1000px;}
+    &_inr{position:relative; margin:0 auto; width:1080px;}
+
+    // 이전, 다음 버튼 : .nvr_bt_turn
+    &_bt_turn{
+        position:absolute; top:0; bottom:0; right:0; font-size:0;
+        button{
+            position:relative; border-left:1px solid #ebeef3; width:44px; height:100%; outline:none; text-indent:-9999px;
+            @include arrow($size:9px){
+                position:absolute; top:50%; left:50%;
+            }
+            &:hover:after{border-color:#00bc53}
+        }
+        .bt_prv:after{margin:-6px 0 0 -1px; border-width:0 0 1px 1px;}
+        .bt_nxt:after{margin:-6px 0 0 -8px;}
+    }
 
     // .nvr_hg
     &_hg{
-        position:relative; padding-top:50px;
-        // .nvr_hg_top
-        &_top{position:absolute; top:5px; right:0;}
-        // .nvr_hg_md
-        &_md{}
-        // .nvr_hg_btm
-        &_btm{margin-top:25px;}
-
+        position:relative; border-bottom:1px solid #d1d8e4;
+        // .nvr_hg_cg
+        &_cg{
+            border-bottom:1px solid #f1f3f6; padding-bottom:55px; font-size:0;
+            .nvr_inr{
+                padding-top:65px;
+                &:after{@include clearfix;}
+            }
+        }
+        // .nvr_hg_mn
+        &_mn{
+            .nvr_inr:after{@include clearfix;}
+        }
+        .sd_area{position:absolute; top:15px; right:0;}
         .bt_fav{
-            &:after{display:inline-block; border:solid #666; border-width:1px 1px 0 0; width:3px; height:3px; transform:rotate(45deg); vertical-align:middle; content:"";}
+            display:inline-block; color:#888; font-size:11px; vertical-align:middle;
+            @include arrow($margin:-2px 0 0 3px, $color:#888, $size:3px);
+            &:hover{text-decoration:underline;}
         }
         .mr_lnk{
-            border:1px solid #aaa;
-            li{margin-left:5px;}
+            display:inline-block; margin-left:10px; border-left:1px solid #ebeef3; overflow:hidden; vertical-align:middle;
+            li{float:left; margin-left:8px;}
+            .jnr a{background-position:0 -52px; width:58px;}
+            .hpy a{background-position:-61px -52px; width:34px;}
+            a{
+                display:block; height:11px;
+                @include background($img:img_nvr);
+                &:hover{background-position-y:-64px;}
+            }
         }
         .logo{
+            float:left; margin-top:-8px;
             img{width:auto; height:auto; max-width:100%; max-height:100%;}
         }
-        .sch{
-            margin-left:10px;
-            fieldset{border:2px solid #03cf5d; width:500px;}
-            // .sch_inr
-            &_inr{
-                input{padding:0 15px; width:100%; height:100%; box-sizing:border-box;}
-            }
+        .sch_bx{
+            float:left; margin-left:20px;
+            fieldset{position:relative; border:2px solid #03cf5d; padding-right:47px; width:521px; height:49px; box-sizing:border-box;}
+            input{display:block; border:0; padding:0 15px; width:100%; height:100%; box-sizing:border-box; font-size:18px; font-weight:bold; outline:none;}
             .bt_crn{text-indent:-9999px;}
-            .bt_sch{background:#03cf5d; width:25px; height:100%;}
+            .bt_sch{
+                position:absolute; top:0; right:0; background:#03cf5d; width:47px; height:100%; text-indent:-9999px; outline:none;
+                @include background($pseudo:true, $margin:-11px 0 0 -9px, $wsize:21px, $hsize:21px, $img:ic_nvr, $pos:0 -16px){
+                    position:absolute; top:50%; left:50%;
+                }
+            }
+        }
+        .hot{
+            position:relative; float:right;
+            @include arrow($margin:-6px 0 0, $border:0 2px 2px 0, $size:8px){
+                position:absolute; top:50%; right:4px; z-index:-1;
+            }
+            // .hot_inr
+            &_inr{width:200px; height:46px; line-height:46px; overflow:hidden;}
+            // .hot_kwd
+            &_kwd{
+                a{
+                    display:block; padding-right:20px; font-size:13px; word-break:break-all;
+                    @include text-ellipsis;
+                    &:hover{text-decoration:underline;}
+                }
+                em{display:inline-block; margin-right:8px; width:18px; font-size:16px; font-weight:bold; text-align:center;}
+                &.slide{
+                    em{color:#00ab33;}
+                }
+            }
+            @at-root .ly_hot{position:absolute;}
         }
     }
 
+    // .nvr_nv
+    &_nv{
+        float:left; font-size:0;
+        &:after{@include clearfix;}
+        // .nvr_nv_svc
+        &_svc{
+            display:inline-block; position:relative; vertical-align:middle;
+            &:after{position:absolute; top:50%; right:0; margin-top:-7px; width:1px; height:14px; background:#ebeef3; content:"";}
+            li{float:left; margin-right:14px; height:46px; line-height:46px; font-weight:bold; font-size:14px; letter-spacing:-1px; font-family:sans-serif;}
+            .msvc a{color:#00bc53}
+        }
+        // .nvr_nv_bt
+        &_bt{
+            display:inline-block; position:relative; margin-left:16px; height:46px; line-height:46px; font-size:14px; font-weight:bold; outline:none; font-family:sans-serif; letter-spacing:-1px; vertical-align:middle;
+            @include arrow($margin:-6px 0 0 6px, $color:#333, $border:0 1px 1px 0, $size:6px)
+        }
+    }
+
+    // .nvr_cg
+    &_cg{
+        padding:4px 0; background:#f2f4f7;
+        .nvr_inr{
+            display:flex; flex-wrap:wrap; justify-content:space-between;
+            > section:not(.nvr_bnr){margin:4px 0; border:1px solid #dee3eb; background:#fff; box-sizing:border-box; transition:width 0.2s, height 0.2s;}
+        }
+    }
+
+    // 레이아웃 변경용 버튼 : .nvr_fix_bt
+    &_fix_bt{
+        position:fixed; bottom:30px; left:30px;
+        button{
+            display:block; margin:10px 0; border-radius:5px; padding:6px 12px; background:#fff; width:100%; box-shadow:0 0 4px rgba(0,0,0,.3); transition:0.2s all; font-size:14px; font-weight:bold; outline:none; letter-spacing:-0.5px;
+            &:hover{background:#888; color:#fff;}
+            &.is_on{background:#00bc53; color:#fff;}
+        }
+    }
+
+    // .nvr_bnr
+    &_bnr{
+        transition:width 0.2s, height 0.2s;
+        img{width:100%; height:100%;}
+        // 배너영역 공통 테두리 처리 .nvr_bnr_lnk
+        &_lnk{
+            display:block; position:relative; height:100%;
+            &:after{position:absolute; top:0; left:0; right:0; bottom:0; border:1px solid rgba(0,0,0,.1); content:"";}
+        }
+        // main banner
+        &.t_main{margin:4px 0; width:740px; height:120px; order:1;}
+        // .nvr_sd 하위 : side banner
+        &.t_sd01{margin-top:8px; height:150px;}
+        // side banner 2
+        &.t_sd02{margin:4px 0; width:332px; height:130px; order:8;}
+    }
+
+    // .nvr_lgn
+    &_lgn{
+        width:332px; height:120px; order:2;
+        // .nvr_lgn_inf
+        &_inf{
+            .inf{position:relative; padding:10px 16px 12px 14px; height:81px; box-sizing:border-box; font-size:0;}
+            .prf{
+                display:inline-block; position:relative; width:58px; height:58px; vertical-align:middle;
+                @include background($pseudo:true, $target:after, $wsize:18px, $hsize:18px, $img:ic_nvr, $pos:-22px -16px){
+                    position:absolute; bottom:0; right:0;
+                }
+                &:before{position:absolute; top:0; left:0; right:0; bottom:0; border-radius:50%; border:1px solid #eee; content:"";}
+                img{width:auto; height:auto; max-width:100%; max-height:100%;}
+            }
+            .dtl{
+                display:inline-block; margin-left:10px; vertical-align:middle; font-size:12px;
+                // .dtl_my
+                &_my{
+                    .nm{
+                        display:inline-block; font-size:14px; vertical-align:middle;
+                        &:hover{text-decoration:underline;}
+                    }
+                    .edt{display:inline-block; margin-left:5px; vertical-align:middle; text-decoration:underline; color:#777;}
+                }
+                // .dtl_now
+                &_now{
+                    margin-top:8px;
+                    a{
+                        display:inline-block; margin-right:20px; vertical-align:middle;
+                        &:hover{text-decoration:underline;}
+                    }
+                    strong{color:#00ab33;}
+                }
+            }
+            .bt_lgout{position:absolute; bottom:13px; right:13px; border:1px solid #e5e8ef; padding:0 5px; height:22px; line-height:22px; font-size:12px;}
+            .mn{
+                display:table; width:100%; table-layout:fixed; overflow:hidden; text-align:center;
+                li{
+                    display:table-cell; border:solid #ebeef3; border-width:1px 0 0 1px; background:#fafafa;
+                    &:first-child{border-left:0;}
+                    &:hover{background:#f3f4f3;}
+                }
+                a{display:block; height:36px; line-height:36px;}
+            }
+        }
+    }
+
+    // .nvr_news : border, background 처리 제거
+    &_news{
+        border:none !important; background:none !important; width:740px; height:300px; order:3;
+        // .nvr_news_hd
+        &_hd{
+            border:1px solid #dee3eb; padding:15px 8px 0 15px; background:#fff; height:46px; box-sizing:border-box; transition:width 0.2s, height 0.2s;
+            .slide_news{
+                position:relative; float:left; width:340px; height:18px; line-height:18px; overflow:hidden;
+                ul{position:absolute; overflow:hidden;}
+                li{}
+            }
+            .sd_mn{
+                float:right;
+                li{float:left; margin:0 7px; font-size:13px;}
+                a{
+                    color:#666; font-weight:bold;
+                    &:hover{color:#000;}
+                }
+                .hm a{
+                    color:#00bc53;
+                    &:hover{color:#0b9500;}
+                }
+            }
+        }
+        // .nvr_news_dtl
+        &_dtl{
+            margin-top:8px; border:1px solid #dee3eb; background:#fff; height:244px; transition:width 0.2s, height 0.2s;
+            .mn{position:relative; border-bottom:1px solid #ebeef3; padding:15px 8px 0 15px; height:44px; overflow:hidden; box-sizing:border-box;}
+            .ctg{
+                float:left; font-size:13px;
+                li{
+                    position:relative; float:left; margin-right:28px;
+                    &.is_on a{color:#000;}
+                    a{
+                        color:#666; font-weight:bold;
+                        &:hover{color:#000;}
+                    }
+                    + li:before{position:absolute; left:-14px; top:0; background:#ebeef3; width:1px; height:15px; content:"";}
+                }
+            }
+            .lst{
+                margin:-1px 0 0 -1px; overflow:hidden; text-align:center;
+                li{float:left; border:solid #ebeef3; border-width:1px 0 0 1px; width:16.66%; height:67px; line-height:67px; box-sizing:border-box;}
+                a{display:block;}
+            }
+        }
+        h3{
+            float:left; margin-right:12px; font-size:13px; letter-spacing:-0.5px;
+            @include arrow($margin:-2px 0 0 4px, $color:#222, $size:5px);
+        }
+    }
+
+    // aside : .nvr_sd
+    &_sd{margin:4px 0; width:332px; order:4;}
+
+    // .nvr_util (.nvr_sd 하위)
+    &_util{
+        border:1px solid #dee3eb; background:#fff; box-sizing:border-box; height:142px;
+        // .nvr_util_hd
+        &_hd{
+            border-bottom:1px solid #ebeef3; padding:0 15px; height:34px; line-height:34px; box-sizing:border-box; 
+            .sbj{font-size:0;}
+            .date{display:inline-block; vertical-align:middle; font-size:14px; letter-spacing:-1px;}
+            h3{
+                display:inline-block; color:#888; vertical-align:middle; font-size:12px; font-weight:normal;
+                &:before{display:inline-block; margin:-2px 6px 0; background:#e3e7ee; width:1px; height:13px; content:""; vertical-align:middle;}
+            }
+        }
+        // .nvr_util_dtl
+        &_dtl{
+            position:relative; padding:23px 95px 0 16px;
+            .tt{display:block; color:#2565d0; font-weight:bold; letter-spacing:-1px;}
+            .lst{
+                overflow:hidden;
+                li{
+                    position:relative; float:left; margin-top:10px; padding-left:6px; width:50%; box-sizing:border-box;
+                    &:before{position:absolute; top:4px; left:0; background:#bdbdbd; width:2px; height:2px; vertical-align:middle; content:"";}
+                }
+            }
+            a:hover{text-decoration:underline;}
+            .bt_lnk{
+                position:absolute; top:17px; right:17px; width:74px; height:74px; text-indent:-9999px;
+                @include background($img:img_mask);
+            }
+        }
+    }
+
+    // .nvr_cast
+    &_cast{
+        width:740px; height:884px; order:5;
+        // .nvr_cast_mn
+        &_mn{
+            position:relative; border-bottom:1px solid #ebeef3; height:44px;
+            .bt_ctg{
+                position:relative; float:left; border-right:1px solid #ebeef3; width:44px; height:100%; text-indent:-9999px;
+                @include background($pseudo:true, $margin:-7px 0 0 -9px, $wsize:18px, $hsize:14px, $img:ic_nvr, $pos:0 0){
+                    position:absolute; top:50%; left:50%;
+                }
+            }
+            .ctg{
+                overflow:hidden; font-size:13px; font-weight:bold; letter-spacing:-1px;
+                li{
+                    float:left; margin:0 5px;
+                    &:first-child{margin-left:12px;}
+                    &.is_on{
+                        a{border-bottom:3px solid #00bc53; color:#00bc53;}
+                        &.t_sport{
+                            a{border-bottom-color:#2565d0; color:#2565d0;}
+                        }
+                    }
+                }
+                a{
+                    display:block; padding:0 6px; height:44px; line-height:44px; color:#666; box-sizing:border-box;
+                    &:hover{color:#000;}
+                }
+            }
+            &:after{@include clearfix;}
+        }
+        // .nvr_cast_dtl
+        &_dtl{
+            position:relative; padding:18px 16px 0;
+            &.t_sport{
+                .sbj{
+                    @include background($color:#3862de, $img:bg_cast_sport, $pos:50% 0);
+                    background-size:cover;
+                }
+            }
+            .sbj{
+                position:absolute; top:18px; left:16px; padding:23px 8px 0 18px; background:#15c24d; width:166px; height:185px; box-sizing:border-box;
+                h3{
+                    position:relative; padding-bottom:17px; color:#fff; font-size:20px; letter-spacing:-1px;
+                    &:after{position:absolute; bottom:0; left:0; background:rgba(255,255,255,.4); width:13px; height:2px; content:"";}
+                }
+                ul{margin:8px -3px 0; overflow:hidden;}
+                li{
+                    float:left; margin-top:8px; padding:0 3px; width:50%; box-sizing:border-box;
+                    a{
+                        color:#fff;
+                        &:hover{text-decoration:underline;}
+                    }
+                }
+            }
+            .lst{
+                margin-right:-14px; overflow:hidden;
+                li{
+                    float:left; padding:0 14px 19px 0; width:25%; height:205px; box-sizing:border-box;
+                    &:first-child{margin-left:180px;}
+                }
+                a{
+                    display:block;
+                    &:hover{
+                        .thmb img{transform:scale(1.05);}
+                        .txt{text-decoration:underline;}
+                    }
+                }
+                .thmb{
+                    position:relative; height:108px; overflow:hidden;
+                    &:after{position:absolute; top:0; left:0; right:0; bottom:0; border:1px solid rgba(0,0,0,.1); content:"";}
+                    img{width:100%; height:auto; transition:transform 0.2s;}
+                }
+                .flg_vd{
+                    position:absolute; bottom:0; left:0; background:rgba(0,0,0,.4); width:24px; height:24px; text-indent:-9999px;
+                    @include background($pseudo:true, $wsize:8px, $hsize:11px, $img:ic_nvr, $pos:-51px 0){
+                        position:absolute; top:50%; left:50%; margin:-5px 0 0 -4px;
+                    }
+                }
+                .txt{padding-top:7px; line-height:18px; height:36px; overflow:hidden; font-weight:bold;}
+                .etc{
+                    margin-top:6px; font-size:0;
+                    em{
+                        display:inline-block; position:relative; color:#888; font-size:12px;
+                        + em{
+                            padding-left:14px;
+                            &:before{position:absolute; top:1px; left:7px; background:#e3e7ee; width:1px; height:11px; content:"";}
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // .nvr_shp
+    &_shp{
+        width:332px; height:884px; overflow:hidden; order:6;
+        // .nvr_shp_mn
+        &_mn{
+            border-bottom:1px solid #ebeef3; padding:15px 16px 0; height:44px; box-sizing:border-box;
+            h2{font-size:14px;}
+        }
+        // .nvr_shp_dtl
+        &_dtl{
+            padding-top:10px;
+            .ctg{
+                border-bottom:1px solid #ebeef3; margin:0 16px; padding-bottom:12px; overflow:hidden;
+                li{
+                    position:relative; float:left; margin:4px 0 0 18px;
+                    &:before{position:absolute; left:-10px; top:50%; margin-top:-1px; background:#cdcdcd; width:2px; height:2px; content:"";}
+                }
+                // 제일 왼쪽, dot이 없는 shop
+                .no_dot{
+                    margin-left:0;
+                    &:before{display:none;}
+                }
+                a{
+                    &:hover{text-decoration:underline;}
+                }
+            }
+            .lst{border-bottom:1px solid #ebeef3; padding:15px 16px 0;}
+            // 상품 갤러리 형식 리스트
+            .itm_glr{
+                text-align:center; overflow:hidden;
+                li{float:left; padding:15px 0 12px; width:33.3%;}
+                a:hover{
+                    .thmb img{transform:scale(1.1);}
+                    .txt{text-decoration:underline;}
+                }
+                .thmb{
+                    margin:0 auto; width:92px; overflow:hidden;
+                    img{width:auto; height:auto; max-width:100%; max-height:100%; transition:transform 0.3s;}
+                }
+                .txt{padding:4px 4px 0; line-height:17px; height:34px; overflow:hidden; word-break:break-word;}
+            }
+            // 배너 갤러리 형식 리스트
+            .bnr_glr{
+                margin-top:16px;
+                li{margin-top:8px; border:1px solid #ececec; background:#fff;}
+                a{
+                    display:block; padding:10px; overflow:hidden;
+                    &:hover{
+                        text-decoration:underline;
+                        .thmb img{transform:scale(1.1);}
+                    }
+                }
+                .thmb{
+                    position:relative; float:left; margin-right:17px; width:116px; height:64px; overflow:hidden;
+                    img{width:auto; height:auto; max-width:100%; max-height:100%; transition:transform 0.3s;}
+                    &:after{position:absolute; top:0; left:0; right:0; bottom:0; border:rgba(0,0,0,.1); content:"";}
+                }
+                .dtl{padding-top:3px; overflow:hidden;}
+                .txt{line-height:18px; height:36px; overflow:hidden;}
+                .shop{display:block; margin-top:10px; color:#7b97c5;}
+            }
+
+            .add_inf{
+                padding:20px 16px 0;
+                &.t_bnr{background:#f9fafc; height:341px;}
+                h4{
+                    &:before{display:inline-block; margin:-3px 6px 0 0; background:#9891e5; width:3px; height:12px; vertical-align:middle; content:"";}
+                }
+                .cmt{margin-top:10px; color:#888; font-size:11px;}
+            }
+        }
+    }
+
+    // .nvr_clmn
+    &_clmn{
+        width:740px; height:130px; order:7;
+        ul{padding:20px 0 0 16px; overflow:hidden;}
+        li{
+            float:left; width:50%; overflow:hidden;
+            a:hover{
+                .tt,
+                .dsc{text-decoration:underline;}
+            }
+        }
+        .thmb{float:left; margin-right:14px; width:166px; height:88px; background:#666;}
+        .dtl{padding:6px 28px 0 0; overflow:hidden;}
+        .sbj{display:block; color:#00ab33;}
+        .tt{
+            display:block; margin-top:6px; font-size:14px;
+            @include text-ellipsis;
+        }
+        .dsc{margin-top:6px; height:32px; line-height:16px; overflow:hidden;}
+    }
+
+    // .nvr_fg
+    &_fg{
+        border-top:1px solid #dee3eb;
+        // .nvr_fg_ntc
+        &_ntc{
+            border-bottom:1px solid #f1f3f6; padding-top:16px; height:45px; box-sizing:border-box; overflow:hidden;
+            h2{
+                display:inline-block; font-size:13px;
+                a:hover{text-decoration:underline;}
+            }
+            .bt_svc{
+                float:right; font-size:13px; font-weight:bold;
+                @include arrow($margin:-2px 0 0 3px, $color:#333, $size:5px);
+                &:hover{text-decoration:underline;}
+            }
+        }
+        // .nvr_fg_svc
+        &_svc{
+            border-bottom:1px solid #f1f3f6; padding:24px 0; overflow:hidden;
+            .ctg{float:left;}
+            .grp{
+                margin-top:10px; overflow:hidden;
+                &:first-child{margin-top:0;}
+                h3{float:left; margin-right:5px; min-width:85px; font-size:12px; vertical-align:middle; word-break:break-word;}
+                ul{overflow:hidden; vertical-align:middle;}
+                li{
+                    position:relative; float:left; padding:0 15px;
+                    + li:before{position:absolute; top:50%; left:0; margin-top:-6px; background:#e8e9ec; width:1px; height:11px; content:"";}
+                    a{
+                        color:#888;
+                        &:hover{text-decoration:underline;}
+                    }
+                }
+            }
+            .sd{
+                float:right;
+                // .sd_ls
+                &_ls{
+                    position:relative; float:left; border-left:1px solid #f1f3f6; padding:0 50px 0 24px; width:165px; height:50px; box-sizing:border-box;
+                    + .sd_ls{margin-left:20px;}
+                }
+                .t_whale .bt{
+                    background-position:0 0;
+                }
+                .t_project .bt{
+                    background-position:-52px 0;
+                }
+                .tt{display:block;}
+                .lnk{
+                    display:block; margin-top:8px; color:#888;
+                    &:hover{text-decoration:underline;}
+                }
+                .bt{
+                    position:absolute; top:0; right:0; width:50px; height:50px; text-indent:-9999px;
+                    @include background($img:img_nvr);
+                }
+            }
+        }
+        // .nvr_fg_mn
+        &_mn{
+            padding:25px 0 115px; overflow:hidden;
+            .lst{
+                float:left; overflow:hidden;
+                li{
+                    position:relative; float:left; padding:0 15px;
+                    &:first-child{
+                        padding-left:0;
+                        &:before{display:none;}
+                    }
+                    &:before{position:absolute; top:50%; left:0; margin-top:-6px; background:#e8e9ec; width:1px; height:11px; content:"";}
+                }
+                a{
+                    color:#888;
+                    &:hover{text-decoration:underline;}
+                }
+            }
+            .corp{
+                float:left; color:#444;
+                a:hover{text-decoration:underline;}
+            }
+        }
+    }
 }

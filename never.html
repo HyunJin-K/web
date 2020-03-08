@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="네이버 페이지의 레이아웃을 바꿔보는 페이지 입니다.">
-    <link rel="stylesheet" href="layout/css/never.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="네이버 페이지의 레이아웃을 바꿔보는 페이지">
     <title>Never</title>
+    <link rel="stylesheet" href="layout/css/common.min.css">
+    <link rel="stylesheet" href="layout/css/never.min.css">
 </head>
 <body>
     <div class="skip_nav">
@@ -16,26 +18,24 @@
     </div>
     <div class="nvr_wrp">
         <header class="nvr_hg">
-            <div class="nvr_inr">
-                <div class="nvr_hg_top">
-                    <a href="#" class="bt_fav">네버를 시작페이지로</a>
-                    <ul class="mr_lnk">
-                        <li><a href="#">쥬니어네버</a></li>
-                        <li><a href="#">해피빈</a></li>
-                    </ul>
-                </div>
-                <div class="nvr_hg_md">
+            <div class="nvr_hg_cg">
+                <div class="nvr_inr">
+                    <div class="sd_area">
+                        <a href="#" class="bt_fav">네버를 시작페이지로</a>
+                        <ul class="mr_lnk">
+                            <li class="jnr"><a href="#">쥬니어네버</a></li>
+                            <li class="hpy"><a href="#">해피빈</a></li>
+                        </ul>
+                    </div>
                     <h1 class="logo">
-                        <a href="#"><img src="#" alt="NEVER"></a>
+                        <a href="#"><img src="layout/img/never/logo_never.png" width="206" height="54" alt="NEVER"></a>
                     </h1>
-                    <div class="sch">
+                    <div class="sch_bx">
                         <form action="">
                             <fieldset>
                                 <legend>검색창</legend>
-                                <div class="sch_inr">
-                                    <input type="text">
-                                    <button type="button" class="bt_crn">연관검색어</button>
-                                </div>
+                                <input type="text">
+                                <button type="button" class="bt_crn">연관검색어</button>
                                 <button type="submit" class="bt_sch">검색</button>
                             </fieldset>
                         </form>
@@ -43,17 +43,17 @@
                 </div>
             </div>
             
-            <div class="nvr_hg_btm">
+            <div class="nvr_hg_mn">
                 <div class="nvr_inr">
-                    <nav id="nav" class="nv">
-                        <ul class="svc">
-                            <li><a href="#">메일</a></li>
-                            <li><a href="#">카페</a></li>
-                            <li><a href="#">블로그</a></li>
-                            <li><a href="#">지식iN</a></li>
-                            <li><a href="#">쇼핑</a></li>
-                            <li><a href="#">Pay</a></li>
-                            <li><a href="#"><img src="#" alt="Never TV"></a></li>
+                    <nav id="nav" class="nvr_nv">
+                        <ul class="nvr_nv_svc">
+                            <li class="msvc"><a href="#">메일</a></li>
+                            <li class="msvc"><a href="#">카페</a></li>
+                            <li class="msvc"><a href="#">블로그</a></li>
+                            <li class="msvc"><a href="#">지식iN</a></li>
+                            <li class="msvc"><a href="#">쇼핑</a></li>
+                            <li class="msvc"><a href="#">Pay</a></li>
+                            <li><a href="#"><img src="layout/img/never/ic_ntv.png" width="32" height="13" alt="Never TV"></a></li>
                             <li><a href="#">사전</a></li>
                             <li><a href="#">뉴스</a></li>
                             <li><a href="#">증권</a></li>
@@ -64,348 +64,664 @@
                             <li><a href="#">책</a></li>
                             <li><a href="#">웹툰</a></li>
                         </ul>
-                        <button type="button" class="bt_mr" title="서비스 메뉴 더보기">더보기</button>
+                        <button type="button" class="nvr_nv_bt" title="서비스 메뉴 더보기">더보기</button>
                     </nav>
                     <div class="hot">
-    
+                        <div class="hot_inr">
+                            <ul class="hot_kwd slide">
+                                <li><a href="#"><em>1</em>test1</a></li>
+                                <li><a href="#"><em>2</em>test2</a></li>
+                                <li><a href="#"><em>3</em>test3</a></li>
+                                <li><a href="#"><em>4</em>test4</a></li>
+                                <li><a href="#"><em>5</em>test5</a></li>
+                                <li><a href="#"><em>6</em>test6</a></li>
+                                <li><a href="#"><em>7</em>test7</a></li>
+                                <li><a href="#"><em>8</em>test8</a></li>
+                                <li><a href="#"><em>9</em>test9</a></li>
+                                <li><a href="#"><em>10</em>test10</a></li>
+                                <li><a href="#"><em>11</em>test11</a></li>
+                                <li><a href="#"><em>12</em>test12</a></li>
+                                <li><a href="#"><em>13</em>test13</a></li>
+                                <li><a href="#"><em>14</em>test14</a></li>
+                                <li><a href="#"><em>15</em>test15</a></li>
+                                <li><a href="#"><em>16</em>test16</a></li>
+                                <li><a href="#"><em>17</em>test17</a></li>
+                                <li><a href="#"><em>18</em>test18</a></li>
+                                <li><a href="#"><em>19</em>test19</a></li>
+                                <li><a href="#"><em>20</em>test20</a></li>
+                            </ul>
+                        </div>
+                        <!-- Layer : 키워드-->
+                        <div class="ly_hot" style="display:none;">
+                            <div class="tab" role="tablist">
+                                <a href="" role="tab"></a>
+                                <a href="" role="tab"></a>
+                            </div>
+                            <div>
+                                <ul class="hot_kwd" role="tabpanel">
+                                    <li><a href="#">test1</a></li>
+                                    <li><a href="#">test2</a></li>
+                                    <li><a href="#">test3</a></li>
+                                    <li><a href="#">test4</a></li>
+                                    <li><a href="#">test5</a></li>
+                                    <li><a href="#">test6</a></li>
+                                    <li><a href="#">test7</a></li>
+                                    <li><a href="#">test8</a></li>
+                                    <li><a href="#">test9</a></li>
+                                    <li><a href="#">test10</a></li>
+                                </ul>
+                                <ul class="hot_kwd" role="tabpanel">
+                                    <li><a href="#">test11</a></li>
+                                    <li><a href="#">test12</a></li>
+                                    <li><a href="#">test13</a></li>
+                                    <li><a href="#">test14</a></li>
+                                    <li><a href="#">test15</a></li>
+                                    <li><a href="#">test16</a></li>
+                                    <li><a href="#">test17</a></li>
+                                    <li><a href="#">test18</a></li>
+                                    <li><a href="#">test19</a></li>
+                                    <li><a href="#">test20</a></li>
+                                </ul>
+                            </div>
+                            <div class="ft">
+                                <a href="#">DataLab</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </header>
 
         <div id="content" class="nvr_cg">
             <div class="nvr_inr">
-                <!-- Section : 배너 & 로그인 -->
-                <section class="nvr_sg">
-                    <div class="nvr_bnr">
-                        <a href="#">
-                            <img src="" width="" height="" alt="">
-                        </a>
+                <!-- Section : 배너 -->
+                <section class="nvr_bnr t_main">
+                    <h2 class="hide">메인 배너</h2>
+                    <a href="#" class="nvr_bnr_lnk">
+                        <img src="https://ssl.pstatic.net/tveta/libs/1246/1246905/4584d8d6a34c0765f899_20200302174534744.jpg" width="740" height="120" alt="네이버 해피빈 코로나19, 우리 함께 이겨내요! 긴급모금 함께 기부하기">
+                    </a>
+                </section>
+
+                <!-- Section : 로그인 -->
+                <section id="login" class="nvr_lgn">
+                    <h2 class="hide">로그인</h2>
+
+                    <!-- {if} 로그인 입력 -->
+                    <div class="nvr_lgn_ipt">
+                        <form action="">
+                            <fieldset>
+                                <legend>로그인 입력</legend>
+                                <div>
+                                    
+                                </div>
+                            </fieldset>
+                        </form>
                     </div>
-                    <div id="login" class="nvr_lgn">
-                        <h2 class="hide">로그인</h2>
+                    <!-- {if} 사용자 정보 -->
+                    <div class="nvr_lgn_inf">
+                        <div class="inf">
+                            <a href="#" class="prf" title="프로필 이미지 편집">
+                                <img src="https://ssl.pstatic.net/static/common/myarea/myInfo.gif" width="56" height="56" alt="사용자 프로필 이미지">
+                            </a>
+                            <div class="dtl">
+                                <div class="dtl_my">
+                                    <a href="#" class="nm">
+                                        <strong>김현진</strong> 님
+                                    </a>
+                                    <a href="#" class="edt">내정보</a>
+                                </div>
+                                <div class="dtl_now">
+                                    <a href="#">메일 <strong>0</strong></a>
+                                    <a href="#">쪽지 <strong>0</strong></a>
+                                </div>
+                            </div>
+                            <a href="#" class="bt_lgout">로그아웃</a>
+                        </div>
+                        <ul class="mn">
+                            <li><a href="#">알림</a></li>
+                            <li><a href="#">MY구독</a></li>
+                            <li><a href="#">메일</a></li>
+                            <li><a href="#">카페</a></li>
+                            <li><a href="#">블로그</a></li>
+                            <li><a href="#">페이</a></li>
+                        </ul>
                     </div>
                 </section>
 
-                <!-- Section : 뉴스 & 사이드 안내 -->
-                <section class="nvr_sg">
-                    <div class="nvr_news">
-                        <h2 class="hide">뉴스</h2>
+                <!-- Section : 뉴스 -->
+                <section class="nvr_news">
+                    <h2 class="hide">뉴스</h2>
+                    <div class="nvr_news_hd">
+                        <h3><a href="#">연합뉴스</a></h3>
+                        <div class="slide_news">
+                            <ul>
+                                <li><a href="#">testestsetset</a></li>
+                                <li><a href="#">testestsetset</a></li>
+                                <li><a href="#">testestsetset</a></li>
+                            </ul>
+                        </div>
+                        <ul class="sd_mn">
+                            <li class="hm"><a href="#">네버뉴스</a></li>
+                            <li><a href="#">연예</a></li>
+                            <li><a href="#">스포츠</a></li>
+                            <li><a href="#">경제</a></li>
+                            <li><a href="#">시사</a></li>
+                        </ul>
                     </div>
+                    <div class="nvr_news_dtl">
+                        <div class="mn">
+                            <h3><a href="#">뉴스스탠드</a></h3>
+                            <ul class="ctg" role="tablist">
+                                <!-- [D] 현재 활성화 되어있는 탭에 is_on 클래스 추가 -->
+                                <li class="is_on"><a href="#" role="tab">전체 언론사</a></li>
+                                <li><a href="#" role="tab">MY 뉴스</a></li>
+                            </ul>
+                            <div class="nvr_bt_turn">
+                                <button type="button" class="bt_prv">이전 페이지</button>
+                                <button type="button" class="bt_nxt">다음 페이지</button>
+                            </div>
+                        </div>
+                        <ul class="lst" role="tabpanel">
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd172736175.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd173111263.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd14449981.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2018/0807/nsd1484475.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd145032565.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd153955864.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd145718601.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd145951763.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd162718792.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd17338859.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd153432228.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd154619739.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd173010586.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/1221/nsd134325318.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd145249746.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd172519405.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2018/0525/nsd141715196.png" height="24" alt="ttt"></a></li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd173237747.png" height="24" alt="ttt"></a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Aside : 사이드 안내 -->
+                <aside class="nvr_sd">
                     <div class="nvr_util">
                         <h2 class="hide">빠른 안내</h2>
-                    </div>
-                    <div class="nvr_bn_sd">
-                        <img src="#" width="" height="" alt="">
-                    </div>
-                </section>
-
-                <!-- Section : 주제별 캐스트 & 쇼핑 -->
-                <section class="nvr_sg">
-                    <div class="nvr_cast">
-                        <h2 class="hide">주제별 캐스트</h2>
-                        <div class="nvr_cast_mn">
-                            <a href="#">캐스트 주제 전체보기</a>
-                            <ul class="ctg">
-                                <li><a href="#">스포츠</a></li>
-                                <li><a href="#">웹툰</a></li>
-                                <li><a href="#">게임</a></li>
-                                <li><a href="#">함께N</a></li>
-                                <li><a href="#">뮤직</a></li>
-                            </ul>
-                            <div class="btn">
-                                <button type="button">이전 카테고리</button>
-                                <button type="button">다음 카테고리</button>
+                        <div class="nvr_util_hd">
+                            <div class="sbj">
+                                <strong class="date">02.12.(수)</strong>
+                                <h3>이슈</h3>
                             </div>
                         </div>
-                        <div class="nvr_cast_dtl">
-                            <div class="cast_sbj">
-                                <h3>뮤직</h3>
-                                <ul>
-                                    <li><a href="#">Top 100</a></li>
-                                    <li><a href="#">최신앨범</a></li>
-                                    <li><a href="#">뮤직스페셜</a></li>
-                                    <li><a href="#">뮤직매거진</a></li>
-                                    <li><a href="#">뮤지션리그</a></li>
-                                    <li><a href="#">온스테이지</a></li>
-                                    <li><a href="#">이용권</a></li>
-                                    <li><a href="#">내 이용현황</a></li>
-                                </ul>
-                            </div>
+                        <div class="nvr_util_dtl">
+                            <a href="#" class="tt">코로나19 위기 단계 '심각'</a>
                             <ul class="lst">
-                                <!-- [!] 배너형 리스트는 t_bn 클래스 추가 -->
-                                <li class="t_bn">
-                                    <a href="#">
-                                        <div class="img">
-                                            <img src="#" width="" height="" alt="">
-                                        </div>
-                                        <div class="inf">
-                                            <div class="thmb">
-                                                <img src="#" width="" height="" alt="">
-                                            </div>
-                                            <div class="dtl">
-                                                <span class="sub">textxetxte</span>
-                                                <strong class="tt">tetetetetest</strong>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="t_chart">
-                                    <h4>일간 TOP 100</h4>
-                                    <p class="dsc">00.00 오전 7시 업데이트</p>
-                                    <!-- 뮤직, 차트 -->
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <div class="thmb">
-                                                    <img src="#" width="" height="" alt="">
-                                                </div>
-                                                <span>testset</span>
-                                            </a>
-                                            <span class="artist">wrwer</span>
-                                        </li>
-                                    </ul>
-                                    <!-- // 뮤직, 차트 -->
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img">
-                                            <img src="#" width="" height="" alt="">
-                                            <span class="flg">뮤지션리그</span>
-                                        </div>
-                                        <div class="inf">
-                                            <span class="sub">textxetxte</span>
-                                            <strong class="tt">tetetetetest</strong>
-                                        </div>
-                                    </a>
-                                    <span class="sbj">testset</span>
-                                </li>
+                                <li><a href="#">정부 정례 브리핑</a></li>
+                                <li><a href="#">예방 수칙</a></li>
+                                <li><a href="#">팩트체크</a></li>
+                                <li><a href="#">국민안심병원</a></li>
                             </ul>
+                            <a href="#" class="bt_lnk">신종 코로나 대응 안내</a>
                         </div>
                     </div>
+                    <div class="nvr_bnr t_sd01">
+                        <h2 class="hide">사이드 광고 배너</h2>
+                        <a href="#" class="nvr_bnr_lnk">
+                            <img src="https://ssl.pstatic.net/tveta/libs/1277/1277724/7e1a731b145b217a0e6f_20200221113444431.png" width="332" height="150" alt="펫셔니스타 탱구 비하인드 #끝난 줄 알았지? 태연X제로 미공개 영상!">
+                        </a>
+                    </div>
+                </aside>
 
-                    <div class="nvr_shp">
-                        <div class="nvr_shp_mn">
-                            <h2>쇼핑</h2>
-                            <ul class="tab">
-                                <li><a href="#">상품</a></li>
-                                <li><a href="#">쇼핑몰</a></li>
-                                <li><a href="#">MEN</a></li>
-                            </ul>
-                        </div>
-                        <ul class="nvr_shp_ctg">
-                            <li><a href="#">G마켓</a></li>
-                            <li><a href="#">옥션</a></li>
-                            <li><a href="#">11번가</a></li>
-                            <li><a href="#">위메프</a></li>
-                            <li><a href="#">티몬</a></li>
-                            <li><a href="#">이마트몰</a></li>
-                            <li><a href="#">신세계몰</a></li>
-                            <li><a href="#">올리브영</a></li>
-                            <li><a href="#">GS샵</a></li>
-                            <li><a href="#">롯데닷컴</a></li>
-                            <li><a href="#">롯데i몰</a></li>
-                            <li><a href="#">CJmall</a></li>
+                <!-- Section : 주제별 캐스트 -->
+                <section class="nvr_cast">
+                    <h2 class="hide">주제별 캐스트</h2>
+                    <div class="nvr_cast_mn">
+                        <a href="#" class="bt_ctg">캐스트 주제 전체보기</a>
+                        <ul class="ctg">
+                            <li class="is_on t_sport"><a href="#" role="tab">스포츠</a></li>
+                            <li><a href="#" role="tab">웹툰</a></li>
+                            <li><a href="#" role="tab">게임</a></li>
+                            <li><a href="#" role="tab">함께N</a></li>
+                            <li><a href="#" role="tab">뮤직</a></li>
                         </ul>
-                        
-                        <!-- Tab : 상품 -->
-                        <div id="tab_Item" class="nvr_shp_dtl">
-                            <h3 class="hide">상품 목록</h3>
-                            <div class="">
-                                <div class="pg">
-                                    <span class="num"><strong>1</strong>/19</span>
-                                    <button type="button">이전 페이지</button>
-                                    <button type="button">다음 페이지</button>
-                                </div>
-                                <ul class="itm_glr">
-                                    <li>
-                                        <a href="#">
-                                            <div class="thmb">
-                                                <img src="#" width="" height="" alt="">
-                                            </div>
-                                            <div class="dtl">
-                                                <p>testetsetsetset</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="shp_news">
-                                <h4>반갑다! 쇼핑뉴스</h4>
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <span class="sllr">셀러명</span>
-                                            <p class="dsc">뉴스설명</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Tab : 쇼핑몰 -->
-                        <div id="tab_Shopping" class="nvr_shp_dtl">
-                            <h3 class="hide">쇼핑몰 목록</h3>
-                            <div class="pg">
-                                <span class="num"><strong>1</strong>/19</span>
-                                <button type="button">이전 페이지</button>
-                                <button type="button">다음 페이지</button>
-                            </div>
-                            <div id="shopping01">
-                                <div class="mall">
-                                    <h4 class="nm">옥션</h4>
-                                    <a href="#" class="bt_go">옥션 바로가기</a>
-                                    <ul class="itm_glr">
-                                        <li>
-                                            <a href="#">
-                                                <div class="thmb">
-                                                    <img src="#" width="" height="" alt="">
-                                                </div>
-                                                <div class="dtl">
-                                                    <p>testetsetsetset</p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="txt_bn">
-                                    <a href="#">
-                                        <span class="flg">SALE</span>
-                                        핫딜핫딜핫딜핫딜핫딜핫딜핫딜
-                                    </a>
-                                </div>
-                                <!-- 상품 3개씩 노출 -->
-                                <div class="mall">
-                                    <h4 class="nm">옥션2</h4>
-                                    <a href="#" class="bt_go">옥션2 바로가기</a>
-                                    <ul class="itm_glr">
-                                        <li>
-                                            <a href="#">
-                                                <div class="thmb">
-                                                    <img src="#" width="" height="" alt="">
-                                                </div>
-                                                <div class="dtl">
-                                                    <p>testetsetsetset</p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="mall">
-                                    <h4 class="nm">옥션3</h4>
-                                    <a href="#" class="bt_go">옥션3 바로가기</a>
-                                    <ul class="itm_glr">
-                                        <li>
-                                            <a href="#">
-                                                <div class="thmb">
-                                                    <img src="#" width="" height="" alt="">
-                                                </div>
-                                                <div class="dtl">
-                                                    <p>testetsetsetset</p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="mall">
-                                    <h4 class="nm">옥션4</h4>
-                                    <a href="#" class="bt_go">옥션4 바로가기</a>
-                                    <ul class="itm_glr">
-                                        <li>
-                                            <a href="#">
-                                                <div class="thmb">
-                                                    <img src="#" width="" height="" alt="">
-                                                </div>
-                                                <div class="dtl">
-                                                    <p>testetsetsetset</p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <!-- Tab : MEN -->
-                        <div id="tab_Men" class="nvr_shp_dtl">
-                            <h3 class="hide">MEN 상품 목록</h3>
-                            <div class="">
-                                <div class="pg">
-                                    <span class="num"><strong>1</strong>/19</span>
-                                    <button type="button">이전 페이지</button>
-                                    <button type="button">다음 페이지</button>
-                                </div>
-                                <ul class="itm_glr">
-                                    <li>
-                                        <a href="#">
-                                            <div class="thmb">
-                                                <img src="#" width="" height="" alt="">
-                                            </div>
-                                            <div class="dtl">
-                                                <p>testetsetsetset</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>PLAY.Fun</h4>
-                                <ul class="itm_glr t02">
-                                    <li>
-                                        <a href="#">
-                                            <div class="thmb">
-                                                <img src="#" width="" height="" alt="">
-                                            </div>
-                                            <div class="dtl">
-                                                <p>testetsetsetset</p>
-                                                <span class="shp">shopshop</span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="nvr_bt_turn">
+                            <button type="button" class="bt_prv">이전 카테고리</button>
+                            <button type="button" class="bt_nxt">다음 카테고리</button>
                         </div>
                     </div>
-                </section>
-
-                <!-- Section : 칼럼 & 스몰 배너 -->
-                <section class="nvr_sg">
-                    <div class="nvr_clmn">
-                        <ul>
+                    <div class="nvr_cast_dtl t_sport" role="tabpanel">
+                        <div class="sbj">
+                            <h3>스포츠</h3>
+                            <ul>
+                                <li><a href="#">야구</a></li>
+                                <li><a href="#">해외야구</a></li>
+                                <li><a href="#">축구</a></li>
+                                <li><a href="#">해외축구</a></li>
+                                <li><a href="#">농구</a></li>
+                                <li><a href="#">배구</a></li>
+                                <li><a href="#">골프</a></li>
+                                <li><a href="#">일반</a></li>
+                            </ul>
+                        </div>
+                        <ul class="lst">
                             <li>
                                 <a href="#">
                                     <div class="thmb">
-                                        <img src="#" width="" height="" alt="">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25581528794735380.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
                                     </div>
-                                    <div class="dtl">
-                                        <span class="sbj">해피빈</span>
-                                        <strong class="tt">제목</strong>
-                                        <p class="dsc">설명</p>
+                                    <div class="inf">
+                                        <p class="txt">크리스의 '위닝 블락'에 이어 상대의 라인크로스 이끌어내는 압박수비</p>
                                     </div>
                                 </a>
+                                <div class="etc">
+                                    <em>NBA 영상</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25580944244857844.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">데 브라이너의 50골 중 기억에 남는 골을 되돌아 본 시간!</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>맨체스터 시티</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25580457794631619.png" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">'서른, 그리고 스틸야드 1부' (포항스틸러스 다큐멘터리)</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>포항스틸러스</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25579635354424690.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">멋진 앨리웁 플레이로 홈팬들의 환호 이끌어내는 위긴스-크리스</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>NBA 영상</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25579600063654433.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">'속이 확 뚫리네!' 임성재의 롱 버디 퍼팅</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>PGA 영상</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25579569034989175.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">'연습 경기를 뒤집어 놓으셨다' 데이빗 프라이스 3이닝 무실점 7K</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>MLB 영상</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25579515162541755.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">'해수욕장 모래에서 벙커샷?' 임성재 벙커샷 챌린지</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>PGA 영상</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25579484200708923.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">29R 번리 vs 토트넘 경기 하이라이트</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>PL 영상</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/mobile_124347924772.jpg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">'PK 결승골' 메시 레알 소시에다드전 활약상</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>라리가 영상</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25579321617691671.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">'K.K.K' 모든 타석 삼진처리 당하는 쓰쓰고</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>MLB 영상</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25543062100615441.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">‘한번의 아쉬움’ 긴장감을 이겨내지 못한 이해인</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>피겨 Jr. 세계선수권</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25542552614065730.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">개인 최고점! 위서영, 완벽 클린 연기를 보여주다</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>피겨 Jr 세계선수권</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25540868646922464.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">VAR로도 막을 수 없는 '안방 킬러' 라카제트의 골!</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>PL 영상</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0307/cropImg_166x108_25531551908397661.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">'기다렸던 라리가 데뷔전' 기성용 에이바르전 주요장면</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>라리가 영상</em>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thmb">
+                                        <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0308/cropImg_166x108_25584659996617389.jpeg" width="166" height="108" alt="">
+                                        <span class="flg_vd">동영상 게시물</span>
+                                    </div>
+                                    <div class="inf">
+                                        <p class="txt">'WKBL 2주간 리그 중단' 4대 프로스포츠 올 스톱</p>
+                                    </div>
+                                </a>
+                                <div class="etc">
+                                    <em>WKBL 영상</em>
+                                </div>
                             </li>
                         </ul>
                     </div>
-                    <div class="nvr_bn_sd02">
-                        <a href="#">
-                            <img src="#" width="" height="" alt="">
-                        </a>
+                </section>
+
+                <!-- Section : 쇼핑 -->
+                <section class="nvr_shp">
+                    <div class="nvr_shp_mn">
+                        <h2><a href="#">쇼핑</a></h2>
+                    </div>
+
+                    <div id="tab_Item" class="nvr_shp_dtl">
+                        <h3 class="hide">쇼핑 목록</h3>
+                        <ul class="ctg">
+                            <li class="no_dot"><a href="#"><strong>G마켓</strong></a></li>
+                            <li><a href="#">옥션</a></li>
+                            <li><a href="#">11번가</a></li>
+                            <li><a href="#">위메프</a></li>
+                            <li><a href="#"><strong>티몬</strong></a></li>
+                            <li><a href="#">이마트몰</a></li>
+                            <li class="no_dot"><a href="#">신세계몰</a></li>
+                            <li><a href="#">올리브영</a></li>
+                            <li><a href="#"><strong>GS샵</strong></a></li>
+                            <li><a href="#">롯데닷컴</a></li>
+                            <li><a href="#">롯데i몰</a></li>
+                        </ul>
+                        <div class="lst">
+                            <ul class="itm_glr">
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200218_14/1246ec41-6374-49ea-94a4-725ccdd4e1d5.jpg" width="92" height="69" alt="">
+                                        </div>
+                                        <p class="txt">팬츠가 9,310원!<br>특가일때 쟁여요</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200213_4/71b9ccfa-eabe-41b6-92de-45e668d49a9e.jpg" width="92" height="69" alt="">
+                                        </div>
+                                        <p class="txt">디스퀘어드2<br>드로즈 최대74%</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200304_26/167291da-bb17-4f6e-b455-1bb3098e8bfb.jpg" width="92" height="69" alt="">
+                                        </div>
+                                        <p class="txt">아디다스SET<br>초특가2만원대!</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200306_25/b70f1c3c-331f-421a-b9d2-63c5f7d945cc.jpg" width="92" height="69" alt="">
+                                        </div>
+                                        <p class="txt">허벅지 고민 끝!<br>50% 반값 득템!</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200306_7/8d30f23a-d4c0-4fec-97ac-2d8108367f64.jpg" width="92" height="69" alt="">
+                                        </div>
+                                        <p class="txt">다신없을기회<br>최대~50%할인</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200305_12/0d994220-38f5-4614-b94e-2cc458102cb4.jpg" width="92" height="69" alt="">
+                                        </div>
+                                        <p class="txt">소가죽 클래스<br>무크 신상특가</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200213_0/27e6d5fe-fcbb-431e-a158-14278b99cd6d.jpg" width="92" height="69" alt="">
+                                        </div>
+                                        <p class="txt">가렵죠?냄새나죠<br>무좀!발냄새제거</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200228_16/7e7ef8a1-4ccf-4a8b-a83e-91f73a1f0135.jpg" width="92" height="69" alt="">
+                                        </div>
+                                        <p class="txt">침대 필요없어!<br>숙면매트 65%↓</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200304_5/5e2a8c2e-0940-4926-b025-d35f6ee45c66.jpg" width="92" height="69" alt="">
+                                        </div>
+                                        <p class="txt">운동화로 착각해<br>신고보니 구두네</p>
+                                    </a>
+                                </li>
+                                <li style="display:none;">
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200228_29/3c2053e4-3a01-41f9-8f1b-4493952b22b1.jpg" width="92" height="69" alt="">
+                                        </div>
+                                        <p class="txt">꿀잠베개 1+1! 한정수량 71%↓</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="add_inf t_bnr">
+                            <h4>PLAY·FUN</h4>
+                            <ul class="bnr_glr">
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200305_0/f4551959-f199-4b8d-9935-fa9e5bb7bc36.jpg" width="116" height="64" alt="">
+                                        </div>
+                                        <div class="dtl">
+                                            <p class="txt">발수코팅 방풍재킷 단 하루만 초특가</p>
+                                            <span class="shop">슈나이더 스포츠</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200225_19/0aeaf320-dae2-4513-8bcf-4faf1dbe7663.jpg" width="116" height="64" alt="">
+                                        </div>
+                                        <div class="dtl">
+                                            <p class="txt">이게 대체 뭐길래? 요즘 인기 폭발적!</p>
+                                            <span class="shop">폰뿌</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="thmb">
+                                            <img src="https://s.pstatic.net/shopping.phinf/20200228_5/1d7827d8-7e31-4e7b-bd76-7150d51fc332.jpg" width="116" height="64" alt="">
+                                        </div>
+                                        <div class="dtl">
+                                            <p class="txt">고음질 무선이어폰 3만원대 무배</p>
+                                            <span class="shop">앱스토리몰</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <p class="cmt">ㆍ PLAY·FUN은 매 주 수요일 업데이트 될리가요.</p>
+                        </div>
                     </div>
                 </section>
+
+                <!-- Section : 칼럼 -->
+                <section class="nvr_clmn">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="thmb">
+                                    <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0306/mobile_134829922799.png" width="166" height="88" alt="">
+                                </div>
+                                <div class="dtl">
+                                    <span class="sbj">칸아카데미 한국</span>
+                                    <strong class="tt">중등 수학 과목 오픈</strong>
+                                    <p class="dsc">칸아카데미를 집에서 무료로 중등수학도 기본을 탄탄하게</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="thmb">
+                                    <img src="https://s.pstatic.net/static/www/mobile/edit/2020/0306/mobile_135204330726.jpg" width="166" height="88" alt="">
+                                </div>
+                                <div class="dtl">
+                                    <span class="sbj">기업과 굿액션</span>
+                                    <strong class="tt">세상 모든 어머니들이</strong>
+                                    <p class="dsc">행복할 수 있도록 콩저금통 기부로 함께해요</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section : 스몰 배너 -->
+                <section class="nvr_bnr t_sd02">
+                    <a href="#" class="nvr_bnr_lnk">
+                        <img src="https://ssl.pstatic.net/tveta/libs/1279/1279609/41a4a4c418386df4db3e_20200306121956791.jpg" width="332" height="130" alt="VLIVE+ 펫셔니스타 탱구 비하인드 #끝난 줄 알았지? 태연X제로 미공개 영상!">
+                    </a>
+                </section>
+            </div>
+
+            <!-- [BTN] 레이아웃 변경용 버튼 -->
+            <div class="nvr_fix_bt">
+                <button type="button" class="is_on" data-type="default">Default</button>
+                <button type="button" data-type="t_layout01">Layout01</button>
+                <button type="button" data-type="t_layout02">Layout02</button>
             </div>
         </div>
 
         <footer class="nvr_fg">
-            <div class="nvr_inr">
-                <div class="nvr_fg_ntc">
-                    <h2>
-                        <a href="#">공지사항</a>
-                    </h2>
+            <div class="nvr_fg_ntc">
+                <div class="nvr_inr">
+                    <h2><a href="#">공지사항</a></h2>
                     <a href="#" class="bt_svc">서비스 전체보기</a>
                 </div>
-                <div class="nvr_fg_svc">
+            </div>
+
+            <div class="nvr_fg_svc">
+                <div class="nvr_inr">
                     <h2 class="hide">사용자 서비스</h2>
                     <div class="ctg">
                         <div class="grp">
@@ -436,23 +752,28 @@
                         </div>
                     </div>
                     <div class="sd">
-                        <div class="grp">
+                        <div class="sd_ls t_whale">
                             <strong class="tt">웨일 브라우저</strong>
-                            <a href="#">다운받기</a>
+                            <a href="#" class="lnk">다운받기</a>
+                            <a href="#" class="bt">웨일 브라우저 바로가기</a>
                         </div>
-                        <div class="grp">
+                        <div class="sd_ls t_project">
                             <strong class="tt">프로젝트 꽃</strong>
-                            <a href="#">바로가기</a>
+                            <a href="#" class="lnk">바로가기</a>
+                            <a href="#" class="bt">프로젝트 꽃 바로가기</a>
                         </div>
                     </div>
                 </div>
-                <div class="nvr_fg_mn">
-                    <ul>
+            </div>
+
+            <div class="nvr_fg_mn">
+                <div class="nvr_inr">
+                    <ul class="lst">
                         <li><a href="#">회사소개</a></li>
                         <li><a href="#">인재채용</a></li>
                         <li><a href="#">제휴제안</a></li>
                         <li><a href="#">이용약관</a></li>
-                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#"><strong>개인정보처리방침</strong></a></li>
                         <li><a href="#">청소년보호정책</a></li>
                         <li><a href="#">네이버 정책</a></li>
                         <li><a href="#">고객센터</a></li>
@@ -464,5 +785,7 @@
             </div>
         </footer>
     </div>
+    <script src="layout/js/jquery-3.1.1.min.js"></script>
+    <script src="layout/js/never.js"></script>
 </body>
 </html>

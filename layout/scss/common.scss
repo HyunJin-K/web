@@ -1,0 +1,21 @@
+@import "./control/reset";
+
+
+
+/* skip navigation */
+.skip_nav{
+    a{
+        position:absolute; top:-20px; left:0px; border:1px solid #dad0d0; background:#f9f9f9; height:20px; line-height:20px; font-size:13px; box-sizing:border-box;
+        &:focus{top:0px; z-index:9999;}
+    }
+}
+
+/* hide text */
+.hide{position:absolute; visibility:hidden; text-indent:-9999px;}
+
+/* scroll fix */
+// html 태그에 클래스 적용
+.scroll_fix{
+    height:100%; overflow:hidden;
+    body{height:100%; overflow:hidden;}
+}
