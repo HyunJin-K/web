@@ -126,6 +126,45 @@ html, body {
   font-size: 13px;
 }
 
+.ptf_lst {
+  font-size: 14px;
+}
+
+.ptf_lst li {
+  position: relative;
+  padding-left: 8px;
+}
+
+.ptf_lst li:before {
+  position: absolute;
+  left: 0;
+  top: 14px;
+  background: #999;
+  width: 3px;
+  height: 3px;
+  content: "";
+}
+
+.ptf_lst a {
+  display: inline-block;
+  padding: 8px 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.ptf_lst a:hover {
+  background: #888;
+  color: #fff;
+  font-weight: bold;
+}
+
+.ptf_dsc {
+  margin-top: 20px;
+  color: #777;
+  font-size: 13px;
+  text-align: center;
+}
+
 .ptf_fg {
   position: absolute;
   bottom: 0;
