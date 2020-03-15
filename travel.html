@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Hyun Jin Kim">
+    <meta name="description" content="누런풍선 모바일 페이지">
+    <title>누런풍선 [여행을 가볍게]</title>
+    <link rel="stylesheet" href="layout/css/common.min.css">
+    <link rel="stylesheet" href="layout/css/travel.min.css">
+</head>
+<body>
+    <!-- skip Nav -->
+	<div class="skip_nav">
+        <a href="#tabMenu">탭 메뉴 바로가기</a>
+        <a href="#SideMenu">사이드 메뉴 바로가기</a>
+    </div>
+    
+    <div class="yb_wrp">
+        <header class="yb_hg">
+            <div class="yb_hg_tb" id="tabMenu">
+                <a href="#" class="is_on">여행</a>
+                <a href="#">항공권</a>
+                <a href="#">호텔</a>
+            </div>
+            <div class="yb_hg_mn">
+                <a href="#" class="bt_ctg">open Category</a>
+                <h1 class="logo"><img src="layout/img/travel/logo_travel.png" width="109" height="29" alt="노랑풍선"></h1>
+                <div class="sd">
+                    <a href="#" class="bt_srch">Search</a>
+                    <a href="#" class="bt_chtt">Live Chatting</a>
+                </div>
+            </div>
+        </header>
+        <di class="yb_cg">
+            <!-- Area : 메인배너 -->
+            <section class="yb_bnr">
+                <h2 class="hide">메인 배너</h2>
+                <div id="slideBanner">
+                    <div>
+                        <a href="#"><img src="layout/img/travel/bnr_travel01.jpg" width="320" height="373" alt="대자연의 아름다움 북유럽 4국 4색, 아시아나 항공 전세기 타고 당신이 꿈꾸던 그 곳으로"></a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="layout/img/travel/bnr_travel02.jpg" width="320" height="373" alt="천혜의 대자연 뉴질랜드, 천천히, 그리고 여유롭게 맑고 깨끗한 자연속으로..."></a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="layout/img/travel/bnr_travel03.jpg" width="320" height="373" alt="서유럽으로 가는 가장 합리적인 방법, 경유하여 가는 일정 중 가장 빠른 핀에어 항공!"></a>
+                    </div>
+                </div>
+                <a href="#LayerAllBanner" class="bt_mr">Open Slide Layer</a>
+                
+                <!-- Layer : 전체 배너 레이어 -->
+                <div class="ly_allbnr" id="LayerAllBanner" style="display:none;">
+                    <h3>기획전</h3>
+                    <ul class="lst">
+                        <li>
+                            <a href="#"><img src="layout/img/travel/bnr_travel01.jpg" width="320" height="373" alt="대자연의 아름다움 북유럽 4국 4색, 아시아나 항공 전세기 타고 당신이 꿈꾸던 그 곳으로"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="layout/img/travel/bnr_travel02.jpg" width="320" height="373" alt="천혜의 대자연 뉴질랜드, 천천히, 그리고 여유롭게 맑고 깨끗한 자연속으로..."></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="layout/img/travel/bnr_travel03.jpg" width="320" height="373" alt="서유럽으로 가는 가장 합리적인 방법, 경유하여 가는 일정 중 가장 빠른 핀에어 항공!"></a>
+                        </li>
+                    </ul>
+                    <button type="button" class="bt_clse">Close Layer</button>
+                </div>
+            </section>
+
+            <!-- Area : 추천상품 -->
+            <section class="yb_sg">
+                <h2 class="yb_tt"><a href="#">추천상품</a></h2>
+                <div class="yb_tb" role="tablist">
+                    <a href="#Recommand01" class="is_on" role="tab">출발임박 특가</a>
+                    <a href="#Recommand02" role="tab">조기예약 특가</a>
+                </div>
+                <div class="yb_itms">
+                    <section id="Recommand01" role="tabpanel">
+                        <div>
+                            <a href="#">
+                                <div class="thmb">
+                                    <img src="https://dimgcdn.ybtour.co.kr/TN/33/33b4786cc7ec3551ea1ee8ed19aafcec.tn.410x280.jpg" width="240" height="164" alt="">
+                                    <div class="flg">해외<br>패키지</div>
+                                </div>
+                                <div class="dtl">
+                                    <p class="txt">[보라카이] 가성비甲 일급 라까멜라리조트 세미패키지 4/5일</p>
+                                    <div class="inf">
+                                        <span class="sbj">출발일</span>
+                                        <span>04.05</span>
+                                    </div>
+                                    <div class="prc">
+                                        <strong>299,000</strong> 원~
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="thmb">
+                                    <img src="https://dimgcdn.ybtour.co.kr/TN/d5/d51a1b50cf83a536d94466f7c4c95701.tn.410x280.jpg" width="240" height="164" alt="">
+                                    <div class="flg light">라이트팩</div>
+                                </div>
+                                <div class="dtl">
+                                    <p class="txt">[북해도3일][시내중심숙박+삿포로천연온천체험♨]</p>
+                                    <div class="inf">
+                                        <span class="sbj">출발일</span>
+                                        <span>04.07, 04.14</span>
+                                    </div>
+                                    <div class="prc">
+                                        <strong>369,000</strong> 원~
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="thmb">
+                                    <img src="https://dimgcdn.ybtour.co.kr/TN/db/dbd589bac37d29b43883b79195ed1776.tn.410x280.jpg" width="240" height="164" alt="">
+                                    <div class="flg prm">프리미엄</div>
+                                </div>
+                                <div class="dtl">
+                                    <p class="txt">[대한항공 출발] 에베레스트 베이스캠프 트레킹 스텝업 16일</p>
+                                    <div class="inf">
+                                        <span class="sbj">출발일</span>
+                                        <span>03.20</span>
+                                    </div>
+                                    <div class="prc">
+                                        <strong>3,190,000</strong> 원~
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+                    <section id="Recommand02" role="tabpanel" style="display:none;">
+                        <div>
+                            <a href="#">
+                                <div class="thmb">
+                                    <img src="https://dimgcdn.ybtour.co.kr/TN/4e/4edccaa11c328f9a5ad900a5361f7ffb.tn.410x280.jpg" width="240" height="164" alt="">
+                                    <div class="flg">해외<br>패키지</div>
+                                </div>
+                                <div class="dtl">
+                                    <p class="txt">[부다페스트 직항 취항기념] 동유럽 3국 8일[3대도시 자유시간_주말출/도착 포함]</p>
+                                    <div class="inf">
+                                        <span class="sbj">출발일</span>
+                                        <span>06.24, 07.29, 08.05</span>
+                                    </div>
+                                    <div class="prc">
+                                        <strong>1,399,000</strong> 원~
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="thmb">
+                                    <img src="https://dimgcdn.ybtour.co.kr/TN/70/709e83801250182b9aa503a61d91f76d.tn.410x280.jpg" width="240" height="164" alt="">
+                                    <div class="flg">해외<br>패키지</div>
+                                </div>
+                                <div class="dtl">
+                                    <p class="txt">[요정의 숲 한가운데서] 크로아티아/슬로베니아[패키지 속 자유]9일_아시아나직항+명품아울렛</p>
+                                    <div class="inf">
+                                        <span class="sbj">출발일</span>
+                                        <span>07.03, 07.24, 07.31</span>
+                                    </div>
+                                    <div class="prc">
+                                        <strong>2,299,000</strong> 원~
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <!-- Area : 테마여행 -->
+            <section class="yb_sg">
+                <h2 class="yb_tt">테마여행</h2>
+                <div class="yb_tag" role="tablist">
+                    <a href="#tabTheme01" class="is_on" role="tab">여행을 가볍게</a>
+                    <a href="#tabTheme02" role="tab">올인패키지</a>
+                </div>
+                <div class="yb_thm">
+                    <section class="pkt" id="tabTheme01" role="tabpanel">
+                        <div class="bg"></div>
+                        <div class="inf">
+                            <p class="tt">영상으로 보는푸켓 여행</p>
+                            <p class="dsc">더 쉽고 가벼게 떠나요!</p>
+                            <a href="#" class="bt_go">GO</a>
+                        </div>
+                    </section>
+                    <section class="all" id="tabTheme02" role="tabpanel" style="display:none;">
+                        <div class="bg"></div>
+                        <div class="inf">
+                            <p class="tt">NO쇼핑,NO팁NO옵션</p>
+                            <p class="dsc">불필요한 선택없이모두 담은 패키지</p>
+                            <a href="#" class="bt_go">GO</a>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <!-- Area : On Air 노랑TV -->
+            <section class="yb_sg t_tv">
+                <h2 class="hide">On Air 노랑TV</h2>
+                <div class="yb_onair">
+                    <a href="#">
+                        <p class="txt">히말라야 안나푸르나 베이스캠프로 향하는 트레킹 9일</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Area : 홈쇼핑 방영상품 -->
+            <section class="yb_sg">
+                <h2 class="yb_tt"><a href="#">홈쇼핑 방영상품</a></h2>
+                <div class="yb_shp" id="slideShopping">
+                    <div class="bg_eu">
+                        <a href="#">
+                            <div class="flg">
+                                <img src="layout/img/travel/logo_shp.png" height="27" alt="홈&쇼핑">
+                            </div>
+                            <p class="txt">동유럽 발칸 완전 일주 9일</p>
+                            <span class="dsc">2020.00.00 (일) 22:00 방영</span>
+                        </a>
+                    </div>
+                    <div class="bg_us">
+                        <a href="#">
+                            <div class="flg">
+                                <img src="layout/img/travel/logo_shp.png" height="27" alt="홈&쇼핑">
+                            </div>
+                            <p class="txt">미서부 완전일주+4대캐년 9/10일</p>
+                            <span class="dsc">2020.00.00 (일) 22:00 방영</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Area : 이벤트 -->
+            <section class="yb_sg">
+                <h2 class="yb_tt"><a href="#">이벤트</a></h2>
+                <div class="yb_evnt" id="slideEvent">
+                    <div>
+                        <a href="#">
+                            <img src="https://cimgcdn.ybtour.co.kr/attachHome/EM/EB/201904/201904121132525891410002001047.jpg" width="320" height="187" alt="제주 중문 면세점 BIG Sale! 할인쿠폰&사은품 증정">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="https://cimgcdn.ybtour.co.kr/attachHome/EM/EB/201904/201904121131313121410002001004.jpg" width="320" height="187" alt="해외에서 데이터 고를 땐 와이파이 도시락 쉽고 빠른 와이파이 할인받기!">
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Area : 고객 여행기 -->
+            <section class="yb_sg t_rvw">
+                <h2 class="yb_tt"><a href="#">노랑풍선 고객 여행기</a></h2>
+                <div class="yb_rvw" id="slideReview">
+                    <div>
+                        <a href="#">
+                            <div class="flg">BEST<br>후기</div>
+                            <div class="thmb">
+                                <img src="https://cimgcdn.ybtour.co.kr/attachHome/YT/TR/202002/202002141717361361712021001063.jpg" width="200" height="200" alt="">
+                            </div>
+                            <p class="txt">선물같았던 태국여행(방콕파타야) with.ooo가이드님</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <div class="flg">BEST<br>후기</div>
+                            <div class="thmb">
+                                <img src="https://cimgcdn.ybtour.co.kr/attachHome/YT/TR/202002/202002141719412211712021001040.jpg" width="200" height="200" alt="">
+                            </div>
+                            <p class="txt">자유 여행만 즐기다 처음 경험한 패키지 여행 후기!! (with ooo 인솔자님♡)</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Area : 서비스 메뉴 -->
+            <section class="yb_sg t_svc">
+                <ul class="yb_inq">
+                    <li class="qna"><a href="#">1:1 문의</a></li>
+                    <li class="est"><a href="#">견적 문의</a></li>
+                    <li class="biz"><a href="#">기업/단체 문의</a></li>
+                </ul>
+                <div class="yb_gr">
+                    <h2 class="yb_tt"><a href="#">자주하는 질문</a></h2>
+                    <ul class="yb_svc_mn">
+                        <li><a href="#">상품예약</a></li>
+                        <li><a href="#">상품결제</a></li>
+                        <li><a href="#">여행상품</a></li>
+                        <li><a href="#">마일리지</a></li>
+                        <li><a href="#">해외항공권</a></li>
+                        <li><a href="#">홈페이지이용</a></li>
+                    </ul>
+                </div>
+                <div class="yb_gr">
+                    <h2 class="yb_tt"><a href="#">이용안내</a></h2>
+                    <ul class="yb_svc_mn">
+                        <li><a href="#">예약안내</a></li>
+                        <li><a href="#">결제방법안내</a></li>
+                        <li><a href="#">무이자할부</a></li>
+                        <li><a href="#">마일리지</a></li>
+                        <li><a href="#">할인쿠폰</a></li>
+                        <li><a href="#">여행상품</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Area : 공지사항 -->
+            <div class="yb_ntc">
+                <h2 class="yb_ntc_tt">공지</h2>
+                <a href="#" class="yb_ntc_lnk">[항공권소식] [ANA항공] 김포-하네다 운휴 공지</a>
+            </div>
+
+            <!-- Area : 상품 관련 설명 -->
+            <div class="yb_dsc">
+				본 화면의 모든 상품가격은 항공운임(항공권) 등이 포함된 총 금액이며, 유류할증료는 유가와 환율에 따라 변동될 수 있습니다.
+            </div>
+        </div>
+
+        <footer class="yb_fg">
+            <!-- Area : 서비스 링크 -->
+            <div class="yb_fg_lnk">
+                <h2 class="hide">서비스 링크</h2>
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">예약확인/결제</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">PC버전</a></li>
+                </ul>
+            </div>
+            
+            <!-- Area : SNS 안내 -->
+            <div class="yb_fg_sns">
+                <h2 class="hide">SNS 안내</h2>
+                <a href="#" class="ic_sns fbk">FaceBook</a>
+                <a href="#" class="ic_sns ins">Instagram</a>
+                <a href="#" class="ic_sns ytb">Youtube</a>
+                <a href="#" class="ic_sns kko">KaKao talk</a>
+                <a href="#" class="ic_sns blg">Naver Blog</a>
+                <a href="#" class="ic_sns pst">Naver Post</a>
+            </div>
+
+            <!-- Area : 상단 관련 안내 -->
+            <div class="yb_fg_csl">
+                <h2 class="hide">상단 관련 안내</h2>
+                <div class="yb_gr">
+                    <h3>상담대표번호</h3>
+                    <ul class="phn_inf">
+                        <li>
+                            <span>여행/호텔 상담</span>
+                            <a href="tel:1544-2288">1544-2288</a>
+                        </li>
+                        <li>
+                            <span>부산지사</span>
+                            <a href="tel:051-710-7744">051-710-7744</a>
+                        </li>
+                        <li>
+                            <span>항공권 상담</span>
+                            <a href="tel:1644-3399">1644-3399</a>
+                        </li>
+                    </ul>
+                    <a href="#" class="bt_inf">지역별 직통 상담 번호 안내</a>
+                </div>
+
+                <div class="yb_gr">
+                    <h3>상담시간 안내</h3>
+                    <ul class="time_inf">
+                        <li>
+                            <strong class="tt">여행</strong>
+                            <span class="dt">평일</span>
+                            <p class="dsc">오전 9시 ~ 오후 6시 (금,토,일요일 및 공휴일 휴무)</p>
+                        </li>
+                        <li>
+                            <strong class="tt">호텔/항공권</strong>
+                            <span class="dt">평일</span>
+                            <p class="dsc">오전 9시 ~ 오후 6시 (금,토,일요일 및 공휴일 휴무)</p>
+                        </li>
+                    </ul>
+                    <p class="cmt">* 해외항공권 취소/변경/환불 업무는 평일 오후 4시까지</p>
+                </div>
+            </div>
+
+            <!-- Area : 회사 하단 정보 -->
+            <div class="yb_fg_btm">
+                <ul class="mn">
+                    <li><a href="#"><em>개인정보처리방침</em></a></li>
+                    <li><a href="#">인터넷회원규정</a></li>
+                    <li><a href="#">여행약관</a></li>
+                    <li><a href="#">여행자보험</a></li>
+                </ul>
+                <div class="inf">
+                    <img src="layout/img/travel/logo_kodaq.png" width="125" height="10" alt="코스닥 상장법인">
+                    <strong class="cmpny">㈜누런풍선</strong>
+                    <p class="copy">© Yellow Balloon tour. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="layout/js/jquery-3.1.1.min.js"></script>
+    <script src="layout/js/slick.min.js"></script>
+    <script src="layout/js/travel.js"></script>
+</body>
+</html>

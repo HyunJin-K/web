@@ -54,6 +54,7 @@ $(function(){
     $('#slideBanner').slick({
         infinite : true,
         autoplay : true,
-        dots : true
+        dots : true,
+        touchThreshold : 30
     });
 });
