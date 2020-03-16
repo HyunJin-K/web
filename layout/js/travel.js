@@ -53,3 +53,13 @@ $(function(){
         $(nowTab).show().siblings("[role='tabpanel']").hide();
     });
 });
+
+// Loading
+$(window).on("load", function(){
+    setTimeout(
+        function(){
+            $(".yb_loading").fadeOut();
+            $("html").removeClass("scroll_fix");
+        }, 500
+    );
+});

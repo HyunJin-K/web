@@ -18,6 +18,28 @@ $page:travel;
         .slick-slide a:focus{outline:none;}
     }
 
+    // .yb_loading : 로딩화면
+    &_loading{
+        position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.6); text-align:center; font-size:0;
+        &:after{display:inline-block; height:100%; vertical-align:middle; content:"";}
+        .inr{display:inline-block; vertical-align:middle;}
+        img{
+            display:inline-block; width:auto; height:29px; animation-duration:0.5s; animation-direction:alternate; animation-iteration-count:infinite;
+            &:first-child{animation-name:moving01;}
+            &:last-child{animation-name:moving02;}
+        }
+        @at-root{
+            @keyframes moving01{
+                from{transform:rotate(15deg)}
+                to{transform:rotate(-15deg)}
+            }
+            @keyframes moving02{
+                from{transform:rotate(-15deg)}
+                to{transform:rotate(15deg)}
+            }
+        }
+    }
+
     // .yb_hg
     &_hg{
         // .yb_hg_tb
