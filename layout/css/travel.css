@@ -375,6 +375,9 @@
 }
 
 .yb_ag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: fixed;
   top: 0;
   left: -100%;
@@ -466,6 +469,9 @@
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid #ddd;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .yb_ag_cg nav {
