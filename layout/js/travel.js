@@ -52,13 +52,36 @@ $(function(){
         var nowTab = $(this).attr("href");
         $(nowTab).show().siblings("[role='tabpanel']").hide();
     });
+
+    // Side Menu
+    $(".yb_hg_mn .bt_ctg").on("click", function(){
+        var Layer = $(this).attr("href");
+        $(Layer).addClass("is_opn");
+        $("html").addClass("scroll_fix");
+    });
+
+    $(".yb_ag .bt_clse").on("click", function(){
+        $(this).parents(".yb_ag").removeClass("is_opn");
+        $("html").removeClass("scroll_fix");
+    });
+
+    $(".yb_ag_cg .ctg a").on("click", function(e){
+        e.preventDefault();
+        $(".yb_ag_cg .ctg li").removeClass("is_on");
+        $(this).parent("li").addClass("is_on");
+    });
+
+    $(".yb_ag_cg .ctg a").on("click", function(){
+        var Layer = $(this).attr("href");
+        $(Layer).show().siblings("div[role='tabpanel']").hide();
+    });
 });
 
 // Loading
 $(window).on("load", function(){
     setTimeout(
         function(){
-            $(".yb_loading").fadeOut();
+            $(".yb_loading").fadeOut().removeClass("is_on");
             $("html").removeClass("scroll_fix");
         }, 500
     );

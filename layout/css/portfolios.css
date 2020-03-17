@@ -191,6 +191,11 @@ html, body {
   z-index: 100;
 }
 
+.ld_bg.is_on .ld {
+  -webkit-animation: ld_square 1.4s infinite;
+          animation: ld_square 1.4s infinite;
+}
+
 .ld_bg .ld {
   position: fixed;
   top: 50%;
@@ -201,8 +206,6 @@ html, body {
   height: 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-animation: ld_square 1.4s infinite;
-          animation: ld_square 1.4s infinite;
   text-indent: -9999px;
 }
 

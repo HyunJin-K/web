@@ -88,7 +88,7 @@
 	</div>
 
 	<!-- Page Loading -->
-	<div class="ld_bg">
+	<div class="ld_bg is_on">
 		<div class="ld">Page Loading</div>
 	</div>
 
@@ -111,7 +111,7 @@
 	$(window).on("load", function(){
 		setTimeout(
 			function(){
-				$(".ld_bg").fadeOut();
+				$(".ld_bg").fadeOut().removeClass("is_on");
 			}, 1100
 		);
 	});

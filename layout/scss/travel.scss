@@ -20,14 +20,18 @@ $page:travel;
 
     // .yb_loading : 로딩화면
     &_loading{
-        position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.6); text-align:center; font-size:0;
+        position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.6); text-align:center; font-size:0; z-index:9999;
         &:after{display:inline-block; height:100%; vertical-align:middle; content:"";}
-        .inr{display:inline-block; vertical-align:middle;}
-        img{
-            display:inline-block; width:auto; height:29px; animation-duration:0.5s; animation-direction:alternate; animation-iteration-count:infinite;
-            &:first-child{animation-name:moving01;}
-            &:last-child{animation-name:moving02;}
+        &.is_on{
+            img{
+                animation-duration:0.5s; animation-direction:alternate; animation-iteration-count:infinite;
+                &:first-child{animation-name:moving01;}
+                &:last-child{animation-name:moving02;}
+            }
         }
+        .inr{display:inline-block; vertical-align:middle;}
+        img{display:inline-block; width:auto; height:29px;}
+
         @at-root{
             @keyframes moving01{
                 from{transform:rotate(15deg)}
@@ -74,6 +78,107 @@ $page:travel;
                 }
                 .bt_srch{background-position:-29px 0;}
                 .bt_chtt{background-position:-58px 0;}
+            }
+        }
+    }
+
+    // Aside : .yb_ag
+    &_ag{
+        position:fixed; top:0; left:-100%; right:100%; bottom:0; background:#fff; overflow:hidden; overflow-y:auto; z-index:999; transition:0.5s all;
+        &.is_opn{left:0; right:0;}
+        .bt_clse{
+            position:absolute; top:15px; right:8px; width:30px; height:30px; font-size:0;
+            &:before,
+            &:after{display:inline-block; background:#fff; width:1px; height:23px; content:""; vertical-align:middle;}
+            &:before{transform:rotate(45deg);}
+            &:after{transform:rotate(-45deg);}
+        }
+        // .yb_ag_hg
+        &_hg{
+            background:#333;
+            .mn{
+                font-size:14px; overflow:hidden;
+                li{
+                    float:left;
+                    + li a:before{position:absolute; top:50%; left:0; margin-top:-7px; background:#777; width:1px; height:15px; content:"";}
+                }
+                a{display:block; position:relative; padding:0 14px; height:60px; line-height:60px; color:#bbb;}
+                .is_on a{color:#fff;}
+            }
+        }
+        // .yb_ag_cg
+        &_cg{
+            display:flex; border-bottom:1px solid #ddd;
+            nav{
+                background:#f3f3f3; width:110px; overflow:hidden; overflow-y:auto; flex-shrink:0;
+                h3{padding:22px 0 15px; color:#4567ad; font-size:17px; text-align:center;}
+            }
+            .ctg{
+                font-weight:bold; font-size:14px; word-break:break-word;
+                a{display:block; padding:17px 5px 17px 15px; color:#777;}
+                .is_on a{background:#fff; color:#000;}
+            }
+            .dtl{
+                flex-grow:1; padding:22px 15px;
+                h3{
+                    border-bottom:1px solid #222; padding-bottom:18px; font-size:17px;
+                    a{
+                        position:relative; display:block; padding-right:15px;
+                        &:after{position:absolute; top:50%; right:5px; margin-top:-3px; border:solid #333; border-width:1px 1px 0 0; width:6px; height:6px; transform:rotate(45deg); content:"";}
+                    }
+                }
+            }
+            .lst{
+                font-size:0;
+                li{display:inline-block; padding:6px; width:33.3%; vertical-align:top; font-size:14px; box-sizing:border-box; text-align:center;}
+                a{
+                    display:block; color:#777;
+                    @include background($pseudo:true, $display:block, $margin:0 auto 6px, $img:ic_category, $bsize:200px auto, $wsize:50px, $hsize:50px);
+                }
+                $i : 0;
+                $j : 0;
+                // 각 리스트별 아이콘
+                @each $icon in (eu, sea, cn, hk, jp, au, us, id, prm, gm, ps){
+                    @if $icon == jp{
+                        $i : 0;
+                        $j : -50;
+                    }
+                    @if $icon == prm{
+                        $i : 0;
+                        $j : -100;
+                    }
+                    .#{$icon} a:before{
+                        background-position:($i + px) ($j + px);
+                    }
+                    $i : $i - 50;
+                }
+            }
+            .lnk{
+                margin-top:20px; padding:1px 0 0 1px; overflow:hidden;
+                li{float:left; margin:-1px 0 0 -1px; border:1px solid #ddd; width:calc(50% + 1px); box-sizing:border-box; text-align:center;}
+                a{
+                    display:block; padding:0 5px; height:38px; line-height:38px;
+                    @include text-ellipsis;
+                }
+            }
+        }
+        // .yb_ag_fg
+        &_fg{
+            padding:30px 15px; background:#f7f7f7;
+            .svc{
+                display:table; border:1px solid #ddd; background:#fff; width:100%; height:73px; table-layout: fixed; text-align:center; box-sizing:border-box;
+                a{
+                    display:table-cell; position:relative; padding:0 10px; vertical-align:middle; font-size:14px; font-weight:bold;
+                    @include text-ellipsis;
+                    @include background($pseudo:true, $margin:-6px 0 0, $img:ic_category, $bsize:200px auto, $wsize:50px, $hsize:50px);
+                    &:after{position:absolute; top:50%; left:0; margin-top:-13px; background:#ddd; height:27px; width:1px; content:"";}
+                    &.ps:before{background-position:-100px -100px;}
+                    &.wd:before{background-position:-150px -100px;}
+                }
+            }
+            .cntct{
+                margin-top:22px; text-align:center; font-size:13px;
+                .call{margin-left:5px; color:#4567b6; font-weight:bold;}
             }
         }
     }

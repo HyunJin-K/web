@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<a lang="ko">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,8 @@
     <!-- skip Nav -->
 	<div class="skip_nav">
         <a href="#tabMenu">탭 메뉴 바로가기</a>
-        <a href="#SideMenu">사이드 메뉴 바로가기</a>
+        <a href="#sideMenu">사이드 메뉴 바로가기</a>
+        <a href="#content">메인 컨텐츠 바로가기</a>
     </div>
     
     <div class="yb_wrp">
@@ -25,7 +26,7 @@
                 <a href="#">호텔</a>
             </div>
             <div class="yb_hg_mn">
-                <a href="#" class="bt_ctg">open Category</a>
+                <a href="#sideMenu" class="bt_ctg">open Category</a>
                 <h1 class="logo"><img src="layout/img/travel/logo_travel.png" width="109" height="29" alt="누런풍선"></h1>
                 <div class="sd">
                     <a href="#" class="bt_srch">Search</a>
@@ -34,7 +35,126 @@
             </div>
         </header>
 
-        <div class="yb_cg">
+        <!-- Aside :  -->
+        <aside class="yb_ag" id="sideMenu">
+            <h2 class="hide">사이드 전체 메뉴</h2>
+            <div class="yb_ag_hg">
+                <ul class="mn">
+                    <li><a href="travel.html">홈</a></li>
+                    <li class="is_on"><a href="#">전체메뉴</a></li>
+                </ul>
+            </div>
+
+            <div class="yb_ag_cg">
+                <nav>
+                    <h3>패키지여행</h3>
+                    <ul class="ctg" role="tablist">
+                        <li class="is_on"><a href="#ctg01" role="tab">해외패키지</a></li>
+                        <li><a href="#ctg02" role="tab">프리미엄</a></li>
+                        <li><a href="#ctg03" role="tab">테마</a></li>
+                        <li><a href="#ctg04" role="tab">국내</a></li>
+                    </ul>
+                    <h3>자유여행</h3>
+                    <ul class="ctg">
+                        <li><a href="#ctg05" role="tab">항공권</a></li>
+                        <li><a href="#ctg06" role="tab">호텔</a></li>
+                        <li><a href="#ctg07" role="tab">투어패스</a></li>
+                    </ul>
+                </nav>
+                <!-- 상세 카테고리 -->
+                <div class="dtl">
+                    <div id="ctg01" role="tabpanel">
+                        <h3><a href="#">해외패키지 메인</a></h3>
+                        <ul class="lst">
+                            <li class="eu"><a href="#">유럽</a></li>
+                            <li class="sea"><a href="#">동남아</a></li>
+                            <li class="jp"><a href="#">일본</a></li>
+                            <li class="cn"><a href="#">중국</a></li>
+                            <li class="hk"><a href="#">홍콩/마카오/대만</a></li>
+                            <li class="gm"><a href="#">괌/사이판</a></li>
+                        </ul>
+                        <ul class="lnk">
+                            <li><a href="#">크루즈</a></li>
+                            <li><a href="#">누렁TV</a></li>
+                            <li><a href="#">땡처리 항공권</a></li>
+                            <li><a href="#">기획전</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                    </div>
+                    <div id="ctg02" role="tabpanel" style="display:none;">
+                        <h3><a href="#">프리미엄 메인</a></h3>
+                        <ul class="lst">
+                            <li class="prm"><a href="#">프리미엄<br>상품</a></li>
+                        </ul>
+                    </div>
+                    <div id="ctg03" role="tabpanel" style="display:none;">
+                        <h3><a href="#">테마 메인</a></h3>
+                        <ul class="lst">
+                            <li class="au"><a href="#">호주 캥거루 여행</a></li>
+                            <li class="us"><a href="#">미국 전국 일주</a></li>
+                            <li class="gm"><a href="#">휴양지 즐기기</a></li>
+                            <li class="hk"><a href="#">홍콩 야경 여행</a></li>
+                            <li class="id"><a href="#">나를 찾아줘</a></li>
+                        </ul>
+                    </div>
+                    <div id="ctg04" role="tabpanel" style="display:none;">
+                        <h3><a href="#">국내 메인</a></h3>
+                        <ul class="lst">
+                            <li class="gm"><a href="#">제주도</a></li>
+                            <li class="hk"><a href="#">야경 투어</a></li>
+                            <li class="prm"><a href="#">자연 투어</a></li>
+                        </ul>
+                        <ul class="lnk">
+                            <li><a href="#">일출투어</a></li>
+                            <li><a href="#">누렁TV</a></li>
+                            <li><a href="#">땡처리 항공권</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                    </div>
+                    <div id="ctg05" role="tabpanel" style="display:none;">
+                        <h3><a href="#">항공권 메인</a></h3>
+                        <ul class="lst">
+                            <li class="eu"><a href="#">유럽</a></li>
+                            <li class="au"><a href="#">호주</a></li>
+                            <li class="sea"><a href="#">동남아</a></li>
+                            <li class="jp"><a href="#">일본</a></li>
+                            <li class="cn"><a href="#">중국</a></li>
+                        </ul>
+                    </div>
+                    <div id="ctg06" role="tabpanel" style="display:none;">
+                        <h3><a href="#">호텔 메인</a></h3>
+                        <ul class="lst">
+                            <li class="prm"><a href="#">얼리버드</a></li>
+                        </ul>
+                        <ul class="lnk">
+                            <li><a href="#">1등급 호텔</a></li>
+                            <li><a href="#">게스트하우스</a></li>
+                            <li><a href="#">땡처리 호텔</a></li>
+                        </ul>
+                    </div>
+                    <div id="ctg07" role="tabpanel" style="display:none;">
+                        <h3><a href="#">투어패스 메인</a></h3>
+                        <ul class="lst">
+                            <li class="ps"><a href="#">투어패스</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="yb_ag_fg">
+                <div class="svc">
+                    <a href="#" class="ps">항공권</a>
+                    <a href="#" class="wd">호텔</a>
+                </div>
+                <div class="cntct">
+                    고객센터 <a href="tel:1500-0000" class="call">1500-0000</a>
+                </div>
+            </div>
+
+            <button type="button" class="bt_clse">Close Side Menu</button>
+        </aside>
+
+        <div class="yb_cg" id="content">
             <!-- Area : 메인배너 -->
             <section class="yb_bnr">
                 <h2 class="hide">메인 배너</h2>
@@ -322,7 +442,7 @@
         </div>
 
         <!-- 로딩 -->
-        <div class="yb_loading">
+        <div class="yb_loading is_on">
             <div class="inr">
                 <img src="layout/img/travel/logo_travel_load01.png" width="45" height="29" alt="누런풍선">
                 <img src="layout/img/travel/logo_travel_load02.png" width="60" height="29" alt="">

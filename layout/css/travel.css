@@ -195,6 +195,7 @@
   background: rgba(0, 0, 0, 0.6);
   text-align: center;
   font-size: 0;
+  z-index: 9999;
 }
 
 .yb_loading:after {
@@ -202,6 +203,25 @@
   height: 100%;
   vertical-align: middle;
   content: "";
+}
+
+.yb_loading.is_on img {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.yb_loading.is_on img:first-child {
+  -webkit-animation-name: moving01;
+          animation-name: moving01;
+}
+
+.yb_loading.is_on img:last-child {
+  -webkit-animation-name: moving02;
+          animation-name: moving02;
 }
 
 .yb_loading .inr {
@@ -213,22 +233,6 @@
   display: inline-block;
   width: auto;
   height: 29px;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-
-.yb_loading img:first-child {
-  -webkit-animation-name: moving01;
-          animation-name: moving01;
-}
-
-.yb_loading img:last-child {
-  -webkit-animation-name: moving02;
-          animation-name: moving02;
 }
 
 @-webkit-keyframes moving01 {
@@ -368,6 +372,335 @@
 
 .yb_hg_mn .sd .bt_chtt {
   background-position: -58px 0;
+}
+
+.yb_ag {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  right: 100%;
+  bottom: 0;
+  background: #fff;
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 999;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.yb_ag.is_opn {
+  left: 0;
+  right: 0;
+}
+
+.yb_ag .bt_clse {
+  position: absolute;
+  top: 15px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+}
+
+.yb_ag .bt_clse:before, .yb_ag .bt_clse:after {
+  display: inline-block;
+  background: #fff;
+  width: 1px;
+  height: 23px;
+  content: "";
+  vertical-align: middle;
+}
+
+.yb_ag .bt_clse:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.yb_ag .bt_clse:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.yb_ag_hg {
+  background: #333;
+}
+
+.yb_ag_hg .mn {
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.yb_ag_hg .mn li {
+  float: left;
+}
+
+.yb_ag_hg .mn li + li a:before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -7px;
+  background: #777;
+  width: 1px;
+  height: 15px;
+  content: "";
+}
+
+.yb_ag_hg .mn a {
+  display: block;
+  position: relative;
+  padding: 0 14px;
+  height: 60px;
+  line-height: 60px;
+  color: #bbb;
+}
+
+.yb_ag_hg .mn .is_on a {
+  color: #fff;
+}
+
+.yb_ag_cg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.yb_ag_cg nav {
+  background: #f3f3f3;
+  width: 110px;
+  overflow: hidden;
+  overflow-y: auto;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.yb_ag_cg nav h3 {
+  padding: 22px 0 15px;
+  color: #4567ad;
+  font-size: 17px;
+  text-align: center;
+}
+
+.yb_ag_cg .ctg {
+  font-weight: bold;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.yb_ag_cg .ctg a {
+  display: block;
+  padding: 17px 5px 17px 15px;
+  color: #777;
+}
+
+.yb_ag_cg .ctg .is_on a {
+  background: #fff;
+  color: #000;
+}
+
+.yb_ag_cg .dtl {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 22px 15px;
+}
+
+.yb_ag_cg .dtl h3 {
+  border-bottom: 1px solid #222;
+  padding-bottom: 18px;
+  font-size: 17px;
+}
+
+.yb_ag_cg .dtl h3 a {
+  position: relative;
+  display: block;
+  padding-right: 15px;
+}
+
+.yb_ag_cg .dtl h3 a:after {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  margin-top: -3px;
+  border: solid #333;
+  border-width: 1px 1px 0 0;
+  width: 6px;
+  height: 6px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  content: "";
+}
+
+.yb_ag_cg .lst {
+  font-size: 0;
+}
+
+.yb_ag_cg .lst li {
+  display: inline-block;
+  padding: 6px;
+  width: 33.3%;
+  vertical-align: top;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+
+.yb_ag_cg .lst a {
+  display: block;
+  color: #777;
+}
+
+.yb_ag_cg .lst a:before {
+  display: block;
+  margin: 0 auto 6px;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  content: "";
+  background: url("../img/travel/ic_category.png") no-repeat;
+  background-size: 200px auto;
+}
+
+.yb_ag_cg .lst .eu a:before {
+  background-position: 0px 0px;
+}
+
+.yb_ag_cg .lst .sea a:before {
+  background-position: -50px 0px;
+}
+
+.yb_ag_cg .lst .cn a:before {
+  background-position: -100px 0px;
+}
+
+.yb_ag_cg .lst .hk a:before {
+  background-position: -150px 0px;
+}
+
+.yb_ag_cg .lst .jp a:before {
+  background-position: 0px -50px;
+}
+
+.yb_ag_cg .lst .au a:before {
+  background-position: -50px -50px;
+}
+
+.yb_ag_cg .lst .us a:before {
+  background-position: -100px -50px;
+}
+
+.yb_ag_cg .lst .id a:before {
+  background-position: -150px -50px;
+}
+
+.yb_ag_cg .lst .prm a:before {
+  background-position: 0px -100px;
+}
+
+.yb_ag_cg .lst .gm a:before {
+  background-position: -50px -100px;
+}
+
+.yb_ag_cg .lst .ps a:before {
+  background-position: -100px -100px;
+}
+
+.yb_ag_cg .lnk {
+  margin-top: 20px;
+  padding: 1px 0 0 1px;
+  overflow: hidden;
+}
+
+.yb_ag_cg .lnk li {
+  float: left;
+  margin: -1px 0 0 -1px;
+  border: 1px solid #ddd;
+  width: calc(50% + 1px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+
+.yb_ag_cg .lnk a {
+  display: block;
+  padding: 0 5px;
+  height: 38px;
+  line-height: 38px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.yb_ag_fg {
+  padding: 30px 15px;
+  background: #f7f7f7;
+}
+
+.yb_ag_fg .svc {
+  display: table;
+  border: 1px solid #ddd;
+  background: #fff;
+  width: 100%;
+  height: 73px;
+  table-layout: fixed;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.yb_ag_fg .svc a {
+  display: table-cell;
+  position: relative;
+  padding: 0 10px;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.yb_ag_fg .svc a:before {
+  display: inline-block;
+  margin: -6px 0 0;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  content: "";
+  background: url("../img/travel/ic_category.png") no-repeat;
+  background-size: 200px auto;
+}
+
+.yb_ag_fg .svc a:after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -13px;
+  background: #ddd;
+  height: 27px;
+  width: 1px;
+  content: "";
+}
+
+.yb_ag_fg .svc a.ps:before {
+  background-position: -100px -100px;
+}
+
+.yb_ag_fg .svc a.wd:before {
+  background-position: -150px -100px;
+}
+
+.yb_ag_fg .cntct {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.yb_ag_fg .cntct .call {
+  margin-left: 5px;
+  color: #4567b6;
+  font-weight: bold;
 }
 
 .yb_sg {
