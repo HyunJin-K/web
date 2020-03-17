@@ -375,6 +375,9 @@
 }
 
 .yb_ag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: fixed;
   top: 0;
   left: -100%;
@@ -386,6 +389,10 @@
   z-index: 999;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .yb_ag.is_opn {
@@ -423,6 +430,8 @@
 
 .yb_ag_hg {
   background: #333;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .yb_ag_hg .mn {
@@ -463,6 +472,9 @@
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid #ddd;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .yb_ag_cg nav {
@@ -635,6 +647,8 @@
 .yb_ag_fg {
   padding: 30px 15px;
   background: #f7f7f7;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .yb_ag_fg .svc {

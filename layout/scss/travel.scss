@@ -84,7 +84,7 @@ $page:travel;
 
     // Aside : .yb_ag
     &_ag{
-        position:fixed; top:0; left:-100%; right:100%; bottom:0; background:#fff; overflow:hidden; overflow-y:auto; z-index:999; transition:0.5s all;
+        display:flex; position:fixed; top:0; left:-100%; right:100%; bottom:0; background:#fff; overflow:hidden; overflow-y:auto; z-index:999; transition:0.5s all; flex-direction:column;
         &.is_opn{left:0; right:0;}
         .bt_clse{
             position:absolute; top:15px; right:8px; width:30px; height:30px; font-size:0;
@@ -95,7 +95,7 @@ $page:travel;
         }
         // .yb_ag_hg
         &_hg{
-            background:#333;
+            background:#333; flex-shrink:0;
             .mn{
                 font-size:14px; overflow:hidden;
                 li{
@@ -108,7 +108,7 @@ $page:travel;
         }
         // .yb_ag_cg
         &_cg{
-            display:flex; border-bottom:1px solid #ddd;
+            display:flex; border-bottom:1px solid #ddd; flex-grow:1;
             nav{
                 background:#f3f3f3; width:110px; overflow:hidden; overflow-y:auto; flex-shrink:0;
                 h3{padding:22px 0 15px; color:#4567ad; font-size:17px; text-align:center;}
@@ -164,7 +164,7 @@ $page:travel;
         }
         // .yb_ag_fg
         &_fg{
-            padding:30px 15px; background:#f7f7f7;
+            padding:30px 15px; background:#f7f7f7; flex-shrink:0;
             .svc{
                 display:table; border:1px solid #ddd; background:#fff; width:100%; height:73px; table-layout: fixed; text-align:center; box-sizing:border-box;
                 a{
