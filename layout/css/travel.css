@@ -375,15 +375,12 @@
 }
 
 .yb_ag {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   position: fixed;
   top: 0;
   left: -100%;
   right: 100%;
+  bottom: 0;
   background: #fff;
-  height: 100%;
   overflow: hidden;
   overflow-y: auto;
   z-index: 999;
@@ -430,8 +427,6 @@
 
 .yb_ag_hg {
   background: #333;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
 }
 
 .yb_ag_hg .mn {
@@ -472,9 +467,6 @@
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid #ddd;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
 }
 
 .yb_ag_cg nav {
@@ -647,8 +639,6 @@
 .yb_ag_fg {
   padding: 30px 15px;
   background: #f7f7f7;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
 }
 
 .yb_ag_fg .svc {
