@@ -18,8 +18,15 @@ $(function(){
         }
     });
 
-    // 홈쇼핑 반영 상품, 리뷰 Slider
-    var swiper_Shopping = new Swiper('#slideShopping, #slideReview', {
+    // 홈쇼핑 반영 상품 Slider
+    var swiper_Shopping = new Swiper('#slideShopping', {
+        pagination: {
+            el: '.swiper-pagination'
+        }
+    });
+
+    // 리뷰 Slider
+    var swiper_Shopping = new Swiper('##slideReview', {
         pagination: {
             el: '.swiper-pagination'
         }
