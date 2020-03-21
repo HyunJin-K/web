@@ -1,36 +1,38 @@
 $(function(){
-    /* Slick Slider */
-    // Main Banner
-    $("#slideBanner").on('init', function(event, slick) {
-        $(this).append('<div class="slick-counter"><span class="current"></span> / <span class="total"></span></div>');
-        $(".current").text(slick.currentSlide + 1);
-        $(".total").text(slick.slideCount);
-    });
-    $("#slideBanner").slick({
-        autoplay: true,
-        autoplaySpeed : 7000,
-        arrows: false,
-        touchThreshold: 30
-    }).on("beforeChange", function(event, slick, currentSlide, nextSlide) {
-        $(".current").text(nextSlide + 1);
+    /* Swiper Slider */
+    // Main Banner Slider
+    var swiper_MainBanner = new Swiper('#slideBanner', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
     });
 
-    // 추천상품
-    $(".yb_itms > section").slick({
-        infinite: false,
-        variableWidth: true,
-        touchThreshold: 30,
-        arrows: false,
-        centerMode: true
+    // 추천상품 Slider
+    var swiper_Recmmend = new Swiper('#Recommand01, #Recommand02', {
+        slidesPerView: 'auto',
+        observer: true,
+        pagination: {
+            el: '.swiper-pagination'
+        }
     });
 
-    // 홈쇼핑 방영상품, 이벤트, 고객 후기
-    $("#slideShopping, #slideEvent, #slideReview").slick({
-        infinite: false,
-        dots: true,
-        arrows: false,
-        touchThreshold: 30
+    // 홈쇼핑 반영 상품, 리뷰 Slider
+    var swiper_Shopping = new Swiper('#slideShopping, #slideReview', {
+        pagination: {
+            el: '.swiper-pagination'
+        }
     });
+
+    // 이벤트 Slider
+    var swiper_Shopping = new Swiper('#slideEvent', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination'
+        }
+    });
+    
 
     // Layer Open
     $(".yb_bnr .bt_mr").on("click", function(e){

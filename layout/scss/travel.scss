@@ -1,6 +1,6 @@
 $page:travel;
 
-@import "./control/slick",
+@import "./control/swiper",
         "./control/basic";
 
 
@@ -10,12 +10,15 @@ $page:travel;
     // .yb_wrp
     &_wrp{
         font-family:"Helvetica";
-        .slick-dots{
-            bottom:-24px;
-            li button{background:#ddd;}
-            .slick-active button{background:#ffcc31;}
+        .swiper-pagination{
+            position:static; margin-top:10px;
+            // .swiper-pagination-bullet
+            &-bullet{
+                background:#ddd; width:10px; height:10px;
+                // .swiper-pagination-bullet-active
+                &-active{background:#ffcc31;}
+            }
         }
-        .slick-slide a:focus{outline:none;}
     }
 
     // .yb_loading : 로딩화면
@@ -185,7 +188,7 @@ $page:travel;
 
     // .yb_sg
     &_sg{
-        border-top:10px solid #f7f7f7; padding:40px 0;
+        border-top:10px solid #f7f7f7; padding:40px 0 30px;
         // 노랑 TV
         &.t_tv{padding:0;}
         // 여행 후기 영역
@@ -203,7 +206,7 @@ $page:travel;
         img{margin:0 auto; width:auto; height:auto; max-width:100%; max-height:100%;}
         .slick-counter{bottom:15px; left:auto; right:43px; border-radius:20px; background:rgba(0,0,0,.7); width:73px; height:26px; line-height:26px; color:#fff; font-size:14px;}
         .bt_mr{
-            position:absolute; right:13px; bottom:15px; border-radius:50%; background:rgba(0,0,0,.7); width:25px; height:25px; text-indent:-9999px;
+            position:absolute; right:13px; bottom:15px; border-radius:50%; background:rgba(0,0,0,.7); width:25px; height:25px; text-indent:-9999px; z-index:1;
             &:before,
             &:after{position:absolute; top:50%; left:50%; margin:-6px 0 0 -1px; background:#fff; width:1px; height:11px; content:"";}
             &:after{transform:rotate(90deg);}
@@ -245,8 +248,9 @@ $page:travel;
 
     // .yb_itms
     &_itms{
-        margin-top:15px; 
-        .slick-slide{
+        margin-top:15px;
+        .swiper-container{padding:0 20px;}
+        .swiper-slide{
             margin-left:10px; width:240px;
             &:first-child{margin-left:0;}
         }
@@ -325,8 +329,8 @@ $page:travel;
             display:block; margin-top:4px; color:#fff; font-size:15px;
             @include text-ellipsis;
         }
-        .slick-slide{
-            position:relative; margin-bottom:30px; padding:30px 28px 0; background-size:200%; background-position:50%;
+        .swiper-slide{
+            position:relative; margin-bottom:30px; padding:30px 28px 0; background-size:200%; background-position:50%; box-sizing:border-box;
             &:after{position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,.3); content:"";}
             &.bg_eu,
             &.bg_eu a{background-image:url('../img/' + $page + '/bg_shp01.jpg');}
@@ -344,7 +348,7 @@ $page:travel;
     // .yb_rvw
     &_rvw{
         text-align:center;
-        .slick-slide{padding:0 13px;}
+        .swiper-slide{padding:0 13px; box-sizing:border-box;}
         a{display:block; position:relative; border-radius:8px; padding:30px 52px 26px; background:#fff;}
         .flg{
             display:flex; position:absolute; top:0; left:15px; background:#ffc12c; width:55px; height:55px; align-items:center; justify-content:center; font-size:12px; font-weight:bold;
