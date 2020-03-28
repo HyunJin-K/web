@@ -137,12 +137,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* scroll fix */
-.scroll_fix {
-  height: 100%;
-  overflow: hidden;
-}
-
 .scroll_fix body {
-  height: 100%;
   overflow: hidden;
 }

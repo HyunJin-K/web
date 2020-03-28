@@ -26,7 +26,7 @@ $(function(){
     });
 
     // 리뷰 Slider
-    var swiper_Shopping = new Swiper('##slideReview', {
+    var swiper_Shopping = new Swiper('#slideReview', {
         pagination: {
             el: '.swiper-pagination'
         }
