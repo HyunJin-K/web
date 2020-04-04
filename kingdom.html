@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingdom</title>
+    <style>
+        *{margin:0; padding:0;}
+        .kdm_sg{position:relative; background-color:#000; height:100vh; color:#fff;}
+        .kdm_sg[data-role="main"]{background-repeat:no-repeat; background-size:cover; background-image:url(./layout/img/Kingdom/img_kdm03.jpg);}
+        .kdm_bg{position:fixed; top:0; right:0; bottom:0; left:0; background-color:#000; z-index:9999;}
+        .kdm_bg_inr{position:absolute; top:0; left:0; right:0; bottom:0; background-repeat:no-repeat; background-position:50%;}
+    </style>
+</head>
+<body>
+    <div class="kdm_wrp">
+        <div class="kdm_bg">
+            <div class="kdm_bg_inr" style="display:none;"></div>
+        </div>
+        <section class="kdm_sg" data-role="main">
+            
+            <div class="txt">sdafsd</div>
+        </section>
+    </div>
+
+    <script src="layout/js/jquery-3.1.1.min.js"></script>
+    <script>
+        var $kdmBG = $(".kdm_bg");
+        var $kdmBGInr = $(".kdm_bg_inr");
+
+        $(window).on("load", function(){
+            for(var i = 1; i <= 2; i++){
+                setTimeout('BgChange('+ i +')', 1800 * i);
+            }
+        });
+
+        function BgChange($order){
+            $kdmBGInr.fadeIn();
+            $kdmBGInr.css("background-image", "url(./layout/img/Kingdom/img_kdm0" + $order + ".jpg");
+            if($order == 2){
+                setTimeout(
+                    function(){
+                        $kdmBG.fadeOut(800);
+                    }, 800
+                );
+            }
+        }
+    </script>
+</body>
+</html>
