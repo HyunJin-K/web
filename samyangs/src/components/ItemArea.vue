@@ -1,21 +1,21 @@
 <template>
   <div class="syshp_cg">
     <div class="syshp_inr">
-      <ul class="syshp_tb">
+      <ul class="syshp_tb" id="sortAllTab" role="tablist">
         <li class="is_on">
-          <a href="#">전체보기</a>
+          <a role="tab">전체보기</a>
         </li>
         <li>
-          <a href="#">봉지면</a>
+          <a role="tab">봉지면</a>
         </li>
         <li>
-          <a href="#">용기면</a>
+          <a role="tab">용기면</a>
         </li>
         <li>
-          <a href="#">스낵</a>
+          <a role="tab">스낵</a>
         </li>
         <li>
-          <a href="#">디저트/간편식</a>
+          <a role="tab">디저트/간편식</a>
         </li>
       </ul>
 
@@ -28,25 +28,93 @@
         <div class="hd">
           <span class="prd_num">
             상품
-            <em>00</em>개
+            <em>{{ItemNum}}</em>개
           </span>
-          <ul class="sort">
-            <li>
-              <a href="#">상품명순</a>
+          <ul class="sort" id="sortItems" role="tablist">
+            <li class="is_on">
+              <a role="tab" v-on:click="sortDate">등록일순</a>
             </li>
             <li>
-              <a href="#">낮은가격순</a>
+              <a role="tab" v-on:click="sortName">상품명순</a>
             </li>
             <li>
-              <a href="#">높은가격순</a>
+              <a role="tab" v-on:click="sortLowPrice">낮은가격순</a>
+            </li>
+            <li>
+              <a role="tab" v-on:click="sortHighPrice">높은가격순</a>
             </li>
           </ul>
         </div>
 
-        <div class="cg">
+        <div class="cg" role="tabpanel">
+          <!-- Area : Item List -->
           <ul class="itm_lst">
-            <ItemCard v-bind:Items="Items[i]" v-for="(list, i) in Items" :key="i" />
+            <ItemCard v-bind:ItemList="ItemList[i]" v-for="(list, i) in ItemList" :key="i" />
           </ul>
+
+          <!-- Layer : Item Detail -->
+          <div class="ly_item_dtl">
+            <div class="inr">
+              <div class="thmb">
+                <img src="#" alt="">
+              </div>
+              <div class="inf">
+                <span class="brd">브랜드</span>
+                <strong class="tt">상품명</strong>
+
+                <!-- 가격 영역 -->
+                <div class="prc_area">
+                  <div class="prc_gr">
+                    <span class="prc_tt">판매가</span>
+                    <div class="prc_dtl">
+                      <span class="prc">가격</span>
+                    </div>
+                  </div>
+                  <div class="prc_gr">
+                    <span class="prc_tt">판매가</span>
+                    <div class="prc_dtl">
+                      <span class="prc">가격</span>
+                    </div>
+                  </div>
+                  <div class="prc_gr">
+                    <span class="prc_tt">판매가</span>
+                    <div class="prc_dtl">
+                      <span class="prc">가격</span>
+                      <p class="dsc">(적립금으로 상품을 결제할 경우 적립 제외)</p>
+                    </div>
+                  </div>
+                  <div class="prc_gr">
+                    <span class="prc_tt">판매가</span>
+                    <div class="prc_dtl">
+                      <span class="prc">가격</span>
+                      <p class="dsc">(적립금으로 상품을 결제할 경우 적립 제외)</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="opt">
+                  <div class="ctrl_num">
+                    <button type="button">수량 감소</button>
+                    <input type="number">
+                    <button type="button">수량 증가</button>
+                  </div>
+                  <span class="prc">총가격</span>
+                </div>
+
+                <div class="total">
+                  <span class="txt">
+                    총 합계 <strong class="prc">총가격</strong>원
+                  </span>
+                </div>
+
+                <div class="bt_area">
+                  <button type="button">장바구니</button>
+                  <button type="button">구매하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // Layer : Item Detail -->
         </div>
       </div>
     </div>
@@ -58,17 +126,66 @@ import ItemCard from "./ItemCard.vue";
 
 export default {
   name: "ItemArea",
-  data(){
-    return{
-      bnrImg : '',
-      bnrImgDsc : '',
-    }
+  data() {
+    return {
+      bnrImg: "",
+      bnrImgDsc: "",
+      ItemNum: this.ItemList.length,
+      ItemListOrg: [...this.ItemList]
+    };
   },
   components: {
     ItemCard
   },
   props: {
-    Items: Array
+    ItemList: Array
+  },
+  methods: {
+    sortDate(e) {
+      e.preventDefault();
+      this.ItemList = [...this.ItemListOrg];
+    },
+    sortName(e) {
+      e.preventDefault();
+      this.ItemList.sort(function(a, b) {
+        return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
+      });
+    },
+    sortLowPrice(e) {
+      e.preventDefault();
+      this.ItemList.sort(function(a, b) {
+        return a.price - b.price;
+      });
+    },
+    sortHighPrice(e) {
+      e.preventDefault();
+      this.ItemList.sort(function(a, b) {
+        return b.price - a.price;
+      });
+    }
+  },
+  mounted() {
+    // tab menu on effect
+    function tabEffect($param) {
+      var sortTab = document.getElementById($param);
+      var sortTabLi = sortTab.getElementsByTagName("li");
+      var sortTabLiBtn;
+
+      for (var i = 0; i < sortTabLi.length; i++) {
+        // a버튼
+        sortTabLiBtn = sortTabLi[i].getElementsByTagName("a")[0];
+
+        sortTabLiBtn.addEventListener("click", function(e) {
+          e.preventDefault();
+          for (var j = 0; j < sortTabLi.length; j++) {
+            sortTabLi[j].classList.remove("is_on");
+          }
+          this.parentNode.classList.add("is_on");
+        });
+      }
+    }
+    tabEffect("sortItems");
+    tabEffect("sortAllTab");
   }
 };
 </script>
@@ -99,10 +216,10 @@ export default {
       }
     }
     .is_on a {
-      color: #222;
+      color: #000;
     }
     a {
-      color: #666;
+      color: #888;
     }
   }
   // .syshp_bnr
@@ -136,10 +253,10 @@ export default {
         }
       }
       .is_on a {
-        color: #333;
+        color: #000;
       }
       a {
-        color: #777;
+        color: #888;
       }
     }
     .prd_num {
@@ -186,7 +303,7 @@ export default {
       }
       .tt {
         font-size: 19px;
-        letter-spacing:-0.4px;
+        letter-spacing: -0.4px;
         @include text-ellipsis;
       }
       .dtl {

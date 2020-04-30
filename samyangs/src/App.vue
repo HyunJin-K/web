@@ -29,7 +29,7 @@
       </div>
     </header>
 
-    <ItemArea v-bind:Items="Items" />
+    <ItemArea :ItemList="ItemList" />
 
     <footer class="syshp_fg">
       <div class="syshp_inr">
@@ -69,12 +69,13 @@ export default {
   name: "App",
   data() {
     return {
-      Items: Items
+      ItemList: Items,
     };
   },
   components: {
     ItemArea
-  }
+  },
+  methods: {}
 };
 </script>
 
