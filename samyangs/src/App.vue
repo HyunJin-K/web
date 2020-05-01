@@ -143,6 +143,7 @@ export default {
       .dsc{position:absolute; bottom:40px; right:0; color:#777; letter-spacing:-0.4px}
     }
   }
+
   // .syshp_tb
   &_tb{
     text-align:center; font-size:0;
@@ -153,20 +154,29 @@ export default {
     .is_on a{color:#000;}
     a{color:#888;}
   }
+
   // .syshp_bnr
   &_bnr{margin-top:18px;}
+
   // .syshp_dtl
   &_dtl{
     margin-top:40px;
-    .hd{border-bottom:1px solid #e2e2e2; padding-bottom:18px; overflow:hidden;}
+    .hd{
+      position:relative; border-bottom:1px solid #e2e2e2; padding-bottom:18px;
+      &:after{@include clearfix;}
+    }
+    .bt_lysort{
+      display:none; float:right; width:28px; height:28px; text-indent:-9999px;
+      @include background($img:ic_syshp, $pos:-87px 0);
+    }
     .sort{
-      float:right; overflow:hidden;
+      float:right;
       li{
-        position:relative; float:left; padding:0 24px; font-size:13px;
+        position:relative; display:inline-block; font-size:13px;
         + li:before{position:absolute; left:0; top:50%; margin-top:-5px; background:#e2e2e2; width:1px; height:10px; content:""}
       }
       .is_on a{color:#000;}
-      a{color:#888;}
+      a{display:block; padding:0 24px; color:#888;}
     }
     .prd_num{
       display:inline-block;
@@ -262,7 +272,7 @@ export default {
           .bt_up:after{display:inline-block; position:absolute; top:50%; left:50%; margin:-8px 0 0 0; background:#111; width:1px; height:16px; content:"";}
         }
         // .opt_prc
-        &_prc{float:right; font-size:1.21em;}
+        &_prc{float:right; font-size:1.5em;}
       }
       .total{
         margin-top:25px; text-align:right;
@@ -286,11 +296,26 @@ export default {
   }
 }
 
+@media only screen and (max-width:980px){
+  .syshp{
+      // .syshp_hg
+      &_hg{
+        .logo{display:block;}
+        .sd_bnr{display:none;}
+        .srch{float:none; margin:40px auto 0;}
+      }
+      // .syshp_fg
+      &_fg{
+        .faq .time{display:block; margin:10px 0 0;}
+      }
+  }
+}
+
 @media only screen and (min-width:415px) and (max-width:980px){
   .syshp{
     // .syshp_dtl
     &_dtl{
-      .itm_lst li{width:calc(50% - 15px);}
+      .itm_lst li{margin-bottom:60px; width:calc(50% - 15px);}
     }
   }
 }
@@ -298,12 +323,35 @@ export default {
 /* ~ Tablet */
 @media only screen and (max-width:768px){
   .syshp{
+    // .syshp_tb
+    &_tb{
+      li{
+        display:block; margin-top:-1px;
+        + li:before{display:none;}
+      }
+      a{display:block; border:1px solid #aaa; padding:10px 0;}
+      .is_on a{background:#f8f8f8; font-weight:bold;}
+    }
+
     // .syshp_dtl
     &_dtl{
+      .hd{padding-bottom:10px;}
+      .cg{padding-top:20px;}
+      .bt_lysort{display:block;}
+      .sort{
+        display:none; position:absolute; top:36px; right:0; background:#fff; width:250px; z-index:1; box-shadow:0 0 3px rgba(0,0,0,.2);
+        li{
+          display:block; text-align:center;
+          + li:before{display:none;}
+        }
+        a{padding:15px 24px;}
+        .is_on a{background:#f8f8f8; font-weight:bold;}
+      }
       .itm_lst{
         .dtl .btn{display:none;}
       }
     }
+
     // .syshp_fg
     &_fg{
       .inf{
@@ -317,12 +365,31 @@ export default {
     .inr{padding:40px 20px 20px;}
     .thmb{display:block; width:auto;}
     .inf{display:block; margin-top:20px; padding-left:0; width:auto;}
+    .bt_clse{position:fixed; top:12px; right:50%; margin-right:-25px; border-radius:50%; background:#fff; box-shadow:0 0 3px rgba(0,0,0,.3);}
   }
 }
 
 /* ~ Mobile */
 @media only screen and (max-width:414px){
   .syshp{
+    // .syshp_hg
+    &_hg{
+      .srch{
+        width:100%;
+        input{font-size:16px;}
+      }
+    }
+
+    // .syshp_cg
+    &_cg{
+      padding-top:40px;
+    }
+
+    // .syshp_tb
+    &_tb{
+      li{padding:0 10px;}
+    }
+
     // .syshp_dtl
     &_dtl{
       .itm_lst{

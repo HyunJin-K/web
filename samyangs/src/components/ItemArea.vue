@@ -30,6 +30,9 @@
             상품
             <em>{{ItemNum}}</em>개
           </span>
+
+          <!-- 768px 이하일 경우 사용하는 정렬 버튼 -->
+          <a href="#sortItems" class="bt_lysort" id="btLayerSort">정렬 선택 레이어</a>
           <ul class="sort" id="sortItems" role="tablist">
             <li class="is_on">
               <a role="tab" v-on:click="sortDate">등록일순</a>
@@ -225,6 +228,21 @@ export default {
     }
     tabEffect("sortItems");
     tabEffect("sortAllTab");
+
+    // 정렬 선택 레이어
+    var btsort = document.getElementById('btLayerSort');
+    btsort.addEventListener('click', function(e){
+      e.preventDefault();
+      var clickNow = this.getAttribute('href');
+      var layerNow = document.querySelector(clickNow);
+
+      if(layerNow.style.display == 'block'){
+        layerNow.style.display = 'none';
+      }else{
+        layerNow.style.display = 'block';
+      }
+      
+    });
   }
 };
 </script>
