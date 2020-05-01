@@ -63,31 +63,33 @@
                 <strong class="tt">상품명</strong>
 
                 <!-- 가격 영역 -->
-                <div class="prc_area">
-                  <div class="prc_gr">
-                    <span class="prc_tt">판매가</span>
-                    <div class="prc_dtl">
-                      <span class="prc">가격</span>
+                <div class="dtl">
+                  <div class="dtl_gr">
+                    <span class="dtl_tt">판매가</span>
+                    <div class="dtl_con">
+                      <span class="prc_sell">가격</span>
                     </div>
                   </div>
-                  <div class="prc_gr">
-                    <span class="prc_tt">판매가</span>
-                    <div class="prc_dtl">
-                      <span class="prc">가격</span>
+                  <div class="dtl_gr">
+                    <span class="dtl_tt">할인가</span>
+                    <div class="dtl_con">
+                      <span class="prc_dc">가격</span>
                     </div>
                   </div>
-                  <div class="prc_gr">
-                    <span class="prc_tt">판매가</span>
-                    <div class="prc_dtl">
-                      <span class="prc">가격</span>
-                      <p class="dsc">(적립금으로 상품을 결제할 경우 적립 제외)</p>
+                  <div class="dtl_gr">
+                    <div class="dtl_gr_ls">
+                      <span class="dtl_tt">적립금</span>
+                      <div class="dtl_con">
+                        <span class="prc">가격</span>
+                        <span class="dsc">(적립금으로 상품을 결제할 경우 적립 제외)</span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="prc_gr">
-                    <span class="prc_tt">판매가</span>
-                    <div class="prc_dtl">
-                      <span class="prc">가격</span>
-                      <p class="dsc">(적립금으로 상품을 결제할 경우 적립 제외)</p>
+                    <div class="dtl_gr_ls">
+                      <span class="dtl_tt">배송비</span>
+                      <div class="dtl_con">
+                        <span class="prc">가격</span>
+                        <p class="dsc">(적립금으로 상품을 결제할 경우 적립 제외)</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -96,20 +98,20 @@
                   <div class="ctrl_num">
                     <button type="button">수량 감소</button>
                     <input type="number">
-                    <button type="button">수량 증가</button>
+                    <button type="button" class="bt_up">수량 증가</button>
                   </div>
                   <span class="prc">총가격</span>
                 </div>
 
                 <div class="total">
                   <span class="txt">
-                    총 합계 <strong class="prc">총가격</strong>원
+                    총 합계 <em>총가격</em>원
                   </span>
                 </div>
 
                 <div class="bt_area">
                   <button type="button">장바구니</button>
-                  <button type="button">구매하기</button>
+                  <button type="button" class="bt_buy">구매하기</button>
                 </div>
               </div>
             </div>
@@ -194,6 +196,8 @@ export default {
 @import "../assets/scss/basic";
 
 .syshp {
+  $pnt-color: #ff661b;
+
   // .syshp_tb
   &_tb {
     text-align: center;
@@ -334,6 +338,78 @@ export default {
             background-position: -58px 0;
           }
         }
+      }
+    }
+  }
+  
+  // .ly_item_dtl
+  @at-root{
+    .ly_item_dtl{
+      position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.2); text-align:center; z-index:100;
+      &:after{display:inline-block; height:100%; vertical-align:middle; content:"";}
+      .inr{display:inline-block; padding:40px; background:#fff; max-width:90%; max-height:90%; font-size:0; box-sizing:border-box; overflow-y:auto; vertical-align:middle;}
+      .thmb{
+        display:inline-block; width:40%; vertical-align:middle;
+        img{width:auto; height:auto; max-width:100%; max-height:100%;}
+      }
+      .inf{
+        display:inline-block; padding-left:5%; width:60%; vertical-align:middle; box-sizing:border-box; font-size:14px; text-align:left;
+        .dsc{color:#888;}
+      }
+      .brd{display:block; color:#888; font-size:21px;}
+      .tt{display:block; margin-top:14px; font-size:26px;}
+      .dtl{
+        margin-top:20px; border-top:1px solid #aaa;
+        // .dtl_gr
+        &_gr{
+          display:table; border-top:1px solid #e2e2e2; padding:20px 0; width:100%; table-layout:fixed;
+          &:first-child{border-top:0;}
+          // 더 깊은 depth : border처리 없는 영역
+          &_ls{
+            display:table; width:100%; table-layout:fixed;
+            + .dtl_gr_ls{margin-top:24px;}
+            .dtl_tt,
+            .dtl_con{vertical-align:top;}
+          }
+        }
+        // .dtl_tt
+        &_tt{display:table-cell; padding-right:15px; width:100px; box-sizing:border-box; color:#555; font-weight:bold; vertical-align:middle;}
+        // .dtl_con
+        &_con{display:table-cell; vertical-align:middle;}
+        .prc{
+          // .prc_sell
+          &_sell{font-size:18px;}
+          // .prc_dc
+          &_dc{font-size:24px; font-weight:bold;}
+        }
+      }
+      .opt{
+        margin-top:30px; padding:25px 20px; background:#f5f5f5;
+        @at-root .ctrl_num{
+          display:inline-block; border:1px solid #e2e2e2; height:28px; font-size:0;
+          input{
+            display:inline-block; border:solid #e2e2e2; border-width:0 1px; width:40px; height:100%; vertical-align:middle; font-size:12px;
+            ::-webkit-inner-spin-button,
+            ::-webkit-outer-spin-button{-webkit-appearance: none; -moz-appearance: none; appearance: none;}
+          }
+          button{
+            display:inline-block; position:relative; background:#fff; width:28px; height:100%; vertical-align:middle; font-size:0; outline:transparent; text-align:center;
+            &:before{display:inline-block; background:#111; width:16px; height:1px; content:"";}
+          }
+          .bt_up:after{display:inline-block; position:absolute; top:50%; left:50%; margin:-8px 0 0 0; background:#111; width:1px; height:16px; content:"";}
+        }
+      }
+      .total{
+        margin-top:35px; text-align:right;
+        .txt{
+          color:$pnt-color; font-size:22px;
+          em{font-weight:bold; font-size:28px;}
+        }
+      }
+      .bt_area{
+        margin-top:20px; text-align:right;
+        button{border:1px solid $pnt-color; width:210px; height:60px; line-height:60px; box-sizing:border-box; color:$pnt-color; font-size:17px; text-align:center;}
+        .bt_buy{background:$pnt-color; color:#fff; font-weight:bold;}
       }
     }
   }
