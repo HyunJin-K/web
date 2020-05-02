@@ -302,9 +302,6 @@ export default {
     this.tabEffect('sortAllTab');
     this.tabEffect('sortItems');
   },
-  updated(){
-    this.tabEffect('sortAllTab');
-  }
 };
 </script>
 
