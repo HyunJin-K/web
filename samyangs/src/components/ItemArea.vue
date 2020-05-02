@@ -3,19 +3,19 @@
     <div class="syshp_inr">
       <ul class="syshp_tb" id="sortAllTab" role="tablist">
         <li class="is_on">
-          <a role="tab">전체보기</a>
+          <a role="tab" v-on:click="tabAll">전체보기</a>
         </li>
         <li>
-          <a role="tab">봉지면</a>
+          <a role="tab" v-on:click="tabRamen1">봉지면</a>
         </li>
         <li>
-          <a role="tab">용기면</a>
+          <a role="tab" v-on:click="tabRamen2">용기면</a>
         </li>
         <li>
-          <a role="tab">스낵</a>
+          <a role="tab" v-on:click="tabSnack">스낵</a>
         </li>
         <li>
-          <a role="tab">디저트/간편식</a>
+          <a role="tab" v-on:click="tabDessert">디저트/간편식</a>
         </li>
       </ul>
 
@@ -145,6 +145,7 @@ export default {
       bnrImgDsc: "",
       ItemNum: this.ItemList.length,
       ItemListOrg: [...this.ItemList],
+      ItemFilter: [],
       LayerStatus: false,
       clickedItem: 1,
       ctrlNum: 1,
@@ -157,25 +158,35 @@ export default {
     ItemList: Array
   },
   methods: {
+    // About Tab
+    tabAll(){
+      this.ItemList = this.ItemListOrg;
+    },
+    tabRamen1(){
+      console.log(this.ItemList[1].type.includes('용기면'));
+    },
+    tabRamen2(){
+    },
+    tabSnack(){
+    },
+    tabDessert(){
+    },
+
     // About Sort
-    sortDate(e) {
-      e.preventDefault();
+    sortDate() {
       this.ItemList = [...this.ItemListOrg];
     },
-    sortName(e) {
-      e.preventDefault();
+    sortName() {
       this.ItemList.sort(function(a, b) {
         return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
       });
     },
-    sortLowPrice(e) {
-      e.preventDefault();
+    sortLowPrice() {
       this.ItemList.sort(function(a, b) {
         return a.price - b.price;
       });
     },
-    sortHighPrice(e) {
-      e.preventDefault();
+    sortHighPrice() {
       this.ItemList.sort(function(a, b) {
         return b.price - a.price;
       });
