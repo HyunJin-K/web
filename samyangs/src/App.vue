@@ -3,7 +3,7 @@
     <header class="syshp_hg">
       <div class="syshp_inr">
         <h1 class="logo">
-          <a href="#">
+          <a href="#" v-on:click="searchStatus = 1">
             <img
               src="@/assets/img/logo_samyang.png"
               width="161"
@@ -22,14 +22,17 @@
             />
           </a>
         </div>
-        <div class="srch">
-          <input type="text" placeholder="사는 맛을 찾아보세요" v-model="typeItem" />
-          <button>검색</button>
-        </div>
+        <form class="srch" v-on:submit="formSearch">
+          <fieldset>
+            <legend>상품 검색창</legend>
+            <input type="text" placeholder="사는 맛을 찾아보세요" data-func="searchIpt" />
+            <button>검색</button>
+          </fieldset>
+        </form>
       </div>
     </header>
 
-    <ItemArea :ItemList="ItemList" />
+    <ItemArea :ItemList="ItemList" :typeItem="typeItem" :formSearch="formSearch" :searchStatus="searchStatus" />
 
     <footer class="syshp_fg">
       <div class="syshp_inr">
@@ -65,18 +68,33 @@
 import ItemArea from "./components/ItemArea.vue";
 import Items from "./items.js";
 
+
+
 export default {
   name: "App",
   data() {
     return {
       ItemList: Items,
       typeItem : '',
+      searchStatus : 1,
     };
   },
   components: {
     ItemArea
   },
-  methods: {}
+  methods: {
+    // 검색용 공통 함수
+    formSearch(e){
+      e.preventDefault();
+      var searchIpt = document.querySelectorAll('input[data-func="searchIpt"]');
+      for(var i = 0; i < searchIpt.length; i++){
+        this.typeItem = searchIpt[i].value;
+        searchIpt[i].value = '';
+      }
+      
+      this.searchStatus = 2;
+    },
+  }
 };
 </script>
 
@@ -99,7 +117,8 @@ export default {
     .logo{display:inline-block;}
     .sd_bnr{float:left;}
     .srch{
-      position:relative; float:right; border-bottom:2px solid $pnt-color; margin-top:70px; padding-right:30px; width:330px; box-sizing:border-box;
+      float:right; margin-top:70px;
+      fieldset{position:relative; border-bottom:2px solid $pnt-color; padding-right:30px; width:330px; box-sizing:border-box;}
       input{border:0; padding:0 22px; width:100%; height:50px; box-sizing:border-box; outline:transparent; font-size:24px;
         &::-webkit-input-placeholder,
         &::-moz-placeholder,
@@ -142,6 +161,21 @@ export default {
         .esc{background-position:-92px 0}
       }
       .dsc{position:absolute; bottom:40px; right:0; color:#777; letter-spacing:-0.4px}
+    }
+  }
+
+  // .syshp_rslt : 검색결과
+  &_rslt{
+    margin:30px auto 80px; padding:0 15px; max-width:860px; text-align:center;
+    .sbj{
+      font-size:31px; letter-spacing:-0.4px;
+      em{color:$pnt-color;}
+    }
+    .dsc{margin-top:15px; color:#555; font-size:18px;}
+    .srch{
+      fieldset{position:relative; margin-top:45px; border:1px solid $pnt-color; padding-right:120px; height:58px; font-size:16px;}
+      input{border:0; padding:0 20px; width:100%; height:100%; color:#777; text-align:left; box-sizing:border-box; outline:transparent;}
+      button{position:absolute; top:0; right:0; bottom:0; background:$pnt-color; width:120px; color:#fff; font-weight:bold; outline:transparent;}
     }
   }
 
@@ -387,6 +421,16 @@ export default {
     // .syshp_cg
     &_cg{
       padding-top:40px;
+    }
+
+    // .syshp_rslt
+    &_rslt{
+      .sbj{font-size:22px;}
+      .dsc{font-size:14px;}
+      .srch{
+        margin-top:30px; padding-right:80px; height:40px;
+        button{width:80px;}
+      }
     }
 
     // .syshp_tb

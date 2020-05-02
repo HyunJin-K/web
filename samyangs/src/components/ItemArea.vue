@@ -1,26 +1,42 @@
 <template>
   <div class="syshp_cg">
     <div class="syshp_inr">
-      <ul class="syshp_tb" id="sortAllTab" role="tablist">
-        <li class="is_on">
-          <a role="tab" v-on:click="AllFilter">전체보기</a>
-        </li>
-        <li>
-          <a role="tab" v-on:click="commonFilter('봉지면')">봉지면</a>
-        </li>
-        <li>
-          <a role="tab" v-on:click="commonFilter('용기면')">용기면</a>
-        </li>
-        <li>
-          <a role="tab" v-on:click="commonFilter('스낵')">스낵</a>
-        </li>
-        <li>
-          <a role="tab" v-on:click="commonFilter('디저트/간편식')">디저트/간편식</a>
-        </li>
-      </ul>
+      <!-- Area : 탭메뉴 & 탭별 배너 -->
+      <div v-if="searchStatus == 1">
+        <ul class="syshp_tb" id="sortAllTab" role="tablist">
+          <li class="is_on">
+            <a role="tab" v-on:click="AllFilter">전체보기</a>
+          </li>
+          <li>
+            <a role="tab" v-on:click="commonFilter('봉지면')">봉지면</a>
+          </li>
+          <li>
+            <a role="tab" v-on:click="commonFilter('용기면')">용기면</a>
+          </li>
+          <li>
+            <a role="tab" v-on:click="commonFilter('스낵')">스낵</a>
+          </li>
+          <li>
+            <a role="tab" v-on:click="commonFilter('디저트/간편식')">디저트/간편식</a>
+          </li>
+        </ul>
 
-      <div class="syshp_bnr">
-        <img :src="bnrImg" :alt="bnrImgDsc" />
+        <div class="syshp_bnr">
+          <img :src="bnrImg" :alt="bnrImgDsc" />
+        </div>
+      </div>
+
+      <!-- Area : 검색결과 표시 -->
+      <div class="syshp_rslt" v-if="searchStatus == 2">
+        <h2 class="sbj"><em>"{{ typeItem }}"</em> 에 대한 검색 결과입니다.</h2>
+        <p class="dsc">검색하신 내용과 일치하는 검색결과 입니다.</p>
+        <form class="srch" v-on:submit="formSearch">
+          <fieldset>
+            <legend>상품 재검색</legend>
+            <input type="text" data-func="searchIpt">
+            <button>검색</button>
+          </fieldset>
+        </form>
       </div>
 
       <div class="syshp_dtl">
@@ -154,14 +170,17 @@ export default {
       ItemListOrg: [...this.ItemList],
       LayerStatus: false,
       clickedItem: 1,
-      ctrlNum: 1
+      ctrlNum: 1,
     };
   },
   components: {
     ItemCard
   },
   props: {
-    ItemList: Array
+    ItemList: Array,
+    typeItem: String,
+    formSearch: Function,
+    searchStatus: Number,
   },
   methods: {
     // Items Filter
