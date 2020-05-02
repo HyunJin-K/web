@@ -3,7 +3,7 @@
     <header class="syshp_hg">
       <div class="syshp_inr">
         <h1 class="logo">
-          <a href="#" v-on:click="searchStatus = 1">
+          <a href="#" onclick="location.reload()">
             <img
               src="@/assets/img/logo_samyang.png"
               width="161"
@@ -22,7 +22,7 @@
             />
           </a>
         </div>
-        <form class="srch" v-on:submit="formSearch">
+        <form class="srch" v-on:submit="formSearch(0)">
           <fieldset>
             <legend>상품 검색창</legend>
             <input type="text" placeholder="사는 맛을 찾아보세요" data-func="searchIpt" />
@@ -32,7 +32,12 @@
       </div>
     </header>
 
-    <ItemArea :ItemList="ItemList" :typeItem="typeItem" :formSearch="formSearch" :searchStatus="searchStatus" />
+    <ItemArea
+      :ItemList="ItemList"
+      :typeItem="typeItem"
+      :formSearch="formSearch"
+      :searchStatus="searchStatus"
+    />
 
     <footer class="syshp_fg">
       <div class="syshp_inr">
@@ -68,15 +73,14 @@
 import ItemArea from "./components/ItemArea.vue";
 import Items from "./items.js";
 
-
-
 export default {
   name: "App",
   data() {
     return {
       ItemList: Items,
-      typeItem : '',
-      searchStatus : 1,
+      typeItem: '',
+      searchStatus: 1,
+      zzzz: '',
     };
   },
   components: {
@@ -84,16 +88,18 @@ export default {
   },
   methods: {
     // 검색용 공통 함수
-    formSearch(e){
-      e.preventDefault();
+    formSearch(num) {
+      event.preventDefault();
       var searchIpt = document.querySelectorAll('input[data-func="searchIpt"]');
-      for(var i = 0; i < searchIpt.length; i++){
-        this.typeItem = searchIpt[i].value;
-        searchIpt[i].value = '';
+      for (var i = 0; i < searchIpt.length; i++) {
+        this.typeItem = searchIpt[num].value;
+        searchIpt[i].value = "";
       }
-      
       this.searchStatus = 2;
     },
+    settingInit() {
+      this.searchStatus = 1;
+    }
   }
 };
 </script>
@@ -340,7 +346,10 @@ export default {
       &_hg{
         .logo{display:block;}
         .sd_bnr{display:none;}
-        .srch{float:none; margin:40px auto 0;}
+        .srch{
+          float:none; 
+          fieldset{margin:40px auto 0;}
+        }
       }
       // .syshp_fg
       &_fg{

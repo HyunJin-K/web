@@ -2,35 +2,33 @@
   <div class="syshp_cg">
     <div class="syshp_inr">
       <!-- Area : 탭메뉴 & 탭별 배너 -->
-      <div v-if="searchStatus == 1">
-        <ul class="syshp_tb" id="sortAllTab" role="tablist">
-          <li class="is_on">
-            <a role="tab" v-on:click="AllFilter">전체보기</a>
-          </li>
-          <li>
-            <a role="tab" v-on:click="commonFilter('봉지면')">봉지면</a>
-          </li>
-          <li>
-            <a role="tab" v-on:click="commonFilter('용기면')">용기면</a>
-          </li>
-          <li>
-            <a role="tab" v-on:click="commonFilter('스낵')">스낵</a>
-          </li>
-          <li>
-            <a role="tab" v-on:click="commonFilter('디저트/간편식')">디저트/간편식</a>
-          </li>
-        </ul>
+      <ul class="syshp_tb" id="sortAllTab" role="tablist" v-if="searchStatus == 1">
+        <li class="is_on">
+          <a role="tab" v-on:click="AllFilter">전체보기</a>
+        </li>
+        <li>
+          <a role="tab" v-on:click="commonFilter('봉지면')">봉지면</a>
+        </li>
+        <li>
+          <a role="tab" v-on:click="commonFilter('용기면')">용기면</a>
+        </li>
+        <li>
+          <a role="tab" v-on:click="commonFilter('스낵')">스낵</a>
+        </li>
+        <li>
+          <a role="tab" v-on:click="commonFilter('디저트/간편식')">디저트/간편식</a>
+        </li>
+      </ul>
 
-        <div class="syshp_bnr">
-          <img :src="bnrImg" :alt="bnrImgDsc" />
-        </div>
+      <div class="syshp_bnr" v-if="searchStatus == 1">
+        <img :src="bnrImg" :alt="bnrImgDsc" />
       </div>
 
       <!-- Area : 검색결과 표시 -->
       <div class="syshp_rslt" v-if="searchStatus == 2">
         <h2 class="sbj"><em>"{{ typeItem }}"</em> 에 대한 검색 결과입니다.</h2>
         <p class="dsc">검색하신 내용과 일치하는 검색결과 입니다.</p>
-        <form class="srch" v-on:submit="formSearch">
+        <form class="srch" v-on:submit="formSearch(1)">
           <fieldset>
             <legend>상품 재검색</legend>
             <input type="text" data-func="searchIpt">
@@ -264,11 +262,10 @@ export default {
     },
     ctrlIncrease() {
       this.ctrlNum = this.ctrlNum + 1;
-    }
-  },
-  mounted() {
-    // tab menu on effect
-    function tabEffect($param) {
+    },
+
+    // tab 효과
+    tabEffect($param) {
       var sortTab = document.getElementById($param);
       var sortTabLi = sortTab.getElementsByTagName("li");
       var sortTabLiBtn;
@@ -285,10 +282,9 @@ export default {
           this.parentNode.classList.add("is_on");
         });
       }
-    }
-    tabEffect("sortItems");
-    tabEffect("sortAllTab");
-
+    },
+  },
+  mounted() {
     // 정렬 선택 레이어
     var btsort = document.getElementById("btLayerSort");
     btsort.addEventListener("click", function(e) {
@@ -302,6 +298,12 @@ export default {
         layerNow.style.display = "block";
       }
     });
+
+    this.tabEffect('sortAllTab');
+    this.tabEffect('sortItems');
+  },
+  updated(){
+    this.tabEffect('sortAllTab');
   }
 };
 </script>
