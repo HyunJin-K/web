@@ -3,19 +3,19 @@
     <div class="syshp_inr">
       <ul class="syshp_tb" id="sortAllTab" role="tablist">
         <li class="is_on">
-          <a role="tab" v-on:click="tabAll">전체보기</a>
+          <a role="tab" v-on:click="AllFilter">전체보기</a>
         </li>
         <li>
-          <a role="tab" v-on:click="tabRamen1">봉지면</a>
+          <a role="tab" v-on:click="commonFilter('봉지면')">봉지면</a>
         </li>
         <li>
-          <a role="tab" v-on:click="tabRamen2">용기면</a>
+          <a role="tab" v-on:click="commonFilter('용기면')">용기면</a>
         </li>
         <li>
-          <a role="tab" v-on:click="tabSnack">스낵</a>
+          <a role="tab" v-on:click="commonFilter('스낵')">스낵</a>
         </li>
         <li>
-          <a role="tab" v-on:click="tabDessert">디저트/간편식</a>
+          <a role="tab" v-on:click="commonFilter('디저트/간편식')">디저트/간편식</a>
         </li>
       </ul>
 
@@ -53,8 +53,8 @@
           <!-- Area : Item List -->
           <ul class="itm_lst">
             <ItemCard
-              v-bind:ItemList="ItemList[i]"
-              v-for="(list, i) in ItemList"
+              v-bind:FilterArr="FilterArr[i]"
+              v-for="(list, i) in FilterArr"
               :key="i"
               v-on:click.native="openLayer(i)"
             />
@@ -64,31 +64,35 @@
           <div class="ly_item_dtl" v-if="LayerStatus">
             <div class="inr">
               <div class="thmb">
-                <img :src="ItemList[clickedItem].img" :alt="ItemList[clickedItem].title" />
+                <img :src="FilterArr[clickedItem].img" :alt="FilterArr[clickedItem].title" />
               </div>
               <div class="inf">
-                <span class="brd">{{ ItemList[clickedItem].brand }}</span>
-                <strong class="tt">{{ ItemList[clickedItem].title }}</strong>
+                <span class="brd">{{ FilterArr[clickedItem].brand }}</span>
+                <strong class="tt">{{ FilterArr[clickedItem].title }}</strong>
 
                 <!-- 가격 영역 -->
                 <div class="dtl">
                   <div class="dtl_gr">
                     <span class="dtl_tt">판매가</span>
                     <div class="dtl_con">
-                      <span class="prc_sell">{{ ItemList[clickedItem].beforePrice.toLocaleString() }}원</span>
+                      <span
+                        class="prc_sell"
+                      >{{ FilterArr[clickedItem].beforePrice.toLocaleString() }}원</span>
                     </div>
                   </div>
                   <div class="dtl_gr">
                     <span class="dtl_tt">할인가</span>
                     <div class="dtl_con">
-                      <span class="prc_dc">{{ ItemList[clickedItem].price.toLocaleString() }}원</span>
+                      <span class="prc_dc">{{ FilterArr[clickedItem].price.toLocaleString() }}원</span>
                     </div>
                   </div>
                   <div class="dtl_gr">
                     <div class="dtl_gr_ls">
                       <span class="dtl_tt">적립금</span>
                       <div class="dtl_con">
-                        <span class="prc">{{ Math.floor(ItemList[clickedItem].price * 0.02).toLocaleString() }}원 </span>
+                        <span
+                          class="prc"
+                        >{{ Math.floor(FilterArr[clickedItem].price * 0.02).toLocaleString() }}원</span>
                         <span class="dsc">(적립금으로 상품을 결제할 경우 적립 제외)</span>
                       </div>
                     </div>
@@ -108,13 +112,15 @@
                     <input type="number" value="1" v-model="ctrlNum" />
                     <button type="button" class="bt_up" v-on:click="ctrlIncrease">수량 증가</button>
                   </div>
-                  <span class="opt_prc">{{ (ItemList[clickedItem].price * ctrlNum).toLocaleString() }}원</span>
+                  <span
+                    class="opt_prc"
+                  >{{ (FilterArr[clickedItem].price * ctrlNum).toLocaleString() }}원</span>
                 </div>
 
                 <div class="total">
                   <span class="txt">
                     총 합계
-                    <em>{{ (ItemList[clickedItem].price * ctrlNum).toLocaleString() }}</em>원
+                    <em>{{ (FilterArr[clickedItem].price * ctrlNum).toLocaleString() }}</em>원
                   </span>
                 </div>
 
@@ -141,14 +147,14 @@ export default {
   name: "ItemArea",
   data() {
     return {
-      bnrImg: "",
-      bnrImgDsc: "",
+      bnrImg: require("@/assets/img/bnr_all.jpg"),
+      bnrImgDsc: "삼양맛샵 앱을 다운 받으세요!",
+      FilterArr: this.ItemList,
       ItemNum: this.ItemList.length,
       ItemListOrg: [...this.ItemList],
-      ItemFilter: [],
       LayerStatus: false,
       clickedItem: 1,
-      ctrlNum: 1,
+      ctrlNum: 1
     };
   },
   components: {
@@ -158,36 +164,60 @@ export default {
     ItemList: Array
   },
   methods: {
-    // About Tab
-    tabAll(){
-      this.ItemList = this.ItemListOrg;
+    // Items Filter
+    commonFilter($param) {
+      this.FilterArr = [];
+
+      var FilterItems = this.ItemList.filter(x => {
+        return x.type == $param;
+      });
+      for (var i = 0; i < FilterItems.length; i++) {
+        this.FilterArr.unshift(FilterItems[i]);
+      }
+
+      this.ItemNum = this.FilterArr.length;
+      this.ItemListOrg = [...this.FilterArr];
+      this.bnrImgDsc = $param;
+
+      if ($param == "봉지면") {
+        this.bnrImg =
+          "https://www.sydeliciousshop.com/resources/category/201911/n_LtGoydSumH_JkHSSCpKg.jpg";
+      } else if ($param == "용기면") {
+        this.bnrImg =
+          "https://www.sydeliciousshop.com/resources/category/201911/pgc9DDGcSDq55_aNRZMZJg.jpg";
+      } else if ($param == "스낵") {
+        this.bnrImg =
+          "https://www.sydeliciousshop.com/resources/category/201911/Vj2GwTB9S!22EjbwQFJ8Xg.jpg";
+      } else if ($param == "디저트/간편식") {
+        this.bnrImg =
+          "https://www.sydeliciousshop.com/resources/category/201911/VfaGcaR9S6yNoHcANJSqAA.jpg";
+      }
     },
-    tabRamen1(){
-      console.log(this.ItemList[1].type.includes('용기면'));
-    },
-    tabRamen2(){
-    },
-    tabSnack(){
-    },
-    tabDessert(){
+    // 전체보기 필터
+    AllFilter() {
+      this.FilterArr = this.ItemList;
+      this.ItemNum = this.ItemList.length;
+      this.ItemListOrg = [...this.ItemList];
+      this.bnrImg = require("@/assets/img/bnr_all.jpg");
+      this.bnrImgDsc = "삼양맛샵 앱을 다운 받으세요!";
     },
 
     // About Sort
     sortDate() {
-      this.ItemList = [...this.ItemListOrg];
+      this.FilterArr = [...this.ItemListOrg];
     },
     sortName() {
-      this.ItemList.sort(function(a, b) {
+      this.FilterArr.sort(function(a, b) {
         return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
       });
     },
     sortLowPrice() {
-      this.ItemList.sort(function(a, b) {
+      this.FilterArr.sort(function(a, b) {
         return a.price - b.price;
       });
     },
     sortHighPrice() {
-      this.ItemList.sort(function(a, b) {
+      this.FilterArr.sort(function(a, b) {
         return b.price - a.price;
       });
     },
@@ -197,23 +227,23 @@ export default {
       event.preventDefault();
       this.LayerStatus = true;
       this.clickedItem = $param;
-      var body = document.getElementsByTagName('body')[0];
-      body.classList.add('scroll_fix');
+      var body = document.getElementsByTagName("body")[0];
+      body.classList.add("scroll_fix");
     },
-    closeLayer(){
-      this.LayerStatus = false
-      var body = document.getElementsByTagName('body')[0];
-      body.classList.remove('scroll_fix');
+    closeLayer() {
+      this.LayerStatus = false;
+      var body = document.getElementsByTagName("body")[0];
+      body.classList.remove("scroll_fix");
       this.ctrlNum = 1;
     },
 
     // About CtrlNum
-    ctrlDecrease(){
-      if(this.ctrlNum > 1){
+    ctrlDecrease() {
+      if (this.ctrlNum > 1) {
         this.ctrlNum = this.ctrlNum - 1;
       }
     },
-    ctrlIncrease(){
+    ctrlIncrease() {
       this.ctrlNum = this.ctrlNum + 1;
     }
   },
@@ -241,18 +271,17 @@ export default {
     tabEffect("sortAllTab");
 
     // 정렬 선택 레이어
-    var btsort = document.getElementById('btLayerSort');
-    btsort.addEventListener('click', function(e){
+    var btsort = document.getElementById("btLayerSort");
+    btsort.addEventListener("click", function(e) {
       e.preventDefault();
-      var clickNow = this.getAttribute('href');
+      var clickNow = this.getAttribute("href");
       var layerNow = document.querySelector(clickNow);
 
-      if(layerNow.style.display == 'block'){
-        layerNow.style.display = 'none';
-      }else{
-        layerNow.style.display = 'block';
+      if (layerNow.style.display == "block") {
+        layerNow.style.display = "none";
+      } else {
+        layerNow.style.display = "block";
       }
-      
     });
   }
 };

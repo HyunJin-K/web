@@ -5,7 +5,7 @@
         <h1 class="logo">
           <a href="#">
             <img
-              src="./assets/img/logo_samyang.png"
+              src="@/assets/img/logo_samyang.png"
               width="161"
               height="120"
               alt="삼양맛샵, 삼양식품 공식 온라인 쇼핑몰"
@@ -15,7 +15,7 @@
         <div class="sd_bnr">
           <a href="#">
             <img
-              src="./assets/img/bnr_membership.jpg"
+              src="@/assets/img/bnr_membership.jpg"
               width="330"
               height="114"
               alt="새롭게, 더 특별하게! 맛샵멤버십"
@@ -23,7 +23,7 @@
           </a>
         </div>
         <div class="srch">
-          <input type="text" placeholder="사는 맛을 찾아보세요" />
+          <input type="text" placeholder="사는 맛을 찾아보세요" v-model="typeItem" />
           <button>검색</button>
         </div>
       </div>
@@ -69,7 +69,8 @@ export default {
   name: "App",
   data() {
     return {
-      ItemList: Items
+      ItemList: Items,
+      typeItem : '',
     };
   },
   components: {
@@ -156,7 +157,10 @@ export default {
   }
 
   // .syshp_bnr
-  &_bnr{margin-top:18px;}
+  &_bnr{
+    margin-top:25px;
+    img{width:auto; height:auto; max-width:100%; max-height:100%;}
+  }
 
   // .syshp_dtl
   &_dtl{
@@ -389,6 +393,9 @@ export default {
     &_tb{
       li{padding:0 10px;}
     }
+
+    // .syshp_bnr
+    &_bnr{display:none;}
 
     // .syshp_dtl
     &_dtl{

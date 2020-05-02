@@ -31,11 +31,3 @@
 @mixin text-line-ellipsis($line){
     display:-webkit-box; overflow:hidden; text-overflow:ellipsis; -webkit-line-clamp:$line; -webkit-box-orient:vertical; word-wrap:break-word;
 }
-
-// Background Gradient
-@mixin bg-gradient($direct, $color1, $color2){
-    background-image: -webkit-linear-gradient($direct, $color1, $color2);
-    background-image: -moz-linear-gradient($direct, $color1, $color2);
-    background-image: -ms-linear-gradient($direct, $color1, $color2);
-    background-image: linear-gradient($direct, $color1, $color2);
-}
