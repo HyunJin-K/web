@@ -12,16 +12,6 @@
             />
           </a>
         </h1>
-        <div class="sd_bnr">
-          <a href="#">
-            <img
-              src="@/assets/img/bnr_membership.jpg"
-              width="330"
-              height="114"
-              alt="새롭게, 더 특별하게! 맛샵멤버십"
-            />
-          </a>
-        </div>
         <form class="srch" v-on:submit="formSearch(0)">
           <fieldset>
             <legend>상품 검색창</legend>
@@ -117,13 +107,10 @@ export default {
   // .syshp_hg
   &_hg{
     padding-top:34px; text-align:center;
-    .syshp_inr:after{
-      @include clearfix;
-    }
+    .syshp_inr{position:relative;}
     .logo{display:inline-block;}
-    .sd_bnr{float:left;}
     .srch{
-      float:right; margin-top:70px;
+      position:absolute; right:0; bottom:0;
       fieldset{position:relative; border-bottom:2px solid $pnt-color; padding-right:30px; width:330px; box-sizing:border-box;}
       input{border:0; padding:0 22px; width:100%; height:50px; box-sizing:border-box; outline:transparent; font-size:24px;
         &::-webkit-input-placeholder,
@@ -345,9 +332,8 @@ export default {
       // .syshp_hg
       &_hg{
         .logo{display:block;}
-        .sd_bnr{display:none;}
         .srch{
-          float:none; 
+          position:static;
           fieldset{margin:40px auto 0;}
         }
       }
@@ -422,7 +408,7 @@ export default {
     // .syshp_hg
     &_hg{
       .srch{
-        width:100%;
+        fieldset{width:100%;}
         input{font-size:16px;}
       }
     }
