@@ -1,5 +1,6 @@
 export default [
     {
+        num : 1,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/202004/evtGtnejSZ6DTPYTupVYcA.jpg',
         brand : '삼양식품',
@@ -8,6 +9,7 @@ export default [
         price : 9900,
     },
     {
+        num : 2,
         type : '디저트/간편식',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/f3kE9kyBS7SOcGifoYvh8Q.jpg',
         brand : '삼양식품',
@@ -16,6 +18,7 @@ export default [
         price : 4500,
     },
     {
+        num : 3,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/202003/EQZiQKJaTB2FNor5tK4Dpg.jpg',
         brand : '삼양식품',
@@ -24,6 +27,7 @@ export default [
         price : 4400,
     },
     {
+        num : 4,
         type : '디저트/간편식',
         img : 'https://www.sydeliciousshop.com/resources/goods/202003/bGFhdgEETrSSmFQ!VjWeHw.jpg',
         brand : '삼양식품',
@@ -32,6 +36,7 @@ export default [
         price : 1900,
     },
     {
+        num : 5,
         type : '디저트/간편식',
         img : 'https://www.sydeliciousshop.com/resources/goods/201912/ZkJxCJYxQFWVrZrWPDpx2g.jpg',
         brand : '삼양식품',
@@ -40,6 +45,7 @@ export default [
         price : 4500,
     },
     {
+        num : 6,
         type : '디저트/간편식',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/NGGVBXfwRqiKUvW0XqnALQ.jpg',
         brand : '삼양식품',
@@ -48,6 +54,7 @@ export default [
         price : 41760,
     },
     {
+        num : 7,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/202003/azRurSG2QcW0ZetMbR6xTA.jpg',
         brand : '삼양식품',
@@ -56,6 +63,7 @@ export default [
         price : 31520,
     },
     {
+        num : 8,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201912/!6LK2ZQ3Spe67wJVPIF1LA.jpg',
         brand : '삼양식품',
@@ -64,6 +72,7 @@ export default [
         price : 20480,
     },
     {
+        num : 9,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201912/!iWjVKktQmOT4j_QQ_BOwA.jpg',
         brand : '삼양식품',
@@ -72,6 +81,7 @@ export default [
         price : 1280,
     },
     {
+        num : 10,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/o18qLEXlQ9ip5kw6IK5!oA.jpg',
         brand : '삼양식품',
@@ -80,6 +90,7 @@ export default [
         price : 42000,
     },
     {
+        num : 11,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/Kz5kLxAcRuOIU1TPZB_L0A.jpg',
         brand : '삼양식품',
@@ -88,6 +99,7 @@ export default [
         price : 28000,
     },
     {
+        num : 12,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/05Ic4bcARy2J7FeP!jgkZQ.jpg',
         brand : '삼양식품',
@@ -96,6 +108,7 @@ export default [
         price : 24480,
     },
     {
+        num : 13,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/Diko8zhCTVaQ_uuM4vuUmw.jpg',
         brand : '삼양식품',
@@ -104,6 +117,7 @@ export default [
         price : 36800,
     },
     {
+        num : 14,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/SviT!PlnQDSVmQJFlYviww.jpg',
         brand : '삼양식품',
@@ -112,6 +126,7 @@ export default [
         price : 3500,
     },
     {
+        num : 15,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/dzu0X8LATUmwbEg1fKXI_g.jpg',
         brand : '삼양식품',
@@ -120,6 +135,7 @@ export default [
         price : 2800,
     },
     {
+        num : 16,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/grh8ggVmSG!GOWnF2xxOVQ.jpg',
         brand : '삼양식품',
@@ -128,6 +144,7 @@ export default [
         price : 3500,
     },
     {
+        num : 17,
         type : '용기면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/ywGXpkYfRISM1C0iGxaTpg.jpg',
         brand : '삼양식품',
@@ -136,6 +153,7 @@ export default [
         price : 4740,
     },
     {
+        num : 18,
         type : '용기면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/XMzEoIk8R2!YeCJ_Se6GRA.jpg',
         brand : '삼양식품',
@@ -144,6 +162,7 @@ export default [
         price : 5520,
     },
     {
+        num : 19,
         type : '용기면',
         img : 'https://www.sydeliciousshop.com/resources/goods/202001/xmSu5iHMSCi!O6Ifai28Aw.jpg',
         brand : '삼양식품',
@@ -152,6 +171,7 @@ export default [
         price : 21000,
     },
     {
+        num : 20,
         type : '용기면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/vJEHZDlOQpqF3_nS1Xm4XQ.jpg',
         brand : '삼양식품',
@@ -160,6 +180,7 @@ export default [
         price : 18880,
     },
     {
+        num : 21,
         type : '스낵',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/_4I8PP89RQ2A9RPgxXxKIw.jpg',
         brand : '삼양식품',
@@ -168,6 +189,7 @@ export default [
         price : 38400,
     },
     {
+        num : 22,
         type : '스낵',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/vey0qhhtT3qk_!jE6!HWIw.jpg',
         brand : '삼양식품',
@@ -176,6 +198,7 @@ export default [
         price : 1970,
     },
     {
+        num : 23,
         type : '스낵',
         img : 'https://www.sydeliciousshop.com/resources/goods/201910/DxX6oI_wTz2C9h8BCjaPig.jpg',
         brand : '삼양식품',
@@ -184,6 +207,7 @@ export default [
         price : 1040,
     },
     {
+        num : 24,
         type : '디저트/간편식',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/0RngTpuMSKCL2QHBQVDx1A.jpg',
         brand : '삼양식품',
@@ -192,6 +216,7 @@ export default [
         price : 20480,
     },
     {
+        num : 25,
         type : '디저트/간편식',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/oYZiP5d5QKadZ_dijOlSnQ.jpg',
         brand : '삼양식품',
@@ -200,6 +225,7 @@ export default [
         price : 3600,
     },
     {
+        num : 26,
         type : '디저트/간편식',
         img : 'https://www.sydeliciousshop.com/resources/goods/201912/4i6HmjlORK!qem_eW2OIsg.jpg',
         brand : '삼양식품',
@@ -208,6 +234,7 @@ export default [
         price : 8900,
     },
     {
+        num : 27,
         type : '디저트/간편식',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/FP2SKVCgQk!JzjD52HWkRQ.jpg',
         brand : '삼양식품',
@@ -216,6 +243,7 @@ export default [
         price : 9900,
     },
     {
+        num : 28,
         type : '디저트/간편식',
         img : 'https://www.sydeliciousshop.com/resources/goods/201912/Tu5Z2yAbRCSs3XDqF62UCQ.jpg',
         brand : '삼양식품',
@@ -224,6 +252,7 @@ export default [
         price : 4500,
     },
     {
+        num : 29,
         type : '용기면',
         img : 'https://www.sydeliciousshop.com/resources/goods/202001/WnUvzo5oTRmT5!TxM3XC7g.jpg',
         brand : '삼양식품',
@@ -232,6 +261,7 @@ export default [
         price : 1310,
     },
     {
+        num : 30,
         type : '용기면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/TgV1soAoTvi8l8_E42WR5Q.jpg',
         brand : '삼양식품',
@@ -240,6 +270,7 @@ export default [
         price : 920,
     },
     {
+        num : 31,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/A6_LczkJS9G0VcPrfJiRWQ.jpg',
         brand : '삼양식품',
@@ -248,6 +279,7 @@ export default [
         price : 22400,
     },
     {
+        num : 32,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/gxlkmIqsTfOQuld3Df6V2w.jpg',
         brand : '삼양식품',
@@ -256,6 +288,7 @@ export default [
         price : 3050,
     },
     {
+        num : 33,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/202002/usJM8xC3QOyJoEf!aKIvqw.jpg',
         brand : '삼양식품',
@@ -264,6 +297,7 @@ export default [
         price : 2880,
     },
     {
+        num : 34,
         type : '용기면',
         img : 'https://www.sydeliciousshop.com/resources/goods/202001/39dqTNe!Qi2BNdQcvJuWXg.jpg',
         brand : '삼양식품',
@@ -272,6 +306,7 @@ export default [
         price : 1280,
     },
     {
+        num : 35,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201912/7AY3GGkrSrWqdODYdAmMNg.jpg',
         brand : '삼양식품',
@@ -280,6 +315,7 @@ export default [
         price : 9900,
     },
     {
+        num : 36,
         type : '용기면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201912/JUCXJ7ByS6mEyuRiAidyyA.jpg',
         brand : '삼양식품',
@@ -288,6 +324,7 @@ export default [
         price : 880,
     },
     {
+        num : 37,
         type : '스낵',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/S0v7NQZwQWCm5FioImHC_w.jpg',
         brand : '삼양식품',
@@ -296,6 +333,7 @@ export default [
         price : 33600,
     },
     {
+        num : 38,
         type : '스낵',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/7JyZzvAPQhWqQ8ZaxY!pZQ.jpg',
         brand : '삼양식품',
@@ -304,6 +342,7 @@ export default [
         price : 15700,
     },
     {
+        num : 39,
         type : '용기면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/j9T58PcOTs!c_4OHkfVqkg.jpg',
         brand : '삼양식품',
@@ -312,6 +351,7 @@ export default [
         price : 5520,
     },
     {
+        num : 40,
         type : '스낵',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/PkDdbhrdQ8eg_rpjT8W9kQ.jpg',
         brand : '삼양식품',
@@ -320,6 +360,7 @@ export default [
         price : 22800,
     },
     {
+        num : 41,
         type : '용기면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/L9nyesJRR2Sp1eLB8G6opw.jpg',
         brand : '삼양식품',
@@ -328,6 +369,7 @@ export default [
         price : 19680,
     },
     {
+        num : 42,
         type : '봉지면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/ph58PokuQYShdmmo0IHC6g.jpg',
         brand : '삼양식품',
@@ -336,6 +378,7 @@ export default [
         price : 36720,
     },
     {
+        num : 43,
         type : '스낵',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/GxC!his7Tx6r0a_5xgmmJg.jpg',
         brand : '삼양식품',
@@ -344,6 +387,7 @@ export default [
         price : 24500,
     },
     {
+        num : 44,
         type : '용기면',
         img : 'https://www.sydeliciousshop.com/resources/goods/201911/BnmM3MT5SwCC3YIKXlGb7A.jpg',
         brand : '삼양식품',
