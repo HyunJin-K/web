@@ -753,7 +753,8 @@ export default {
       .sbj{font-size:22px;}
       .dsc{font-size:14px;}
       .srch{
-        margin-top:30px; padding-right:80px; height:40px;
+        margin-top:30px; 
+        fieldset{padding-right:80px; height:40px;}
         button{width:80px;}
       }
     }
