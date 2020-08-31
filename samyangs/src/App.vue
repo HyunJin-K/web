@@ -3,7 +3,7 @@
     <header class="syshp_hg">
       <div class="syshp_inr">
         <h1 class="logo">
-          <a href="#">
+          <a href="#" v-on:click="pageInit">
             <img
               src="@/assets/img/logo_samyang.png"
               width="161"
@@ -12,24 +12,174 @@
             />
           </a>
         </h1>
-        <div class="sd_bnr">
-          <a href="#">
-            <img
-              src="@/assets/img/bnr_membership.jpg"
-              width="330"
-              height="114"
-              alt="새롭게, 더 특별하게! 맛샵멤버십"
-            />
-          </a>
-        </div>
-        <div class="srch">
-          <input type="text" placeholder="사는 맛을 찾아보세요" v-model="typeItem" />
-          <button>검색</button>
-        </div>
+        <form class="srch" v-on:submit="formSearch(0)">
+          <fieldset>
+            <legend>상품 검색창</legend>
+            <input type="text" placeholder="사는 맛을 찾아보세요" data-func="searchIpt" />
+            <button>검색</button>
+          </fieldset>
+        </form>
       </div>
     </header>
 
-    <ItemArea :ItemList="ItemList" />
+    <div class="syshp_cg">
+      <div class="syshp_inr">
+        <!-- Area : 탭메뉴 & 탭별 배너 -->
+        <ul class="syshp_tb" id="sortAllTab" role="tablist" v-if="searchStatus == 1">
+          <li class="is_on">
+            <a role="tab" v-on:click="AllFilter">전체보기</a>
+          </li>
+          <li>
+            <a role="tab" v-on:click="commonFilter('봉지면')">봉지면</a>
+          </li>
+          <li>
+            <a role="tab" v-on:click="commonFilter('용기면')">용기면</a>
+          </li>
+          <li>
+            <a role="tab" v-on:click="commonFilter('스낵')">스낵</a>
+          </li>
+          <li>
+            <a role="tab" v-on:click="commonFilter('디저트/간편식')">디저트/간편식</a>
+          </li>
+        </ul>
+
+        <div class="syshp_bnr" v-if="searchStatus == 1">
+          <img :src="bnrImg" :alt="bnrImgDsc" />
+        </div>
+
+        <!-- Area : 검색결과 표시 -->
+        <div class="syshp_rslt" v-if="searchStatus == 2">
+          <h2 class="sbj">
+            <em>"{{ typeItem }}"</em> 에 대한 검색 결과입니다.
+          </h2>
+          <p class="dsc">검색하신 내용과 일치하는 검색결과 입니다.</p>
+          <form class="srch" v-on:submit="formSearch(1)">
+            <fieldset>
+              <legend>상품 재검색</legend>
+              <input type="text" data-func="searchIpt" />
+              <button>검색</button>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="syshp_dtl">
+          <h2 class="hide">상품 리스트</h2>
+          <div class="hd">
+            <span class="prd_num">
+              상품
+              <em>{{ItemNum}}</em>개
+            </span>
+
+            <!-- 768px 이하일 경우 사용하는 정렬 버튼 -->
+            <a href="#sortItems" class="bt_lysort" id="btLayerSort">정렬 선택 레이어</a>
+            <ul class="sort" id="sortItems" role="tablist">
+              <li class="is_on">
+                <a role="tab" v-on:click="sortDate">등록일순</a>
+              </li>
+              <li>
+                <a role="tab" v-on:click="sortName">상품명순</a>
+              </li>
+              <li>
+                <a role="tab" v-on:click="sortLowPrice">낮은가격순</a>
+              </li>
+              <li>
+                <a role="tab" v-on:click="sortHighPrice">높은가격순</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cg" role="tabpanel">
+            <!-- Area : Item List -->
+            <ul class="itm_lst">
+              <ItemCard
+                v-bind:FilterArr="FilterArr[i]"
+                v-for="(list, i) in FilterArr"
+                :key="i"
+                v-on:click.native="openLayer(i)"
+              />
+            </ul>
+
+            <!-- Area : 검색 결과 없을 때 -->
+            <p class="no_lst" v-if="noListArea">검색 결과가 없습니다. 재검색 해주시기 바랍니다.</p>
+
+            <!-- Layer : Item Detail -->
+            <div class="ly_item_dtl" v-if="LayerStatus">
+              <div class="inr">
+                <div class="thmb">
+                  <img :src="FilterArr[clickedItem].img" :alt="FilterArr[clickedItem].title" />
+                </div>
+                <div class="inf">
+                  <span class="brd">{{ FilterArr[clickedItem].brand }}</span>
+                  <strong class="tt">{{ FilterArr[clickedItem].title }}</strong>
+
+                  <!-- 가격 영역 -->
+                  <div class="dtl">
+                    <div class="dtl_gr">
+                      <span class="dtl_tt">판매가</span>
+                      <div class="dtl_con">
+                        <span
+                          class="prc_sell"
+                        >{{ FilterArr[clickedItem].beforePrice.toLocaleString() }}원</span>
+                      </div>
+                    </div>
+                    <div class="dtl_gr">
+                      <span class="dtl_tt">할인가</span>
+                      <div class="dtl_con">
+                        <span class="prc_dc">{{ FilterArr[clickedItem].price.toLocaleString() }}원</span>
+                      </div>
+                    </div>
+                    <div class="dtl_gr">
+                      <div class="dtl_gr_ls">
+                        <span class="dtl_tt">적립금</span>
+                        <div class="dtl_con">
+                          <span
+                            class="prc"
+                          >{{ Math.floor(FilterArr[clickedItem].price * 0.02).toLocaleString() }}원</span>
+                          <span class="dsc">(적립금으로 상품을 결제할 경우 적립 제외)</span>
+                        </div>
+                      </div>
+                      <div class="dtl_gr_ls">
+                        <span class="dtl_tt">배송비</span>
+                        <div class="dtl_con">
+                          <span class="prc">2,500원</span>
+                          <p class="dsc">(적립금으로 상품을 결제할 경우 적립 제외)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="opt">
+                    <div class="ctrl_num">
+                      <button type="button" v-on:click="ctrlDecrease">수량 감소</button>
+                      <input type="number" value="1" v-model="ctrlNum" />
+                      <button type="button" class="bt_up" v-on:click="ctrlIncrease">수량 증가</button>
+                    </div>
+                    <span
+                      class="opt_prc"
+                    >{{ (FilterArr[clickedItem].price * ctrlNum).toLocaleString() }}원</span>
+                  </div>
+
+                  <div class="total">
+                    <span class="txt">
+                      총 합계
+                      <em>{{ (FilterArr[clickedItem].price * ctrlNum).toLocaleString() }}</em>원
+                    </span>
+                  </div>
+
+                  <div class="bt_area">
+                    <button type="button">장바구니</button>
+                    <button type="button" class="bt_buy">구매하기</button>
+                  </div>
+                </div>
+
+                <button type="button" class="bt_clse" v-on:click="closeLayer">Close Layer</button>
+              </div>
+            </div>
+            <!-- // Layer : Item Detail -->
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="syshp_fg">
       <div class="syshp_inr">
@@ -62,21 +212,213 @@
 </template>
 
 <script>
-import ItemArea from "./components/ItemArea.vue";
 import Items from "./items.js";
+import ItemCard from "./components/ItemCard.vue";
 
 export default {
   name: "App",
   data() {
     return {
       ItemList: Items,
-      typeItem : '',
+      ItemListOrg: [...Items],
+      typeItem: "", // 검색한 단어
+      searchStatus: 1,
+      bnrImg: require("@/assets/img/bnr_all.jpg"),
+      bnrImgDsc: "삼양맛샵 앱을 다운 받으세요!",
+      FilterArr: Items, // 필터처리된 상품
+      ItemNum: Items.length,
+      LayerStatus: false,
+      noListArea: false,  // 검색 리스트가 없을 경우
+      clickedItem: 1,
+      ctrlNum: 1
     };
   },
   components: {
-    ItemArea
+    ItemCard
   },
-  methods: {}
+  methods: {
+    // tab 효과
+    tabEffect($param) {
+      // 탭 is_on 효과
+      var tabinit = document.querySelectorAll($param + " li");
+      for (var k = 0; k < tabinit.length; k++) {
+        tabinit[k].className = "";
+      }
+      var eventNow = event.target.parentNode;
+      eventNow.className = "is_on";
+    },
+
+    // 검색용 공통 함수
+    formSearch(num) {
+      event.preventDefault();
+      var searchIpt = document.querySelectorAll('input[data-func="searchIpt"]');
+      this.typeItem = searchIpt[num].value;
+
+      if (this.typeItem == "") {
+        alert("검색어를 입력해주세요");
+        return false;
+      } else {
+        this.searchStatus = 2;
+
+        // org값 초기화
+        this.ItemListOrg = [...this.ItemList];
+        this.FilterArr = this.ItemListOrg;
+
+        var searchResult = this.FilterArr.filter(el => {
+          return el.title.indexOf(this.typeItem) != -1;
+        });
+
+        // 검색결과가 없을 때
+        if(searchResult == 0){
+          this.noListArea = true;
+        }else{
+          this.noListArea = false;
+        }
+
+        this.FilterArr = searchResult;
+        this.ItemNum = this.FilterArr.length;
+
+        // 검색창 초기화
+        for (var i = 0; i < searchIpt.length; i++) {
+          searchIpt[i].value = "";
+        }
+      }
+    },
+
+    // Items Filter
+    commonFilter($param) {
+      this.tabEffect("#sortAllTab");
+
+      this.FilterArr = [];
+
+      var FilterItems = this.ItemList.filter(x => {
+        return x.type == $param;
+      });
+      for (var i = 0; i < FilterItems.length; i++) {
+        this.FilterArr.unshift(FilterItems[i]);
+      }
+
+      this.ItemNum = this.FilterArr.length;
+      this.ItemListOrg = [...this.FilterArr];
+      this.bnrImgDsc = $param;
+
+      var sortTab = document.querySelectorAll("#sortItems li");
+      for (var j = 0; j < sortTab.length; j++) {
+        sortTab[j].className = "";
+      }
+      var sortTabFirst = sortTab[0];
+      sortTabFirst.className = "is_on";
+
+      if ($param == "봉지면") {
+        this.bnrImg =
+          "https://www.sydeliciousshop.com/resources/category/201911/n_LtGoydSumH_JkHSSCpKg.jpg";
+      } else if ($param == "용기면") {
+        this.bnrImg =
+          "https://www.sydeliciousshop.com/resources/category/201911/pgc9DDGcSDq55_aNRZMZJg.jpg";
+      } else if ($param == "스낵") {
+        this.bnrImg =
+          "https://www.sydeliciousshop.com/resources/category/201911/Vj2GwTB9S!22EjbwQFJ8Xg.jpg";
+      } else if ($param == "디저트/간편식") {
+        this.bnrImg =
+          "https://www.sydeliciousshop.com/resources/category/201911/VfaGcaR9S6yNoHcANJSqAA.jpg";
+      }
+    },
+
+    // 전체보기 필터
+    AllFilter() {
+      // tab
+      this.tabEffect("#sortAllTab");
+
+      this.FilterArr = this.ItemList;
+      this.ItemNum = this.ItemList.length;
+      this.ItemListOrg = [...this.ItemList];
+      this.bnrImg = require("@/assets/img/bnr_all.jpg");
+      this.bnrImgDsc = "삼양맛샵 앱을 다운 받으세요!";
+      this.noListArea = false;
+    },
+
+    // About Sort
+    sortDate() {
+      this.FilterArr.sort(function(a, b) {
+        return a.num - b.num;
+      });
+    },
+    sortName() {
+      this.FilterArr.sort(function(a, b) {
+        return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
+      });
+    },
+    sortLowPrice() {
+      this.FilterArr.sort(function(a, b) {
+        return a.price - b.price;
+      });
+    },
+    sortHighPrice() {
+      this.FilterArr.sort(function(a, b) {
+        return b.price - a.price;
+      });
+    },
+
+    // About Layer
+    openLayer($param) {
+      event.preventDefault();
+      this.LayerStatus = true;
+      this.clickedItem = $param;
+      var body = document.getElementsByTagName("body")[0];
+      body.classList.add("scroll_fix");
+    },
+    closeLayer() {
+      this.LayerStatus = false;
+      var body = document.getElementsByTagName("body")[0];
+      body.classList.remove("scroll_fix");
+      this.ctrlNum = 1;
+    },
+
+    // About CtrlNum
+    ctrlDecrease() {
+      if (this.ctrlNum > 1) {
+        this.ctrlNum = this.ctrlNum - 1;
+      }
+    },
+    ctrlIncrease() {
+      this.ctrlNum = this.ctrlNum + 1;
+    },
+
+    // 로고 클릭시 홈화면 처리
+    pageInit() {
+      this.FilterArr = this.ItemList;
+      this.ItemNum = this.FilterArr.length;
+      this.searchStatus = 1;
+      this.AllFilter();
+    }
+  },
+  mounted() {
+    // 정렬 선택 레이어
+    var btsort = document.getElementById("btLayerSort");
+    btsort.addEventListener("click", function(e) {
+      e.preventDefault();
+      var clickNow = this.getAttribute("href");
+      var layerNow = document.querySelector(clickNow);
+
+      if (layerNow.style.display == "block") {
+        layerNow.style.display = "none";
+      } else {
+        layerNow.style.display = "block";
+      }
+    });
+
+    // 정렬 탭 is_on
+    var sortTab = document.querySelectorAll("#sortItems li");
+    for (var k = 0; k < sortTab.length; k++) {
+      sortTab[k].addEventListener("click", function() {
+        for (var j = 0; j < sortTab.length; j++) {
+          sortTab[j].className = "";
+        }
+        var eventNow = event.target.parentNode;
+        eventNow.className = "is_on";
+      });
+    }
+  }
 };
 </script>
 
@@ -93,13 +435,11 @@ export default {
   // .syshp_hg
   &_hg{
     padding-top:34px; text-align:center;
-    .syshp_inr:after{
-      @include clearfix;
-    }
+    .syshp_inr{position:relative;}
     .logo{display:inline-block;}
-    .sd_bnr{float:left;}
     .srch{
-      position:relative; float:right; border-bottom:2px solid $pnt-color; margin-top:70px; padding-right:30px; width:330px; box-sizing:border-box;
+      position:absolute; right:0; bottom:0;
+      fieldset{position:relative; border-bottom:2px solid $pnt-color; padding-right:30px; width:330px; box-sizing:border-box;}
       input{border:0; padding:0 22px; width:100%; height:50px; box-sizing:border-box; outline:transparent; font-size:24px;
         &::-webkit-input-placeholder,
         &::-moz-placeholder,
@@ -142,6 +482,21 @@ export default {
         .esc{background-position:-92px 0}
       }
       .dsc{position:absolute; bottom:40px; right:0; color:#777; letter-spacing:-0.4px}
+    }
+  }
+
+  // .syshp_rslt : 검색결과
+  &_rslt{
+    margin:30px auto 80px; padding:0 15px; max-width:860px; text-align:center;
+    .sbj{
+      font-size:31px; letter-spacing:-0.4px;
+      em{color:$pnt-color;}
+    }
+    .dsc{margin-top:15px; color:#555; font-size:18px;}
+    .srch{
+      fieldset{position:relative; margin-top:45px; border:1px solid $pnt-color; padding-right:120px; height:58px; font-size:16px;}
+      input{border:0; padding:0 20px; width:100%; height:100%; color:#777; text-align:left; box-sizing:border-box; outline:transparent;}
+      button{position:absolute; top:0; right:0; bottom:0; background:$pnt-color; width:120px; color:#fff; font-weight:bold; outline:transparent;}
     }
   }
 
@@ -215,6 +570,7 @@ export default {
         }
       }
     }
+    .no_lst{margin-bottom:20px; padding:70px 15px; background:#f9f9f9; color:#999; font-size:15px; text-align:center;}
   }
 
   // .ly_item_dtl
@@ -305,8 +661,10 @@ export default {
       // .syshp_hg
       &_hg{
         .logo{display:block;}
-        .sd_bnr{display:none;}
-        .srch{float:none; margin:40px auto 0;}
+        .srch{
+          position:static;
+          fieldset{margin:40px auto 0;}
+        }
       }
       // .syshp_fg
       &_fg{
@@ -354,6 +712,7 @@ export default {
       .itm_lst{
         .dtl .btn{display:none;}
       }
+      .no_lst{margin-bottom:0;}
     }
 
     // .syshp_fg
@@ -379,7 +738,7 @@ export default {
     // .syshp_hg
     &_hg{
       .srch{
-        width:100%;
+        fieldset{width:100%;}
         input{font-size:16px;}
       }
     }
@@ -387,6 +746,17 @@ export default {
     // .syshp_cg
     &_cg{
       padding-top:40px;
+    }
+
+    // .syshp_rslt
+    &_rslt{
+      .sbj{font-size:22px;}
+      .dsc{font-size:14px;}
+      .srch{
+        margin-top:30px; 
+        fieldset{padding-right:80px; height:40px;}
+        button{width:80px;}
+      }
     }
 
     // .syshp_tb
