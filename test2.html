@@ -88,15 +88,15 @@
         <div class="swiper-slide">
           <span class="txt">Slide 1</span>
 
-          <video class="lazy" loop="" autoplay muted="true" playsinline=""
-            data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/control.jpg"
+          <video class="swiper-lazy" loop="" autoplay muted="true" playsinline=""
+            poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/control.jpg"
             data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/control.mp4"></video>
         </div>
         <div class="swiper-slide video1">
           <span class="txt">Slide 2</span>
 
-          <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-keepplaying
-            data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_motion.jpg"
+          <video class="swiper-lazy" loop="" muted="true" autoplay="" playsinline="" keepplaying
+            poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_motion.jpg"
             data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_motion.mp4">
           </video>
         </div>
@@ -104,16 +104,16 @@
           <span class="txt">Slide 3</span>
 
 
-          <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-keepplaying
-            data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_comment.jpg"
+          <video class="swiper-lazy" loop="" muted="true" autoplay="" playsinline="" keepplaying
+            poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_comment.jpg"
             data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_comment.mp4">
           </video>
         </div>
         <div class="swiper-slide">
           <span class="txt">Slide 4</span>
 
-          <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-keepplaying
-            data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/stadium.jpg"
+          <video class="swiper-lazy" loop="" muted="true" autoplay="" playsinline="" keepplaying
+            poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/stadium.jpg"
             data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/highlight.mp4">
           </video>
         </div>
@@ -141,11 +141,11 @@
     function logElementEvent() {
       $('.txt_2 strong').text($('.video1 video').attr('data-src'));
       $('.txt_3 strong').text($('.video1 video').attr('src'));
+      
     }
 
     var callback_loaded = function (element) {
       logElementEvent();
-      swiper.attachEvents();
     };
 
     // video lazyload
@@ -157,6 +157,7 @@
 
     var swiper = new Swiper(".mySwiper", {
       effect: 'fade',
+      lazy: true,
       fadeEffect: {
         crossFade: true
       },
