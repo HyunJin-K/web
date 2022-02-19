@@ -67,7 +67,7 @@
 
 <body>
   <div class="txt_area">
-    <p class="txt_2"><span>test12</span> : <strong>00</strong></p>
+    <p class="txt_2"><span>test13</span> : <strong>00</strong></p>
     <p class="txt_3"><span>src</span> : <strong>00</strong></p>
   </div>
   <h1>Lazy video demo, with autoplay</h1>
@@ -88,16 +88,15 @@
         <div class="swiper-slide">
           <span class="txt">Slide 1</span>
 
-          <video class="lazy" loop="" autoplay muted="true" playsinline=""
+          <video class="swiper-lazy" loop="" autoplay muted="true" playsinline=""
             poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/control.jpg"
             data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/control.mp4"></video>
         </div>
         <div class="swiper-slide video1">
           <span class="txt">Slide 2</span>
 
-          <video class="lazy" controls loop="" muted="true" autoplay="" playsinline=""
+          <video class="lazy-custom" controls loop="" muted="true" autoplay="" playsinline=""
             poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_motion.jpg" data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_motion.mp4">
-            <source data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_motion.mp4">
           </video>
         </div>
         <div class="swiper-slide video2">
@@ -107,7 +106,6 @@
           <video class="lazy" controls loop="" muted="true" autoplay="" playsinline=""
             data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_comment.jpg"
             data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_comment.mp4">
-            <source data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_comment.mp4">
           </video>
         </div>
         <div class="swiper-slide">
@@ -133,11 +131,9 @@
   <script>
     function videoAttr($target, $video) {
       if ($(window).outerWidth() <= 767) {
-        $target.find('video').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
-        $target.find('video source').attr('src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
+        $target.find('video').attr('src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
       } else {
-        $target.find('video').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
-        $target.find('video source').attr('src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
+        $target.find('video').attr('src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
       }
     }
 
@@ -148,26 +144,19 @@
           videoAttr($video2, 'reality_comment');
     }
 
-    changeVideo();
 
-    
-
-    function logElementEvent() {
-      $('.txt_2 strong').text($('.video1 video').attr('data-src'));
-      $('.txt_3 strong').text($('.video1 video').attr('src'));
-    }
-
-    var callback_loaded = function (element) {
-      logElementEvent();
-    };
-
-    // video lazyload
-    var lazyLoadInstance = new LazyLoad({
-      elements_selector: "video.lazy",
-      callback_enter: callback_loaded,
+    $(window).on('scroll', function(){
+      if($(window).scrollTop() + $(window).outerHeight() >= $('.video1').offset().top - $(window).outerHeight()){
+        if($('.video1 video').attr('src') == undefined){
+          changeVideo();
+          console.log(123);
+        }else{
+        }
+        
+      }
     });
 
-
+    
     var swiper = new Swiper(".mySwiper", {
       effect: 'fade',
       lazy:true,
