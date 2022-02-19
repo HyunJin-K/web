@@ -67,7 +67,7 @@
 
 <body>
   <div class="txt_area">
-    <p class="txt_2"><span>test3</span> : <strong>00</strong></p>
+    <p class="txt_2"><span>test55</span> : <strong>00</strong></p>
     <p class="txt_3"><span>src</span> : <strong>00</strong></p>
   </div>
   <h1>Lazy video demo, with autoplay</h1>
@@ -95,7 +95,7 @@
         <div class="swiper-slide video1">
           <span class="txt">Slide 2</span>
 
-          <video class="swiper-lazy" loop="" muted="true" autoplay="" playsinline="" keepplaying
+          <video class="swiper-lazy" loop="" muted="true" autoplay=""
             poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_motion.jpg"
             data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_motion.mp4">
           </video>
@@ -104,7 +104,7 @@
           <span class="txt">Slide 3</span>
 
 
-          <video class="swiper-lazy" loop="" muted="true" autoplay="" playsinline="" keepplaying
+          <video class="swiper-lazy" loop="" muted="true" autoplay=""
             poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_comment.jpg"
             data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_comment.mp4">
           </video>
@@ -112,7 +112,7 @@
         <div class="swiper-slide">
           <span class="txt">Slide 4</span>
 
-          <video class="swiper-lazy" loop="" muted="true" autoplay="" playsinline="" keepplaying
+          <video class="swiper-lazy" loop="" muted="true" autoplay=""
             poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/stadium.jpg"
             data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/highlight.mp4">
           </video>
@@ -126,22 +126,18 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.1/dist/lazyload.min.js"></script>
   <script>
-    changeVideo();
-
     
-
 
     function changeVideo() {
       var $video1 = $('.video1'),
-        $video2 = $('.video2');
-      videoAttr($video1, 'reality_motion');
-      videoAttr($video2, 'reality_comment');
+          $video2 = $('.video2');
+          videoAttr($video1, 'reality_motion');
+          videoAttr($video2, 'reality_comment');
     }
 
     function logElementEvent() {
       $('.txt_2 strong').text($('.video1 video').attr('data-src'));
       $('.txt_3 strong').text($('.video1 video').attr('src'));
-      
     }
 
     var callback_loaded = function (element) {
@@ -166,9 +162,9 @@
 
     function videoAttr($target, $video) {
       if ($(window).outerWidth() <= 767) {
-        $target.find('video').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
+        $target.find('video').attr('src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
       } else {
-        $target.find('video').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
+        $target.find('video').attr('src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
       }
     }
 
