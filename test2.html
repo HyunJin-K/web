@@ -67,7 +67,7 @@
 
 <body>
   <div class="txt_area">
-    <p class="txt_2"><span>test9</span> : <strong>00</strong></p>
+    <p class="txt_2"><span>test10</span> : <strong>00</strong></p>
     <p class="txt_3"><span>src</span> : <strong>00</strong></p>
   </div>
   <h1>Lazy video demo, with autoplay</h1>
@@ -156,9 +156,13 @@
 
     var callback_loaded = function (element) {
       logElementEvent();
-      $('.video2 video').attr('autoplay', 'true');
-
     };
+
+    setTimeout(function(){
+      var vtest = document.querySelector('.video1 video');
+      console.log(vtest);
+      vtest.play();
+    }, 1000)
 
     // video lazyload
     var lazyLoadInstance = new LazyLoad({
