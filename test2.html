@@ -4,7 +4,7 @@
   <head lang="en">
     <meta charset="UTF-8" />
     <title>Lazy autoplay video - Lazyload demos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -17,7 +17,7 @@
         margin: 0;
         padding: 0;
       }
-      video{object-fit: cover;}
+      video{object-fit: cover;width:100%;height:100%;}
       .viewport-height {
         min-height: calc(100vh);
       }
@@ -25,7 +25,6 @@
       .swiper{height:100%;}
       .swiper-slide{background:#fff;}
       .swiper-slide .txt{position:absolute;font-size:30px;font-weight:bold;top:50%;left:50%;color:#000;}
-      .swiper-slide video{width:100%;height:100%;}
     </style>
   </head>
 
@@ -37,9 +36,9 @@
       <h2>Preload = none</h2>
       <video
         class="lazy"
-        controls
         autoplay
         muted="true"
+        playsinline=""
         preload="none"
         width="620"
         data-src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
@@ -53,7 +52,7 @@
       <video
         class="lazy"
         preload="metadata"
-        controls
+        playsinline=""
         autoplay
         muted="true"
         width="620"
@@ -104,8 +103,8 @@
       <video
         class="lazy"
         preload="auto"
-        controls
         autoplay
+        playsinline=""
         muted="true"
         width="620"
         data-src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
@@ -142,7 +141,6 @@
       function changeVideo(){
         var $video1 = $('.video1'),
             $video2 = $('.video2');
-        console.log($video1);
         videoAttr($video1, 'reality_motion');
         videoAttr($video2, 'reality_comment');
       }
