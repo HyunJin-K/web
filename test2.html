@@ -1,168 +1,182 @@
-
 <!DOCTYPE html>
 <html>
-  <head lang="en">
-    <meta charset="UTF-8" />
-    <title>Lazy autoplay video - Lazyload demos</title>
-    <meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
-    <style>
-      *{margin:0;padding:0;}
-      ul,
-      li {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-      video{object-fit: cover;width:100%;height:100%;}
-      .viewport-height {
-        min-height: calc(100vh);
-      }
-      .section{height:100vh;}
-      .swiper{height:100%;}
-      .txt_area {position:absolute;top:0;left:0;right:0;padding:10px;box-sizing:border-box;color:red;word-break:break-all;}
-      .swiper-slide{background:#fff;}
-      .swiper-slide .txt{position:absolute;font-size:30px;font-weight:bold;top:50%;left:50%;color:#000;}
-    </style>
-  </head>
 
-  <body>
-    <h1>Lazy video demo, with autoplay</h1>
-    <p>👇🏼 Scroll down to see the lazy videos 👇🏼</p>
-    <div class="viewport-height"></div>
-    <div class="section" style="background:skyblue">
-      <h2>Preload = none</h2>
-      <video
-        class="lazy"
-        autoplay
-        muted="true"
-        playsinline=""
-        preload="none"
-        width="620"
-        data-src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
-        data-poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
-      >
-      </video>
-    </div>
-    
-    <section class="section">
-      <!-- Swiper -->
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <span class="txt">Slide 1</span>
-            <div class="txt_area">
-              <p class="txt_2"><span>data-src</span> : <strong>00</strong></p>
-              <p class="txt_3"><span>src</span> : <strong>00</strong></p>
-            </div>
-            
-            <video
-              class="lazy"
-              autoplay
-              muted="true"
-              width="620"
-              data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/control.jpg"
-              data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/control.mp4"
-            >
-          </div>
-          <div class="swiper-slide video1">
-            <span class="txt">Slide 2</span>
-            <div class="txt_area">
-              <p class="txt_2"><span>초기값</span> : <strong>00</strong></p>
-              <p class="txt_3"><span>현재값</span> : <strong>00</strong></p>
-            </div>
-            
+<head lang="en">
+  <meta charset="UTF-8" />
+  <title>Lazy autoplay video - Lazyload demos</title>
+  <meta name="viewport"
+    content="initial-scale=1.0, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-            <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_motion.jpg" data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_motion.mp4">
-            </video>
-          </div>
-          <div class="swiper-slide video2">
-            <span class="txt">Slide 3</span>
-            <div class="txt_area">
-              <p class="txt_2"><span>초기값</span> : <strong>00</strong></p>
-              <p class="txt_3"><span>현재값</span> : <strong>00</strong></p>
-            </div>
-            
+    ul,
+    li {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
 
-            <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_comment.jpg" data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_comment.mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <span class="txt">Slide 4</span>
-            <div class="txt_area">
-              <p class="txt_2"><span>초기값</span> : <strong>00</strong></p>
-              <p class="txt_3"><span>현재값</span> : <strong>00</strong></p>
-            </div>
+    video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
 
-            <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/stadium.jpg" data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/highlight.mp4">
-            </video>
-          </div>
+    .viewport-height {
+      min-height: calc(100vh);
+    }
+
+    .section {
+      height: 100vh;
+    }
+
+    .swiper {
+      height: 100%;
+    }
+
+    .txt_area {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      box-sizing: border-box;
+      color: red;
+      word-break: break-all;
+      z-index: 100;
+    }
+
+    .swiper-slide {
+      background: #fff;
+    }
+
+    .swiper-slide .txt {
+      position: absolute;
+      font-size: 30px;
+      font-weight: bold;
+      top: 50%;
+      left: 50%;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="txt_area">
+    <p class="txt_2"><span>data-src</span> : <strong>00</strong></p>
+    <p class="txt_3"><span>src</span> : <strong>00</strong></p>
+  </div>
+  <h1>Lazy video demo, with autoplay</h1>
+  <p>👇🏼 Scroll down to see the lazy videos 👇🏼</p>
+  <div class="viewport-height"></div>
+  <div class="section" style="background:skyblue">
+    <h2>Preload = none</h2>
+    <video class="lazy" autoplay muted="true" playsinline="" preload="none" width="620"
+      data-src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+      data-poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217">
+    </video>
+  </div>
+
+  <section class="section">
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <span class="txt">Slide 1</span>
+
+          <video class="lazy" autoplay muted="true" width="620"
+            data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/control.jpg"
+            data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/control.mp4">
+        </div>
+        <div class="swiper-slide video1">
+          <span class="txt">Slide 2</span>
+
+          <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-keepplaying
+            data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_motion.jpg"
+            data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_motion.mp4">
+          </video>
+        </div>
+        <div class="swiper-slide video2">
+          <span class="txt">Slide 3</span>
+
+
+          <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-keepplaying
+            data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_comment.jpg"
+            data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_comment.mp4">
+          </video>
+        </div>
+        <div class="swiper-slide">
+          <span class="txt">Slide 4</span>
+
+          <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-keepplaying
+            data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/stadium.jpg"
+            data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/highlight.mp4">
+          </video>
         </div>
       </div>
+    </div>
 
-    </section>
-    
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.1/dist/lazyload.min.js"></script>
-    <script>
-      changeVideo();
+  </section>
 
-      $('.txt_2 strong').text($('.video1 video').attr('src'));
-      
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.1/dist/lazyload.min.js"></script>
+  <script>
+    changeVideo();
 
-      function changeVideo(){
-        var $video1 = $('.video1'),
-            $video2 = $('.video2');
-        videoAttr($video1, 'reality_motion');
-        videoAttr($video2, 'reality_comment');
+    $('.txt_2 strong').text($('.video1 video').attr('data-src'));
+
+
+    function changeVideo() {
+      var $video1 = $('.video1'),
+        $video2 = $('.video2');
+      videoAttr($video1, 'reality_motion');
+      videoAttr($video2, 'reality_comment');
+    }
+
+    function logElementEvent() {
+      $('.txt_3 strong').text($('.video1 video').attr('src'));
+    }
+
+    var callback_loaded = function (element) {
+      logElementEvent();
+      swiper.init();
+    };
+
+    // video lazyload
+    var lazyLoadInstance = new LazyLoad({
+      elements_selector: "video.lazy",
+      callback_enter: callback_loaded,
+    });
+
+
+    var swiper = new Swiper(".mySwiper", {
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      loop: true
+    });
+
+    function videoAttr($target, $video) {
+      if ($(window).outerWidth() <= 767) {
+        $target.find('video').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
+      } else {
+        $target.find('video').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
       }
-
-      function logElementEvent() {
-          $('.txt_3 strong').text($('.video1 video').attr('src'));
-        }
-
-        var callback_loaded = function (element) {
-          logElementEvent();
-          swiper.init();
-        };
-
-      // video lazyload
-      var lazyLoadInstance = new LazyLoad ({
-        elements_selector: "video.lazy",
-        callback_loaded: callback_loaded,
-      });
+    }
 
 
-      var swiper = new Swiper(".mySwiper", {
-        effect: 'fade',
-        fadeEffect: {
-          crossFade: true
-        },
-        loop:true
-      });
-
-      function videoAttr($target, $video){
-        if($(window).outerWidth() <= 767){
-          $target.find('video').attr('data-src','https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
-        }else{
-          $target.find('video').attr('data-src','https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
-        }
-      }
-
-      
-
-        var callback_loaded = function (element) {
-          logElementEvent("👍 LOADED", element);
-        };
-
-      
 
 
-      
-    </script>
-  </body>
+
+
+
+  </script>
+</body>
+
 </html>
