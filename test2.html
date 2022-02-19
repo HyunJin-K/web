@@ -134,10 +134,10 @@
     function videoAttr($target, $video) {
       if ($(window).outerWidth() <= 767) {
         $target.find('video').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
-        $target.find('video source').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
+        $target.find('video source').attr('src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
       } else {
         $target.find('video').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
-        $target.find('video source').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
+        $target.find('video source').attr('src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
       }
     }
 
