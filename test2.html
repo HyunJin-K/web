@@ -124,9 +124,15 @@
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   <script>
     
+    
+  </script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.1/dist/lazyload.min.js"></script>
+  <script>
     function videoAttr($target, $video) {
       if ($(window).outerWidth() <= 767) {
         $target.find('video').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
+        $target.find('video').attr('autoplay', 'true');
       } else {
         $target.find('video').attr('data-src', 'https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
       }
@@ -140,11 +146,6 @@
     }
 
     changeVideo();
-  </script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.1/dist/lazyload.min.js"></script>
-  <script>
-    
 
     
 
@@ -155,6 +156,7 @@
 
     var callback_loaded = function (element) {
       logElementEvent();
+
     };
 
     // video lazyload
@@ -171,15 +173,6 @@
       },
       loop: true
     });
-
-    
-
-
-
-
-
-
-
   </script>
 </body>
 
