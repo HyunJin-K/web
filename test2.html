@@ -67,7 +67,7 @@
 
 <body>
   <div class="txt_area">
-    <p class="txt_2"><span>test1</span> : <strong>00</strong></p>
+    <p class="txt_2"><span>test2</span> : <strong>00</strong></p>
     <p class="txt_3"><span>src</span> : <strong>00</strong></p>
   </div>
   <h1>Lazy video demo, with autoplay</h1>
@@ -88,7 +88,7 @@
         <div class="swiper-slide">
           <span class="txt">Slide 1</span>
 
-          <video class="lazy" autoplay muted="true" width="620"
+          <video class="lazy" loop="" autoplay muted="true" playsinline=""
             data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/control.jpg"
             data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/control.mp4"></video>
         </div>
@@ -144,7 +144,7 @@
 
     var callback_loaded = function (element) {
       logElementEvent();
-      swiper.update();
+      swiper.loopCreate();
     };
 
     // video lazyload
