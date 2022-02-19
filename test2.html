@@ -67,7 +67,7 @@
 
 <body>
   <div class="txt_area">
-    <p class="txt_2"><span>test2</span> : <strong>00</strong></p>
+    <p class="txt_2"><span>test3</span> : <strong>00</strong></p>
     <p class="txt_3"><span>src</span> : <strong>00</strong></p>
   </div>
   <h1>Lazy video demo, with autoplay</h1>
@@ -128,7 +128,7 @@
   <script>
     changeVideo();
 
-    $('.txt_2 strong').text($('.video1 video').attr('data-src'));
+    
 
 
     function changeVideo() {
@@ -139,12 +139,13 @@
     }
 
     function logElementEvent() {
+      $('.txt_2 strong').text($('.video1 video').attr('data-src'));
       $('.txt_3 strong').text($('.video1 video').attr('src'));
     }
 
     var callback_loaded = function (element) {
       logElementEvent();
-      swiper.loopCreate();
+      swiper.attachEvents();
     };
 
     // video lazyload
