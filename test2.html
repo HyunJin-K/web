@@ -91,10 +91,10 @@
             poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/control.jpg"
             src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/control.mp4"></video>
         </div>
-        <div class="swiper-slide video1">
+        <div class="swiper-slide ">
           <span class="txt">Slide 2</span>
           <video loop="" muted="true" autoplay="" playsinline=""
-            poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_motion.jpg">
+            poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_highlight.jpg">
           </video>
         </div>
         <div class="swiper-slide video2">
@@ -104,18 +104,20 @@
             src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_comment.mp4">
           </video>
         </div>
-        <div class="swiper-slide">
-          <span class="txt">Slide 4</span>
-          <video loop="" muted="true" autoplay="" playsinline=""
-            poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/stadium.jpg"
-            src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/highlight.mp4">
-          </video>
-        </div>
       </div>
     </div>
 
   </section>
+  <div class="section">
+    <div class="video1">
+      <video loop="" muted="true" autoplay="" playsinline=""
+        poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_motion.jpg">
+      </video>
+    </div>
+  </div>
 
+
+  
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   <script>
     
@@ -135,7 +137,6 @@
     function changeVideo() {
       var $video1 = $('.video1');
       videoAttr($video1, 'reality_motion');
-      document.querySelector('.video1 video').play();
     }
 
 
