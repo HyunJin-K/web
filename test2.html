@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>Lazy autoplay video - Lazyload demos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <style>
+      *{margin:0;padding:0;}
+      ul,
+      li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      video{object-fit: cover;}
+      .viewport-height {
+        min-height: calc(100vh);
+      }
+      .section{height:100vh;}
+      .swiper{height:100%;}
+      .swiper-slide{background:#fff;}
+      .swiper-slide .txt{position:absolute;font-size:30px;font-weight:bold;top:50%;left:50%;color:#000;}
+      .swiper-slide video{width:100%;height:100%;}
+    </style>
+  </head>
+
+  <body>
+    <h1>Lazy video demo, with autoplay</h1>
+    <p>👇🏼 Scroll down to see the lazy videos 👇🏼</p>
+    <div class="viewport-height"></div>
+    <div class="section" style="background:skyblue">
+      <h2>Preload = none</h2>
+      <video
+        class="lazy"
+        controls
+        autoplay
+        muted="true"
+        preload="none"
+        width="620"
+        data-src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+        data-poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+      >
+      </video>
+    </div>
+    
+    <div class="section" style="background:plum">
+      <h2>Preload = metadata</h2>
+      <video
+        class="lazy"
+        preload="metadata"
+        controls
+        autoplay
+        muted="true"
+        width="620"
+        data-src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+        data-poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+      >
+      </video>
+    </div>
+
+    <section class="section">
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <span class="txt">Slide 1</span>
+            <video
+              class="lazy"
+              autoplay
+              muted="true"
+              width="620"
+              data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/control.mp4"
+              data-poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+            >
+          </div>
+          <div class="swiper-slide video1">
+            <span class="txt">Slide 2</span>
+            
+            <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_motion.jpg" data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_motion.mp4">
+            </video>
+          </div>
+          <div class="swiper-slide video2">
+            <span class="txt">Slide 3</span>
+            <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_comment.jpg" data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_comment.mp4">
+            </video>
+          </div>
+          <div class="swiper-slide">
+            <span class="txt">Slide 4</span>
+            <video class="lazy" loop="" muted="true" autoplay="" playsinline="" data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/stadium.jpg" data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/highlight.mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    
+    <div class="section" style="background:oldlace">
+      <h2>Preload = auto</h2>
+      <video
+        class="lazy"
+        preload="auto"
+        controls
+        autoplay
+        muted="true"
+        width="620"
+        data-src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+        data-poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+      >
+      </video>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.1/dist/lazyload.min.js"></script>
+    <script>
+      // video lazyload
+      var lazyLoadInstance  =  new  LazyLoad ({
+        elements_selector: "video.lazy",
+      });
+
+
+      var swiper = new Swiper(".mySwiper", {
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        loop:true
+      });
+
+      function videoAttr($target, $video){
+        if($(window).outerWidth() <= 767){
+          $target.find('video').attr('data-src','https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/m_' + $video + '.mp4');
+        }else{
+          $target.find('video').attr('data-src','https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/' + $video + '.mp4');
+        }
+      }
+
+      function changeVideo(){
+        var $video1 = $('.video1'),
+            $video2 = $('.video2');
+        console.log($video1);
+        videoAttr($video1, 'reality_motion');
+        videoAttr($video2, 'reality_comment');
+      }
+
+      changeVideo();
+    </script>
+  </body>
+</html>
