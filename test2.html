@@ -60,14 +60,14 @@
       font-weight: bold;
       top: 50%;
       left: 50%;
-      color: #000;
+      color: #fff;
     }
   </style>
 </head>
 
 <body>
   <div class="txt_area">
-    <p class="txt_2"><span>test777</span> : <strong>00</strong></p>
+    <p class="txt_2"><span>test8</span> : <strong>00</strong></p>
     <p class="txt_3"><span>src</span> : <strong>00</strong></p>
   </div>
   <h1>Lazy video demo, with autoplay</h1>
@@ -93,14 +93,14 @@
         </div>
         <div class="swiper-slide video1">
           <span class="txt">Slide 2</span>
-          <video controls loop="" muted="true" autoplay="" playsinline=""
-            poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_motion.jpg" data-src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_motion.mp4">
+          <video loop="" muted="true" autoplay="" playsinline=""
+            poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_motion.jpg">
           </video>
         </div>
         <div class="swiper-slide video2">
           <span class="txt">Slide 3</span>
-          <video controls loop="" muted="true" autoplay="" playsinline=""
-            data-poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_comment.jpg"
+          <video loop="" muted="true" autoplay="" playsinline=""
+            poster="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/img/video/reality_comment.jpg"
             src="https://hive-fn.qpyou.cn/markup/img/brand/cpbv22/video/reality_comment.mp4">
           </video>
         </div>
@@ -133,10 +133,9 @@
     }
 
     function changeVideo() {
-      var $video1 = $('.video1'),
-          $video2 = $('.video2');
-          videoAttr($video1, 'reality_motion');
-          videoAttr($video2, 'reality_comment');
+      var $video1 = $('.video1');
+      videoAttr($video1, 'reality_motion');
+      document.querySelector('.video1 video').play();
     }
 
 
@@ -144,7 +143,7 @@
       if($(window).scrollTop() + $(window).outerHeight() >= $('.video1').offset().top - $(window).outerHeight()){
         if($('.video1 video').attr('src') == undefined){
           changeVideo();
-          console.log(123);
+
         }else{
         }
         
