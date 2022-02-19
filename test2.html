@@ -48,21 +48,6 @@
       </video>
     </div>
     
-    <div class="section" style="background:plum">
-      <h2>Preload = metadata</h2>
-      <video
-        class="lazy"
-        preload="metadata"
-        playsinline=""
-        autoplay
-        muted="true"
-        width="620"
-        data-src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
-        data-poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
-      >
-      </video>
-    </div>
-
     <section class="section">
       <!-- Swiper -->
       <div class="swiper mySwiper">
@@ -70,8 +55,8 @@
           <div class="swiper-slide">
             <span class="txt">Slide 1</span>
             <div class="txt_area">
-              <p class="txt_2"><span>초기값</span> : <strong>00</strong></p>
-              <p class="txt_3"><span>현재값</span> : <strong>00</strong></p>
+              <p class="txt_2"><span>data-src</span> : <strong>00</strong></p>
+              <p class="txt_3"><span>src</span> : <strong>00</strong></p>
             </div>
             
             <video
@@ -120,20 +105,6 @@
 
     </section>
     
-    <div class="section" style="background:oldlace">
-      <h2>Preload = auto</h2>
-      <video
-        class="lazy"
-        preload="auto"
-        autoplay
-        playsinline=""
-        muted="true"
-        width="620"
-        data-src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
-        data-poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
-      >
-      </video>
-    </div>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.1/dist/lazyload.min.js"></script>
@@ -156,6 +127,7 @@
 
         var callback_loaded = function (element) {
           logElementEvent();
+          swiper.init();
         };
 
       // video lazyload
