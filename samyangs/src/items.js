@@ -2,7 +2,7 @@ export default [
     {
         num : 1,
         type : '봉지면',
-        img : 'item_1',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_1.jpg',
         brand : '삼양식품',
         title : '바담뽕 120g x 32입',
         beforePrice : 54400,
@@ -11,7 +11,7 @@ export default [
     {
         num : 2,
         type : '디저트/간편식',
-        img : 'item_18',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_18.jpg',
         brand : '삼양식품',
         title : '불닭커리 골라담기(4개)',
         beforePrice : 23000,
@@ -20,7 +20,7 @@ export default [
     {
         num : 3,
         type : '봉지면',
-        img : 'item_2',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_2.jpg',
         brand : '삼양식품',
         title : '짜장불닭볶음면 140g x 16입',
         beforePrice : 27200,
@@ -29,7 +29,7 @@ export default [
     {
         num : 4,
         type : '디저트/간편식',
-        img : 'item_19',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_19.jpg',
         brand : '삼양식품',
         title : '불닭납작당면 155g x 12입',
         beforePrice : 42000,
@@ -38,7 +38,7 @@ export default [
     {
         num : 5,
         type : '디저트/간편식',
-        img : 'item_20',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_20.jpg',
         brand : '삼양식품',
         title : '불닭빈달루커리 170g x 3개',
         beforePrice : 15000,
@@ -47,7 +47,7 @@ export default [
     {
         num : 6,
         type : '디저트/간편식',
-        img : 'item_21',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_21.jpg',
         brand : '삼양식품',
         title : '로제불닭납작당면 169g x 12입',
         beforePrice : 42000,
@@ -56,7 +56,7 @@ export default [
     {
         num : 7,
         type : '봉지면',
-        img : 'item_3',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_3.jpg',
         brand : '삼양식품',
         title : '러블리핫불닭볶음면 140g x 20입',
         beforePrice : 36000,
@@ -65,7 +65,7 @@ export default [
     {
         num : 8,
         type : '봉지면',
-        img : 'item_4',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_4.jpg',
         brand : '삼양식품',
         title : '간짬뽕 140g x 20입',
         beforePrice : 24000,
@@ -74,7 +74,7 @@ export default [
     {
         num : 9,
         type : '봉지면',
-        img : 'item_5',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_5.jpg',
         brand : '삼양식품',
         title : '쇠고기면 리뉴얼 120g x 40입',
         beforePrice : 34000,
@@ -83,7 +83,7 @@ export default [
     {
         num : 10,
         type : '봉지면',
-        img : 'item_6',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_6.jpg',
         brand : '삼양식품',
         title : '코다리볶음면 140g x 32입',
         beforePrice : 48000,
@@ -92,7 +92,7 @@ export default [
     {
         num : 11,
         type : '봉지면',
-        img : 'item_7',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_7.jpg',
         brand : '삼양식품',
         title : '우돈사골곰탕면 110g x 40입',
         beforePrice : 50000,
@@ -101,7 +101,7 @@ export default [
     {
         num : 12,
         type : '봉지면',
-        img : 'item_8',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_8.jpg',
         brand : '삼양식품',
         title : '수타면 120g x 40입',
         beforePrice : 38000,
@@ -110,7 +110,7 @@ export default [
     {
         num : 13,
         type : '봉지면',
-        img : 'item_9',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_9.jpg',
         brand : '삼양식품',
         title : '크림까르보불닭볶음면 140g x 16입',
         beforePrice : 27200,
@@ -119,7 +119,7 @@ export default [
     {
         num : 14,
         type : '봉지면',
-        img : 'item_10',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_10.jpg',
         brand : '삼양식품',
         title : '맛있는라면 해물맛 115g x 20입',
         beforePrice : 24000,
@@ -128,7 +128,7 @@ export default [
     {
         num : 15,
         type : '봉지면',
-        img : 'item_11',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_11.jpg',
         brand : '삼양식품',
         title : 'NEW 짜짜로니 140g x 40입',
         beforePrice : 44000,
@@ -137,7 +137,7 @@ export default [
     {
         num : 16,
         type : '봉지면',
-        img : 'item_12',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_12.jpg',
         brand : '삼양식품',
         title : '나가사끼짬뽕 115g x 40입',
         beforePrice : 40000,
@@ -146,7 +146,7 @@ export default [
     {
         num : 17,
         type : '용기면',
-        img : 'item_27',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_27.jpg',
         brand : '삼양식품',
         title : '불닭볶음면 작은컵 70g x 12입',
         beforePrice : 15600,
@@ -155,7 +155,7 @@ export default [
     {
         num : 18,
         type : '용기면',
-        img : 'item_28',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_28.jpg',
         brand : '삼양식품',
         title : '까르보불닭볶음면 작은컵 80g x 12개',
         beforePrice : 16300,
@@ -164,7 +164,7 @@ export default [
     {
         num : 19,
         type : '용기면',
-        img : 'item_29',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_29.jpg',
         brand : '삼양식품',
         title : '큰컵 삼양라면 110g x 16입',
         beforePrice : 24000,
@@ -173,7 +173,7 @@ export default [
     {
         num : 20,
         type : '용기면',
-        img : 'item_30',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_30.jpg',
         brand : '삼양식품',
         title : '큰컵 뽀끼뽀끼크림라뽀끼 110g x 16입',
         beforePrice : 21600,
@@ -182,7 +182,7 @@ export default [
     {
         num : 21,
         type : '스낵',
-        img : 'item_38',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_38.jpg',
         brand : '삼양식품',
         title : '쌀로별뽀빠이강정 100g x 12입',
         beforePrice : 24000,
@@ -191,7 +191,7 @@ export default [
     {
         num : 22,
         type : '스낵',
-        img : 'item_39',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_39.jpg',
         brand : '삼양식품',
         title : '렌티큘러 별뽀빠이 72g x 24입',
         beforePrice : 22500,
@@ -200,7 +200,7 @@ export default [
     {
         num : 23,
         type : '스낵',
-        img : 'item_40',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_40.jpg',
         brand : '삼양식품',
         title : '불닭으로딱!집게 70g x 8봉',
         beforePrice : 13000,
@@ -209,7 +209,7 @@ export default [
     {
         num : 24,
         type : '디저트/간편식',
-        img : 'item_22',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_22.jpg',
         brand : '삼양식품',
         title : '불닭떡볶이 오리지널 185g x 16입',
         beforePrice : 25600,
@@ -218,7 +218,7 @@ export default [
     {
         num : 25,
         type : '디저트/간편식',
-        img : 'item_23',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_23.jpg',
         brand : '삼양식품',
         title : '마라불닭 납작당면 155.6g x 12입',
         beforePrice : 45000,
@@ -227,7 +227,7 @@ export default [
     {
         num : 26,
         type : '디저트/간편식',
-        img : 'item_24',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_24.jpg',
         brand : '삼양식품',
         title : '불닭렌당커리 170g x 3개',
         beforePrice : 12000,
@@ -236,7 +236,7 @@ export default [
     {
         num : 27,
         type : '디저트/간편식',
-        img : 'item_25',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_25.jpg',
         brand : '삼양식품',
         title : '까르보불닭떡볶이 179g x 16입',
         beforePrice : 40000,
@@ -245,7 +245,7 @@ export default [
     {
         num : 28,
         type : '디저트/간편식',
-        img : 'item_26',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_26.jpg',
         brand : '삼양식품',
         title : '로제불닭 떡볶이 183g x 16입',
         beforePrice : 56000,
@@ -254,7 +254,7 @@ export default [
     {
         num : 29,
         type : '용기면',
-        img : 'item_31',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_31.jpg',
         brand : '삼양식품',
         title : '큰컵 짜장불닭볶음면 105g x 16입',
         beforePrice : 15000,
@@ -263,7 +263,7 @@ export default [
     {
         num : 30,
         type : '용기면',
-        img : 'item_32',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_32.jpg',
         brand : '삼양식품',
         title : '큰컵 맛있는라면 112g x 16입',
         beforePrice : 10050,
@@ -272,7 +272,7 @@ export default [
     {
         num : 31,
         type : '봉지면',
-        img : 'item_13',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_13.jpg',
         brand : '삼양식품',
         title : '4가지치즈 불닭볶음면 145g x 32입',
         beforePrice : 54400,
@@ -281,7 +281,7 @@ export default [
     {
         num : 32,
         type : '봉지면',
-        img : 'item_14',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_14.jpg',
         brand : '삼양식품',
         title : '맛있는라면 115g x 40입',
         beforePrice : 35000,
@@ -290,7 +290,7 @@ export default [
     {
         num : 33,
         type : '봉지면',
-        img : 'item_15',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_15.jpg',
         brand : '삼양식품',
         title : '삼양라면 매운맛 120g x 40입 / 오고라 레시피',
         beforePrice : 36000,
@@ -299,7 +299,7 @@ export default [
     {
         num : 34,
         type : '용기면',
-        img : 'item_33',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_33.jpg',
         brand : '삼양식품',
         title : '큰컵 로제불닭볶음면 105g x 16입',
         beforePrice : 16000,
@@ -308,7 +308,7 @@ export default [
     {
         num : 35,
         type : '봉지면',
-        img : 'item_16',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_16.jpg',
         brand : '삼양식품',
         title : '콩나물김치라면 115g x 16입',
         beforePrice : 10500,
@@ -317,7 +317,7 @@ export default [
     {
         num : 36,
         type : '용기면',
-        img : 'item_34',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_34.jpg',
         brand : '삼양식품',
         title : '큰컵 간짬뽕 105g x 16입',
         beforePrice : 25600,
@@ -326,7 +326,7 @@ export default [
     {
         num : 37,
         type : '스낵',
-        img : 'item_41',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_41.jpg',
         brand : '삼양식품',
         title : '짱구 115g x 12입(띠부실 3탄)',
         beforePrice : 18400,
@@ -335,7 +335,7 @@ export default [
     {
         num : 38,
         type : '스낵',
-        img : 'item_42',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_42.jpg',
         brand : '삼양식품',
         title : '페어링바이츠 통밀 베이글칩 50g x 20입',
         beforePrice : 48000,
@@ -344,7 +344,7 @@ export default [
     {
         num : 39,
         type : '용기면',
-        img : 'item_35',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_35.jpg',
         brand : '삼양식품',
         title : '큰컵 짜짜로니 115g x 16입',
         beforePrice : 21600,
@@ -353,7 +353,7 @@ export default [
     {
         num : 40,
         type : '스낵',
-        img : 'item_43',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_43.jpg',
         brand : '삼양식품',
         title : '사또밥 67g*20입',
         beforePrice : 26000,
@@ -362,7 +362,7 @@ export default [
     {
         num : 41,
         type : '용기면',
-        img : 'item_36',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_36.jpg',
         brand : '삼양식품',
         title : '삼양라면 작은컵 65g x 12입',
         beforePrice : 22400,
@@ -371,7 +371,7 @@ export default [
     {
         num : 42,
         type : '봉지면',
-        img : 'item_17',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_17.jpg',
         brand : '삼양식품',
         title : '된장라면 120g x 20입',
         beforePrice : 17000,
@@ -380,7 +380,7 @@ export default [
     {
         num : 43,
         type : '스낵',
-        img : 'item_44',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_44.jpg',
         brand : '삼양식품',
         title : '삼양목장 우유로 만든 밀크전병/딸기전병 4개 세트',
         beforePrice : 48000,
@@ -389,7 +389,7 @@ export default [
     {
         num : 44,
         type : '용기면',
-        img : 'item_37',
+        img : 'https://hyunjin-k.github.io/web/dist/samyang/img/item_37.jpg',
         brand : '삼양식품',
         title : '큰컵 삼양라면 매운맛110g x 16입',
         beforePrice : 21600,
